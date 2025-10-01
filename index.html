@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Portfolio of Gabriel Nogarotto, Game Designer, Producer, and Project Manager. Showcasing featured projects with a focus on game design, narrative, and project coordination.">
+    <meta name="keywords" content="Gabriel Nogarotto, Game Designer, Game Producer, Project Manager, GameDev, Portfolio, Interactive Entertainment">
+    <title>Portfolio | Gabriel Nogarotto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 (Fondo blanco/gris muy claro) */
+            color: #1e293b; /* slate-900 */
+        }
+        /* Botones principales de la navegación */
+        .nav-link.active {
+            color: #424242; /* dark gray */
+            font-weight: 600;
+        }
+        /* Estilo del modal */
+        .modal-overlay {
+            transition: opacity 0.3s ease;
+        }
+        .modal-content {
+            transition: transform 0.3s ease;
+            background-color: #ffffff;
+        }
+        /* Estilo de los badges de habilidades */
+        .skill-badge {
+            background-color: #e5e7eb; /* gray-200 */
+            color: #424242; /* dark gray */
+            border-radius: 9999px;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+        }
+        /* Efecto de hover en las tarjetas de proyecto */
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        /* Estilos de botones (Negro y Gris) */
+        .btn-black {
+            background-color: #1f2937; /* gray-900 (Negro) */
+            color: white;
+            transition: background-color 0.15s;
+        }
+        .btn-black:hover {
+            background-color: #374151; /* gray-700 */
+        }
+        .btn-gray-outline {
+            background-color: white;
+            color: #1f2937; /* gray-900 */
+            border: 1px solid #d1d5db; /* gray-300 */
+            transition: background-color 0.15s;
+        }
+        .btn-gray-outline:hover {
+            background-color: #f3f4f6; /* gray-100 */
+        }
+        .btn-gray-solid {
+            background-color: #4b5563; /* gray-600 (Gris oscuro) */
+            color: white;
+            transition: background-color 0.15s;
+        }
+        .btn-gray-solid:hover {
+            background-color: #374151; /* gray-700 */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white sticky top-0 z-50 shadow-md">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <h1 class="text-2xl font-bold text-gray-900">Gabriel Nogarotto</h1>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#profile" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Profile</a>
+                        <a href="#projects" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Projects</a>
+                        <a href="#skills" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Skills</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        <!-- Professional Profile Section -->
+        <section id="profile" class="mb-16 scroll-mt-20">
+            <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12 text-center relative overflow-hidden">
+                <div class="flex flex-col items-center">
+                    <img src="https://media.licdn.com/dms/image/v2/D4E35AQHiCnLOardbqg/profile-framedphoto-shrink_200_200/B4EZjtGv_8IIAY-/0/1756324626735?e=1757534400&v=beta&t=xq7P0SbSwCvmcWoVofLz0bi-F0jAGh8QsHexEMozY" alt="Profile picture of Gabriel Nogarotto" class="w-40 h-40 rounded-full mx-auto mb-6 object-cover shadow-lg border-4 border-gray-900">
+                    <h2 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-2">Gabriel Nogarotto</h2>
+                    <h3 class="text-xl font-medium text-gray-700 mb-6">Game Designer | Producer | Project Manager</h3>
+                </div>
+                
+                <p class="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed">
+                    I am a Game Design student at Image Campus with a deep passion for creating interactive and entertaining experiences that connect with players. My focus lies in designing immersive systems and mechanics, with a special interest in narrative game design. I combine creativity, narrative thinking, and technical skills to build meaningful worlds and enhance player experiences. I'm eager to contribute to projects that push the boundaries of interactive entertainment, bringing value through my dedication and focus on meaningful gameplay.
+                </p>
+
+                <div class="mt-8 flex flex-wrap justify-center items-center gap-4">
+                    <a href="mailto:gabrielnogarotto2@gmail.com" class="flex items-center btn-black font-bold py-2 px-4 rounded-full shadow-lg">
+                        <span class="mr-2 text-xl">📧</span> Contact by Email
+                    </a>
+                    <a href="https://www.linkedin.com/in/gabriel-nogarotto-35a7b02a9" target="_blank" class="flex items-center btn-gray-outline font-bold py-2 px-4 rounded-full shadow-sm">
+                        <span class="mr-2 text-xl">💼</span> LinkedIn
+                    </a>
+                    <a href="https://gabrielnogarotto.itch.io/" target="_blank" class="flex items-center btn-gray-outline font-bold py-2 px-4 rounded-full shadow-sm">
+                        <span class="mr-2 text-xl">🎮</span> itch.io
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-bold mb-8 text-center text-gray-900">🎮 Featured Projects</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project cards will be injected here by JS -->
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-bold mb-8 text-center text-gray-900">🛠️ Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                 <div class="bg-white rounded-xl shadow-md p-6 card-hover transition-all duration-300">
+                    <h3 class="text-xl font-bold mb-4 text-center text-gray-700">Game Design & Management</h3>
+                    <div class="flex flex-wrap justify-center gap-2">
+                        <span class="skill-badge">Agile/Scrum</span>
+                        <span class="skill-badge">Gantt & Roadmaps</span>
+                        <span class="skill-badge">GDDs (Game Design Documents)</span>
+                        <span class="skill-badge">Level Design</span>
+                        <span class="skill-badge">Narrative Design</span>
+                        <span class="skill-badge">Pitch Decks</span>
+                        <span class="skill-badge">Project Management</span>
+                        <span class="skill-badge">Agile Methodologies</span>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-6 card-hover transition-all duration-300">
+                    <h3 class="text-xl font-bold mb-4 text-center text-gray-700">Software & Development</h3>
+                    <div class="flex flex-wrap justify-center gap-2">
+                        <span class="skill-badge">HTML/JavaScript</span>
+                        <span class="skill-badge">Twine (Narrative Tool)</span>
+                        <span class="skill-badge">Construct (Game Engine)</span>
+                        <span class="skill-badge">Godot (Game Engine)</span>
+                        <span class="skill-badge">Stencyl (Game Engine)</span>
+                        <span class="skill-badge">Miro (Workflow)</span>
+                        <span class="skill-badge">AutoCAD</span>
+                        <span class="skill-badge">Canva (Visuals)</span>
+                        <span class="skill-badge">Google Suite</span>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-6 card-hover transition-all duration-300 col-span-1 md:col-span-2">
+                    <h3 class="text-xl font-bold mb-4 text-center text-gray-700">Soft Skills & Communication</h3>
+                    <div class="flex flex-wrap justify-center gap-2">
+                        <span class="skill-badge">Proactivity</span>
+                        <span class="skill-badge">Organization</span>
+                        <span class="skill-badge">Leadership</span>
+                        <span class="skill-badge">Communication</span>
+                        <span class="skill-badge">Teamwork</span>
+                        <span class="skill-badge">Business Planning</span>
+                        <span class="skill-badge">Networking</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
+    <!-- Modal -->
+    <div id="project-modal" class="modal-overlay fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 opacity-0 pointer-events-none">
+        <div id="modal-content-wrapper" class="modal-content rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto p-8 relative transform scale-95">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-3xl font-bold">&times;</button>
+            <h3 id="modal-title" class="text-3xl font-bold mb-2 text-gray-900"></h3>
+            <p id="modal-role" class="text-lg font-medium text-gray-700 mb-4"></p>
+            <div id="modal-description" class="text-gray-600 space-y-3"></div>
+            <div class="mt-6 flex flex-wrap gap-4">
+                <a id="modal-link" href="#" target="_blank" class="inline-block btn-black font-bold py-2 px-4 rounded-full">Go to Project</a>
+                <a id="modal-download-link" href="#" target="_blank" class="inline-block btn-gray-solid font-bold py-2 px-4 rounded-full hidden">Download PDF</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const projectsData = [
+            {
+                title: 'Nanban (Visual Novel)',
+                role: 'Narrative Designer, Twine Developer, and Conceptual Lead',
+                description: [
+                    'Conceptualized and developed this interactive Visual Novel using **Twine**, focusing on branching narratives and player choice.',
+                    'Worked alongside a partner to handle the entire **Narrative Design** process, including world-building, character dialogue, multiple endings, and the selection/implementation of visual assets.',
+                    'This project highlights my ability to structure complex stories, write engaging dialogue, and manage an interactive narrative experience from concept to completion.'
+                ],
+                link: 'https://gabrielnogarotto.itch.io/nanban',
+                imageUrl: 'https://img.itch.zone/aW1nLzIzMzk4NjMxLnBuZw==/315x250%23c/jayV8k.png'
+            },
+            {
+                title: 'The Risk of Fido',
+                role: 'Game Designer and Project Coordinator',
+                description: [
+                    'Led and coordinated a multi-disciplinary team of over 8 people (designers, programmers, artists, and sound engineers) for a Game Jam project developed in Godot.',
+                    'My core responsibilities included co-designing the game concept and rules, and translating the vision into documentation for the programming team.',
+                    'The main challenge was managing scope and communication due to an imbalance between design and programming resources, which provided valuable experience in agile documentation refinement and cross-functional team management.'
+                ],
+                link: 'https://gabrielnogarotto.itch.io/the-risk-of-figo',
+                imageUrl: 'https://img.itch.zone/aW1nLzIyOTY2MzUyLnBuZw==/315x250%23c/996jtP.png'
+            },
+            {
+                title: 'Viper Assault',
+                role: 'Designer and Developer',
+                description: [
+                    'Conceptualized and developed a modern re-imagining of the classic "Snake" game, featuring combat mechanics, special abilities, boss battles, and a structured campaign mode.',
+                    'Using AI assistance for prototyping, I managed the end-to-end development, focusing on feature implementation, iterative playtesting, and balancing the core combat loop.',
+                    'The game was enhanced based on detailed feedback and testing provided by peers and professors.'
+                ],
+                link: 'https://gabrielnogarotto.itch.io/neo-viper-assault',
+                imageUrl: 'https://img.itch.zone/aW1nLzIxMzgyMjY0LnBuZw==/315x250%23c/QDg1AS.png'
+            },
+            {
+                title: 'Ax-Terion',
+                role: 'Game Designer and Developer',
+                description: [
+                    'Developed a course project in a three-person team using the Construct 3 engine. I was responsible for the initial game concept design, detailed **Level Design**, and the entire development implementation.',
+                    'The game was built around a mandatory core mechanic of a rotating maze every 10 seconds. Technical challenges with the camera and inverted controls upon rotation were creatively repurposed as intentional mechanics to increase the game\'s difficulty.'
+                ],
+                link: 'https://gabrielnogarotto.itch.io/ax-terion',
+                imageUrl: 'https://img.itch.zone/aW1nLzIxOTM2NjI4LnBuZw==/315x250%23c/APdTla.png'
+            },
+            {
+                title: 'The Blue Flame (working title)',
+                role: 'Developer and Designer',
+                description: [
+                    'My inaugural game development project, created solo in **Godot** for a Game Jam.',
+                    'This turn-based strategy game focused on combat mechanics and an innovative resource system. The tight development timeline required prioritizing core features, demonstrating effective **time management** and feature scoping in a solo development environment.'
+                ],
+                link: 'https://gabrielnogarotto.itch.io/la-llama-azul-titulo-provisional',
+                imageUrl: 'https://img.itch.zone/aW1nLzIwNjk2NDMwLnBuZw==/315x250%23c/tRmEIc.png'
+            },
+            {
+                title: 'Space Meteroids',
+                role: 'Designer and Developer',
+                description: [
+                    'A retro-style space shooter game developed using **Makecode Arcade**, inspired by classic titles like *Asteroids* and *Galaga*.',
+                    'I focused on designing a satisfying core loop mechanics around combat, exploration, and simple ship upgrade systems.'
+                ],
+                link: 'https://gabrielnogarotto.itch.io/space-meteroids',
+                imageUrl: 'https://img.itch.zone/aW1nLzIyNDMxOTIwLnBuZw==/315x250%23c/AMhrPU.png'
+            },
+            {
+                title: 'Loopean Timing',
+                role: 'Designer and Developer (Solo Jam Project)',
+                description: [
+                    'A precision platformer developed for a Game Jam around the theme of "Loop." The core mechanic involves time loops triggered by failure, requiring the player to learn from previous attempts to advance.',
+                    'I implemented key systems such as movement, shooting, **breakable platforms**, a loop counter score, and the final objective of breaking the loop by securing a "Core" object, emphasizing design around player memory and deduction.'
+                ],
+                link: 'https://gabrielnogarotto.itch.io/loopean-timing',
+                imageUrl: 'https://img.itch.zone/aW1nLzIyNDQ0NzQyLnBuZw==/315x250%23c/%2B6%2Fyzj.png'
+            },
+            {
+                title: 'Sky Ground Runner',
+                role: 'Designer and Developer',
+                description: [
+                    'An endless side-scrolling runner game developed using the **Stencyl** engine.',
+                    'I focused on **obstacle design**, player reflexes, and implementing various scoring power-ups and behaviors to ensure an engaging and increasingly challenging high-score driven experience.'
+                ],
+                link: 'https://gabrielnogarotto.itch.io/sky-ground-runner',
+                imageUrl: 'https://img.itch.zone/aW1nLzIyOTEyNzk5LnBuZw==/315x250%23c/ZRxvW8.png'
+            },
+            {
+                title: 'Other Faculty Projects and Documents',
+                role: 'Document Designer, System Balancer, and Technical Author',
+                description: [
+                    'A curated collection of university coursework including **Game Design Documents (GDDs)**, technical presentations, and balance spreadsheets.',
+                    'This section also includes the documentation for the "Cazadores del Abismo" Print and Play game, where I managed the implementation of complex ludic concepts, asymmetric character roles, and strategic round systems, focusing on detailed **difficulty balancing** and rulebook creation.',
+                    'These documents collectively showcase my theoretical knowledge, professional documentation standards, and ongoing progression across various facets of game development, highlighting my value as a versatile contributor.'
+                ],
+                link: 'https://drive.google.com/drive/folders/1xSNCguAGh1YzwuqoPHQuGEO0Nk7E4PCJ',
+                imageUrl: 'https://placehold.co/400x200/e5e7eb/424242?text=Faculty+Projects'
+            }
+        ];
+
+        const projectsContainer = document.querySelector('#projects .grid');
+        projectsData.forEach((project, index) => {
+            const projectCard = document.createElement('div');
+            projectCard.className = 'bg-white rounded-2xl shadow-md flex flex-col hover:-translate-y-2 transition-all duration-300 cursor-pointer overflow-hidden card-hover';
+            projectCard.innerHTML = `
+                <img src="${project.imageUrl}" alt="Project image for ${project.title}" class="w-full h-40 object-cover rounded-t-2xl">
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold text-gray-900">${project.title}</h3>
+                    <p class="text-gray-700 font-medium mb-3">${project.role}</p>
+                    <p class="text-gray-600 text-sm flex-grow">${project.description[0].substring(0, 100)}...</p>
+                    <button data-index="${index}" class="open-modal-btn mt-4 btn-black font-bold py-2 px-4 rounded-full w-full">View Details</button>
+                </div>
+            `;
+            projectsContainer.appendChild(projectCard);
+        });
+
+        const modal = document.getElementById('project-modal');
+        const modalContentWrapper = document.getElementById('modal-content-wrapper');
+        const closeModalBtn = document.getElementById('close-modal');
+        const openModalBtns = document.querySelectorAll('.open-modal-btn');
+
+        const modalTitle = document.getElementById('modal-title');
+        const modalRole = document.getElementById('modal-role');
+        const modalDescription = document.getElementById('modal-description');
+        const modalLink = document.getElementById('modal-link');
+        const modalDownloadLink = document.getElementById('modal-download-link');
+
+        function openModal(index) {
+            const project = projectsData[index];
+            modalTitle.textContent = project.title;
+            modalRole.textContent = project.role;
+            // Join all description lines into paragraphs
+            modalDescription.innerHTML = project.description.map(p => `<p>${p}</p>`).join('');
+            
+            if (project.link) {
+                modalLink.href = project.link;
+                modalLink.style.display = 'inline-block';
+            } else {
+                modalLink.style.display = 'none';
+            }
+
+            // Custom link styling for "Other Faculty Projects" to indicate it leads to a folder
+            if (project.title.includes('Faculty Projects')) {
+                modalLink.textContent = 'View Documents (Drive)';
+                modalLink.classList.add('btn-gray-solid');
+                modalLink.classList.remove('btn-black');
+                
+                modalDownloadLink.style.display = 'none'; 
+            } else {
+                modalLink.textContent = 'Go to Project';
+                modalLink.classList.add('btn-black');
+                modalLink.classList.remove('btn-gray-solid');
+                modalDownloadLink.style.display = 'none';
+            }
+            
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modalContentWrapper.classList.remove('scale-95');
+        }
+
+        function closeModal() {
+            modal.classList.add('opacity-0');
+            modalContentWrapper.classList.add('scale-95');
+            setTimeout(() => {
+                 modal.classList.add('pointer-events-none');
+            }, 300);
+        }
+
+        openModalBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                openModal(btn.dataset.index);
+            });
+        });
+
+        closeModalBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.4 
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href').substring(1) === entry.target.id) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
