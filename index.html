@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Portfolio of Gabriel Nogarotto, Game Designer, Producer, and Project Manager. Showcasing featured projects with a focus on game design, narrative, and project coordination.">
-    <meta name="keywords" content="Gabriel Nogarotto, Game Designer, Game Producer, Project Manager, GameDev, Portfolio, Interactive Entertainment">
+    <meta name="description" content="Portfolio of Gabriel Nogarotto, Game Designer, Producer, and QA Analyst. Showcasing featured projects with a focus on game design, narrative, and project coordination.">
+    <meta name="keywords" content="Gabriel Nogarotto, Game Designer, Game Producer, QA Analyst, GameDev, Portfolio, Interactive Entertainment">
     <title>Portfolio | Gabriel Nogarotto</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -97,7 +97,7 @@
                 <div class="flex flex-col items-center">
                     <img src="https://media.licdn.com/dms/image/v2/D4E35AQHiCnLOardbqg/profile-framedphoto-shrink_200_200/B4EZjtGv_8IIAY-/0/1756324626735?e=1757534400&v=beta&t=xq7P0SbqSwVcimcWoVofLz0bi-F0jAGh8QsHexEMozY" alt="Profile picture of Gabriel Nogarotto" class="w-40 h-40 rounded-full mx-auto mb-6 object-cover shadow-lg border-4 border-gray-900">
                     <h2 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-2">Gabriel Nogarotto</h2>
-                    <h3 class="text-xl font-medium text-gray-700 mb-6">Game Designer | Producer | Project Manager</h3>
+                    <h3 class="text-xl font-medium text-gray-700 mb-6">Game Designer | Producer | QA Analyst</h3>
                 </div>
                 
                 <p class="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed">
@@ -113,6 +113,9 @@
                     </a>
                     <a href="https://gabrielnogarotto.itch.io/" target="_blank" class="flex items-center btn-gray-outline font-bold py-2 px-4 rounded-full shadow-sm">
                         <span class="mr-2 text-xl">🎮</span> itch.io
+                    </a>
+                    <a href="https://www.artstation.com/gabrielnogarotto" target="_blank" class="flex items-center btn-gray-outline font-bold py-2 px-4 rounded-full shadow-sm">
+                        <span class="mr-2 text-xl">🎨</span> ArtStation
                     </a>
                 </div>
             </div>
@@ -180,209 +183,250 @@
             <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-3xl font-bold">&times;</button>
             <h3 id="modal-title" class="text-3xl font-bold mb-2 text-gray-900"></h3>
             <p id="modal-role" class="text-lg font-medium text-gray-700 mb-4"></p>
+            
+            <!-- Demo Reel Container -->
+            <div id="modal-demo-reel-container" class="mb-6 hidden">
+                <h4 class="text-xl font-semibold mb-3 text-gray-800">Project Demo Reel</h4>
+                <div id="modal-demo-reel-embed" class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-inner bg-gray-200">
+                    <!-- Iframe will be injected here -->
+                </div>
+            </div>
+
+            <h4 class="text-xl font-semibold mb-3 text-gray-800">My Role & Project Details</h4>
             <div id="modal-description" class="text-gray-600 space-y-3"></div>
+            
             <div class="mt-6 flex flex-wrap gap-4">
-                <a id="modal-link" href="#" target="_blank" class="inline-block btn-black font-bold py-2 px-4 rounded-full">Go to Project</a>
-                <a id="modal-download-link" href="#" target="_blank" class="inline-block btn-gray-solid font-bold py-2 px-4 rounded-full hidden">Download PDF</a>
+                <a id="modal-link" href="#" target="_blank" class="inline-block btn-black font-bold py-2 px-4 rounded-full"></a>
+                <a id="modal-artstation-link" href="#" target="_blank" class="inline-block btn-gray-solid font-bold py-2 px-4 rounded-full hidden">View on ArtStation</a>
             </div>
         </div>
     </div>
 
     <script>
-        const projectsData = [
-             {
-                title: 'Deadly Western',
-                role: 'Game Designer & Godot Developer',
-                description: [
-                    'Developed a fast-paced gallery shooter in <strong>Godot</strong>, creating a unique theme of possessed cowboys.',
-                    'My role encompassed the entire design process, from conceptualizing the theme and core shooting mechanics to implementing the complete gameplay loop within the engine.',
-                    'This project showcases my ability to quickly prototype and build a full game concept from start to finish.'
-                ],
-                link: 'https://gabrielnogarotto.itch.io/deadly-western',
-                imageUrl: 'https://img.itch.zone/aW1nLzIzNDM0NDU3LnBuZw==/315x250%23c/pLfGTa.png'
-            },
-            {
-                title: 'Nanban (Visual Novel)',
-                role: 'Narrative Designer, Twine Developer, and Conceptual Lead',
-                description: [
-                    'Conceptualized and developed this interactive Visual Novel using <strong>Twine</strong>, focusing on branching narratives and player choice.',
-                    'Worked alongside a partner to handle the entire <strong>Narrative Design</strong> process, including world-building, character dialogue, multiple endings, and the selection/implementation of visual assets.',
-                    'This project highlights my ability to structure complex stories, write engaging dialogue, and manage an interactive narrative experience from concept to completion.'
-                ],
-                link: 'https://gabrielnogarotto.itch.io/nanban',
-                imageUrl: 'https://img.itch.zone/aW1nLzIzMzk4NjMxLnBuZw==/315x250%23c/jayV8k.png'
-            },
-            {
-                title: 'The Risk of Fido',
-                role: 'Game Designer and Project Coordinator',
-                description: [
-                    'Led and coordinated a multi-disciplinary team of over 8 people for a Game Jam project in <strong>Godot</strong>.',
-                    'My core responsibilities included co-designing the game concept and rules, and translating the vision into documentation for the programming team.',
-                    'This experience was a masterclass in scope management and agile communication, providing valuable lessons in cross-functional team leadership.'
-                ],
-                link: 'https://gabrielnogarotto.itch.io/the-risk-of-figo',
-                imageUrl: 'https://img.itch.zone/aW1nLzIyOTY2MzUyLnBuZw==/315x250%23c/996jtP.png'
-            },
-            {
-                title: 'Viper Assault',
-                role: 'Designer and Developer',
-                description: [
-                    'Conceptualized and developed a modern re-imagining of the classic "Snake" game, featuring combat mechanics, special abilities, boss battles, and a structured campaign mode.',
-                    'I managed the end-to-end development, focusing on feature implementation, iterative playtesting, and balancing, enhancing the game based on detailed feedback from peers and professors.'
-                ],
-                link: 'https://gabrielnogarotto.itch.io/neo-viper-assault',
-                imageUrl: 'https://img.itch.zone/aW1nLzIxMzgyMjY0LnBuZw==/315x250%23c/QDg1AS.png'
-            },
-            {
-                title: 'Ax-Terion',
-                role: 'Game Designer and Developer',
-                description: [
-                    'Developed a course project in a three-person team using <strong>Construct 3</strong>. I was responsible for the initial concept design, detailed <strong>Level Design</strong>, and the entire development implementation.',
-                    'A core mechanic was a rotating maze every 10 seconds. Technical challenges were creatively repurposed as intentional mechanics to increase difficulty.'
-                ],
-                link: 'https://gabrielnogarotto.itch.io/ax-terion',
-                imageUrl: 'https://img.itch.zone/aW1nLzIxOTM2NjI4LnBuZw==/315x250%23c/APdTla.png'
-            },
-            {
-                title: 'Loopean Timing',
-                role: 'Designer and Developer (Solo Jam Project)',
-                description: [
-                    'A precision platformer for a Game Jam with the theme "Loop." The core mechanic involves time loops triggered by failure, requiring players to learn from previous attempts.',
-                    'I implemented movement, shooting, <strong>breakable platforms</strong>, and a loop score, emphasizing a design built around player memory and deduction.'
-                ],
-                link: 'https://gabrielnogarotto.itch.io/loopean-timing',
-                imageUrl: 'https://img.itch.zone/aW1nLzIyNDQ0NzQyLnBuZw==/315x250%23c/%2B6%2Fyzj.png'
-            },
-            {
-                title: 'Sky Ground Runner',
-                role: 'Designer and Developer',
-                description: [
-                    'An endless side-scrolling runner game developed in <strong>Stencyl</strong>.',
-                    'I focused on <strong>obstacle design</strong>, player reflexes, and implementing power-ups to ensure an engaging, high-score driven experience.'
-                ],
-                link: 'https://gabrielnogarotto.itch.io/sky-ground-runner',
-                imageUrl: 'https://img.itch.zone/aW1nLzIyOTEyNzk5LnBuZw==/315x250%23c/ZRxvW8.png'
-            },
-            {
-                title: 'Other Faculty Projects and Documents',
-                role: 'Document Designer & Systems Balancer',
-                description: [
-                    'A curated collection of university coursework including <strong>Game Design Documents (GDDs)</strong>, presentations, and balance spreadsheets.',
-                    'This also includes the "Cazadores del Abismo" Print and Play, where I managed complex ludic concepts, asymmetric roles, and strategic round systems, focusing on detailed <strong>difficulty balancing</strong> and rulebook creation.',
-                    'These documents showcase my theoretical knowledge, professional documentation standards, and ongoing progression in game development.'
-                ],
-                link: 'https://drive.google.com/drive/folders/1xSNCguAGh1YzwuqoPHQuGEO0Nk7E4PCJ',
-                imageUrl: 'https://placehold.co/400x200/e5e7eb/424242?text=Faculty+Projects'
-            }
-        ];
+        document.addEventListener('DOMContentLoaded', () => {
+            const projectsData = [
+                {
+                    title: 'Deadly Western',
+                    role: 'Game Designer & Godot Developer',
+                    description: [
+                        'Developed a fast-paced gallery shooter in <strong>Godot</strong>, creating a unique theme of possessed cowboys.',
+                        'My role encompassed the entire design process, from conceptualizing the theme and core shooting mechanics to implementing the complete gameplay loop within the engine.',
+                        'This project showcases my ability to quickly prototype and build a full game concept from start to finish.'
+                    ],
+                    link: 'https://gabrielnogarotto.itch.io/deadly-western',
+                    imageUrl: 'https://img.itch.zone/aW1nLzIzNDM0NDU3LnBuZw==/315x250%23c/pLfGTa.png',
+                    demoReelEmbed: '<iframe width="100%" height="100%" src="https://www.artstation.com/embed/12345" frameborder="0" allowfullscreen class="w-full h-full"></iframe>',
+                    artstationLink: 'https://your-artstation-project-link.com'
+                },
+                {
+                    title: 'Nanban (Visual Novel)',
+                    role: 'Narrative Designer, Twine Developer, and Conceptual Lead',
+                    description: [
+                        'Conceptualized and developed this interactive Visual Novel using <strong>Twine</strong>, focusing on branching narratives and player choice.',
+                        'Worked alongside a partner to handle the entire <strong>Narrative Design</strong> process, including world-building, character dialogue, multiple endings, and the selection/implementation of visual assets.',
+                        'This project highlights my ability to structure complex stories, write engaging dialogue, and manage an interactive narrative experience from concept to completion.'
+                    ],
+                    link: 'https://gabrielnogarotto.itch.io/nanban',
+                    imageUrl: 'https://img.itch.zone/aW1nLzIzMzk4NjMxLnBuZw==/315x250%23c/jayV8k.png',
+                    demoReelEmbed: '<iframe width="100%" height="100%" src="https://www.artstation.com/embed/67890" frameborder="0" allowfullscreen class="w-full h-full"></iframe>',
+                    artstationLink: 'https://your-artstation-project-link.com'
+                },
+                {
+                    title: 'The Risk of Fido',
+                    role: 'Game Designer and Project Coordinator',
+                    description: [
+                        'Led and coordinated a multi-disciplinary team of over 8 people for a Game Jam project in <strong>Godot</strong>.',
+                        'My core responsibilities included co-designing the game concept, defining rules, and translating the vision into documentation for the programming team.',
+                        'The uploaded game is a basic prototype developed under the jam\'s deadline. While the game is not finished, the experience was invaluable for practicing teamwork, time management, and task administration in a fast-paced environment.'
+                    ],
+                    link: 'https://gabrielnogarotto.itch.io/the-risk-of-figo',
+                    imageUrl: 'https://img.itch.zone/aW1nLzIyOTY2MzUyLnBuZw==/315x250%23c/996jtP.png',
+                    demoReelEmbed: null,
+                    artstationLink: null
+                },
+                {
+                    title: 'Viper Assault',
+                    role: 'Designer and Developer',
+                    description: [
+                        'Conceptualized and developed a modern re-imagining of the classic "Snake" game, featuring combat mechanics, special abilities, boss battles, and a structured campaign mode.',
+                        'I managed the end-to-end development, focusing on feature implementation, iterative playtesting, and balancing, enhancing the game based on detailed feedback from peers and professors.'
+                    ],
+                    link: 'https://gabrielnogarotto.itch.io/neo-viper-assault',
+                    imageUrl: 'https://img.itch.zone/aW1nLzIxMzgyMjY0LnBuZw==/315x250%23c/QDg1AS.png',
+                    demoReelEmbed: null,
+                    artstationLink: null
+                },
+                {
+                    title: 'Ax-Terion',
+                    role: 'Game Designer and Developer',
+                    description: [
+                        'Developed a course project in a three-person team using <strong>Construct 3</strong>. I was responsible for the initial concept design, detailed <strong>Level Design</strong>, and the entire development implementation.',
+                        'A core mechanic was a rotating maze every 10 seconds. Technical challenges were creatively repurposed as intentional mechanics to increase difficulty.'
+                    ],
+                    link: 'https://gabrielnogarotto.itch.io/ax-terion',
+                    imageUrl: 'https://img.itch.zone/aW1nLzIxOTM2NjI4LnBuZw==/315x250%23c/APdTla.png',
+                    demoReelEmbed: null,
+                    artstationLink: null
+                },
+                {
+                    title: 'Loopean Timing',
+                    role: 'Designer and Developer (Solo Jam Project)',
+                    description: [
+                        'A precision platformer for a Game Jam with the theme "Loop." The core mechanic involves time loops triggered by failure, requiring players to learn from previous attempts.',
+                        'I implemented movement, shooting, <strong>breakable platforms</strong>, and a loop score, emphasizing a design built around player memory and deduction.'
+                    ],
+                    link: 'https://gabrielnogarotto.itch.io/loopean-timing',
+                    imageUrl: 'https://img.itch.zone/aW1nLzIyNDQ0NzQyLnBuZw==/315x250%23c/%2B6%2Fyzj.png',
+                    demoReelEmbed: null,
+                    artstationLink: null
+                },
+                {
+                    title: 'Design Documentation & Case Studies',
+                    role: 'Designer & Systems Balancer',
+                    description: [
+                        'A curated collection of professional design documents, including <strong>Game Design Documents (GDDs)</strong>, case studies, presentations, and balance spreadsheets.',
+                        'This also includes the "Cazadores del Abismo" Print and Play, where I managed complex ludic concepts, asymmetric roles, and strategic round systems, focusing on detailed <strong>difficulty balancing</strong> and rulebook creation.',
+                        'These documents showcase my theoretical knowledge, professional documentation standards, and ongoing progression in game development.'
+                    ],
+                    link: 'https://drive.google.com/drive/folders/1xSNCguAGh1YzwuqoPHQuGEO0Nk7E4PCJ',
+                    imageUrl: 'https://placehold.co/400x200/e5e7eb/424242?text=Design+Docs',
+                    demoReelEmbed: null,
+                    artstationLink: null
+                }
+            ];
 
-        const projectsContainer = document.querySelector('#projects .grid');
-        projectsData.forEach((project, index) => {
-            const projectCard = document.createElement('div');
-            projectCard.className = 'bg-white rounded-2xl shadow-md flex flex-col hover:-translate-y-2 transition-all duration-300 cursor-pointer overflow-hidden card-hover';
-            projectCard.innerHTML = `
-                <img src="${project.imageUrl}" alt="Project image for ${project.title}" class="w-full h-40 object-cover rounded-t-2xl">
-                <div class="p-6 flex flex-col flex-grow">
-                    <h3 class="text-xl font-bold text-gray-900">${project.title}</h3>
-                    <p class="text-gray-700 font-medium mb-3">${project.role}</p>
-                    <p class="text-gray-600 text-sm flex-grow">${project.description[0].substring(0, 100)}...</p>
-                    <button data-index="${index}" class="open-modal-btn mt-4 btn-black font-bold py-2 px-4 rounded-full w-full">View Details</button>
-                </div>
-            `;
-            projectsContainer.appendChild(projectCard);
-        });
-
-        const modal = document.getElementById('project-modal');
-        const modalContentWrapper = document.getElementById('modal-content-wrapper');
-        const closeModalBtn = document.getElementById('close-modal');
-        const openModalBtns = document.querySelectorAll('.open-modal-btn');
-
-        const modalTitle = document.getElementById('modal-title');
-        const modalRole = document.getElementById('modal-role');
-        const modalDescription = document.getElementById('modal-description');
-        const modalLink = document.getElementById('modal-link');
-        const modalDownloadLink = document.getElementById('modal-download-link');
-
-        function openModal(index) {
-            const project = projectsData[index];
-            modalTitle.textContent = project.title;
-            modalRole.textContent = project.role;
-            modalDescription.innerHTML = project.description.map(p => `<p>${p}</p>`).join('');
-            
-            if (project.link) {
-                modalLink.href = project.link;
-                modalLink.style.display = 'inline-block';
-            } else {
-                modalLink.style.display = 'none';
+            const projectsContainer = document.querySelector('#projects .grid');
+            if (projectsContainer) {
+                projectsData.forEach((project, index) => {
+                    const projectCard = document.createElement('div');
+                    projectCard.className = 'bg-white rounded-2xl shadow-md flex flex-col hover:-translate-y-2 transition-all duration-300 cursor-pointer overflow-hidden card-hover';
+                    projectCard.innerHTML = `
+                        <img src="${project.imageUrl}" alt="Project image for ${project.title}" class="w-full h-40 object-cover rounded-t-2xl">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-gray-900">${project.title}</h3>
+                            <p class="text-gray-700 font-medium mb-3">${project.role}</p>
+                            <p class="text-gray-600 text-sm flex-grow">${project.description[0].substring(0, 100)}...</p>
+                            <button data-index="${index}" class="open-modal-btn mt-4 btn-black font-bold py-2 px-4 rounded-full w-full">View Details</button>
+                        </div>
+                    `;
+                    projectsContainer.appendChild(projectCard);
+                });
             }
 
-            if (project.title.includes('Faculty Projects')) {
-                modalLink.textContent = 'View Documents (Drive)';
-                modalLink.classList.add('btn-gray-solid');
-                modalLink.classList.remove('btn-black');
-                modalDownloadLink.style.display = 'none'; 
-            } else {
-                modalLink.textContent = 'Go to Project';
-                modalLink.classList.add('btn-black');
-                modalLink.classList.remove('btn-gray-solid');
-                modalDownloadLink.style.display = 'none';
+            const modal = document.getElementById('project-modal');
+            const modalContentWrapper = document.getElementById('modal-content-wrapper');
+            const closeModalBtn = document.getElementById('close-modal');
+            const openModalBtns = document.querySelectorAll('.open-modal-btn'); // Now this is correct, but event delegation is better. Let's fix it.
+
+            const modalTitle = document.getElementById('modal-title');
+            const modalRole = document.getElementById('modal-role');
+            const modalDescription = document.getElementById('modal-description');
+            const modalLink = document.getElementById('modal-link');
+            const modalArtstationLink = document.getElementById('modal-artstation-link');
+            const demoReelContainer = document.getElementById('modal-demo-reel-container');
+            const demoReelEmbed = document.getElementById('modal-demo-reel-embed');
+
+            function openModal(index) {
+                const project = projectsData[index];
+                modalTitle.textContent = project.title;
+                modalRole.textContent = project.role;
+                modalDescription.innerHTML = project.description.map(p => `<p>${p}</p>`).join('');
+                
+                if (project.link) {
+                    modalLink.href = project.link;
+                    modalLink.style.display = 'inline-block';
+                } else {
+                    modalLink.style.display = 'none';
+                }
+
+                if (project.title.includes('Faculty Projects')) {
+                    modalLink.textContent = 'View Documents (Drive)';
+                    modalLink.classList.add('btn-gray-solid');
+                    modalLink.classList.remove('btn-black');
+                } else {
+                    modalLink.textContent = 'Go to Project (itch.io)';
+                    modalLink.classList.add('btn-black');
+                    modalLink.classList.remove('btn-gray-solid');
+                }
+
+                // Handle Demo Reel Embed
+                if (project.demoReelEmbed) {
+                    demoReelEmbed.innerHTML = project.demoReelEmbed;
+                    demoReelContainer.classList.remove('hidden');
+                } else {
+                    demoReelEmbed.innerHTML = '';
+                    demoReelContainer.classList.add('hidden');
+                }
+
+                // Handle ArtStation Link
+                if (project.artstationLink) {
+                    modalArtstationLink.href = project.artstationLink;
+                    modalArtstationLink.classList.remove('hidden');
+                } else {
+                    modalArtstationLink.classList.add('hidden');
+                }
+                
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+                modalContentWrapper.classList.remove('scale-95');
             }
-            
-            modal.classList.remove('opacity-0', 'pointer-events-none');
-            modalContentWrapper.classList.remove('scale-95');
-        }
 
-        function closeModal() {
-            modal.classList.add('opacity-0');
-            modalContentWrapper.classList.add('scale-95');
-            setTimeout(() => {
-                 modal.classList.add('pointer-events-none');
-            }, 300);
-        }
-
-        openModalBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                openModal(btn.dataset.index);
-            });
-        });
-
-        closeModalBtn.addEventListener('click', closeModal);
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                closeModal();
+            function closeModal() {
+                modal.classList.add('opacity-0');
+                modalContentWrapper.classList.add('scale-95');
+                setTimeout(() => {
+                     modal.classList.add('pointer-events-none');
+                }, 300);
             }
-        });
-        
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeModal();
+
+            // Correct implementation using event delegation
+            if (projectsContainer) {
+                projectsContainer.addEventListener('click', (e) => {
+                    const button = e.target.closest('.open-modal-btn');
+                    if (button) {
+                        openModal(button.dataset.index);
+                    }
+                });
             }
-        });
 
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.4 
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href').substring(1) === entry.target.id) {
-                            link.classList.add('active');
-                        }
-                    });
+            closeModalBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
                 }
             });
-        }, observerOptions);
+            
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    closeModal();
+                }
+            });
 
-        sections.forEach(section => {
-            observer.observe(section);
+            // Navigation scroll highlighting
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.4 
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
         });
     </script>
 </body>
