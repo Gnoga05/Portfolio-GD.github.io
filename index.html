@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Portfolio of Gabriel Nogarotto, Game Design Student. Showcasing featured projects with a focus on game design, narrative, and problem-solving.">
-    <meta name="keywords" content="Gabriel Nogarotto, Game Designer, Game Design Student, GameDev, Portfolio, Interactive Entertainment">
+    <meta name="description" content="Portfolio of Gabriel Nogarotto, Game Design & Producer Student. Showcasing featured projects with a focus on game design, narrative, and problem-solving.">
+    <meta name="keywords" content="Gabriel Nogarotto, Game Designer, Game Design Student, GameDev, Portfolio, Interactive Entertainment, Producer">
     <title>Portfolio | Gabriel Nogarotto</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,6 +59,12 @@
         .btn-gray-outline:hover {
             background-color: #f3f4f6; /* gray-100 */
         }
+        /* Hover effect for zoomable images */
+        .zoomable-img:hover {
+            opacity: 0.9;
+            cursor: zoom-in;
+            transition: opacity 0.2s;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -74,6 +80,7 @@
                     <div class="ml-10 flex items-baseline space-x-4">
                         <a href="#profile" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Profile</a>
                         <a href="#projects" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Projects</a>
+                        <a href="#production" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Production</a>
                         <a href="#skills" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Skills</a>
                     </div>
                 </div>
@@ -89,11 +96,11 @@
                 <div class="flex flex-col items-center">
                     <!-- Imagen de perfil eliminada -->
                     <h2 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-2 mt-6">Gabriel Nogarotto</h2>
-                    <h3 class="text-xl font-medium text-gray-700 mb-6">Game Design Student</h3>
+                    <h3 class="text-xl font-medium text-gray-700 mb-6">Game Design & Producer Student</h3>
                 </div>
                 
                 <p class="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed">
-                    I am a Game Design student with a deep passion for creating interactive and entertaining experiences that connect with players. My focus lies in designing immersive systems and mechanics, with a special interest in narrative design. I combine creative problem-solving and technical skills to build meaningful worlds and enhance player experiences.
+                    I am a Game Design & Producer student dedicated to bridging the gap between creative vision and efficient execution. While I have a strong foundation in system design, my primary focus lies in the strategic side of development: <strong>Agile management, roadmap planning, and team coordination</strong>. I thrive on transforming complex ideas into structured, actionable milestones, ensuring projects stay on scope and on time without losing their creative soul.
                 </p>
 
                 <div class="mt-8 flex flex-wrap justify-center items-center gap-4">
@@ -113,11 +120,19 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
+        <!-- Projects Section (Games) -->
         <section id="projects" class="mb-16 scroll-mt-20">
             <h2 class="text-3xl font-bold mb-8 text-center text-gray-900">🎮 Game Development Projects</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project cards will be injected here by JS -->
+            <div id="games-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Game Project cards will be injected here by JS -->
+            </div>
+        </section>
+
+        <!-- Production & Artifacts Section -->
+        <section id="production" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-bold mb-8 text-center text-gray-900">📊 Production Artifacts & Case Studies</h2>
+            <div id="production-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Production Project cards will be injected here by JS -->
             </div>
         </section>
 
@@ -189,7 +204,7 @@
                 </div>
             </div>
 
-            <h4 class="text-xl font-semibold mb-3 text-gray-800">My Role, Challenges & Solutions</h4>
+            <h4 class="text-xl font-semibold mb-3 text-gray-800">My Role & Details</h4>
             <div id="modal-description" class="text-gray-600 space-y-3"></div>
             
             <div class="mt-6 flex flex-wrap gap-4">
@@ -201,12 +216,14 @@
 
     <script>
         const projectsData = [
+            // --- GAME DEVELOPMENT PROJECTS ---
              {
                 title: 'Deadly Western',
                 role: 'Game Designer & Godot Developer',
+                type: 'game',
                 description: [
                     'Developed a fast-paced gallery shooter in <strong>Godot</strong>, creating a unique theme of possessed cowboys. My role encompassed the entire design process, from conceptualizing the theme and core shooting mechanics to implementing the complete gameplay loop.',
-                    '<hr class="my-3">', // Separador
+                    '<hr class="my-3">',
                     '<strong>Challenge (Game Feel):</strong> One of the main challenges was achieving a satisfying "game feel" for the shooting mechanics. Early iterations felt flat and unresponsive.',
                     '<strong>Challenge (Visuals):</strong> Ensuring a coherent aesthetic across all assets was an exhaustive process that required multiple polish passes to unify the visual style.',
                     '<strong>Challenge (Technical):</strong> Implementing specific character animations proved difficult, requiring a code-driven solution rather than relying solely on the animation player.',
@@ -214,15 +231,16 @@
                 ],
                 link: 'https://gabrielnogarotto.itch.io/deadly-western',
                 imageUrl: 'https://img.itch.zone/aW1nLzIzNDM0NDU3LnBuZw==/315x250%23c/pLfGTa.png',
-                demoReelEmbed: 'https://www.youtube.com/embed/g9mP6PCkcq0', // Link de YouTube
+                demoReelEmbed: 'https://www.youtube.com/embed/g9mP6PCkcq0',
                 artstationLink: null
             },
             {
                 title: 'Nanban (Visual Novel)',
-                role: 'Narrative Designer, Twine Developer, and Conceptual Lead',
+                role: 'Narrative Designer, Twine Developer',
+                type: 'game',
                 description: [
                     'Conceptualized and developed this interactive Visual Novel using <strong>Twine</strong>, focusing on branching narratives and player choice. Worked alongside a partner to handle the entire <strong>Narrative Design</strong> process, including world-building, character dialogue, multiple endings, and visual implementation.',
-                    '<hr class="my-3">', // Separador
+                    '<hr class="my-3">',
                     '<strong>Challenge (Technical):</strong> Twine had limitations on image hosting. We had to find a solution to manage our visual assets effectively.',
                     '<strong>Challenge (New Tool):</strong> As this was our first project in Twine, we had to learn the tool while establishing a visual and functional standard.',
                     '<strong>Challenge (Narrative):</strong> After extensive world-building, we struggled to structure the plot into a coherent chronological story.',
@@ -236,9 +254,10 @@
             {
                 title: 'The Risk of Fido',
                 role: 'Game Designer and Project Coordinator',
+                type: 'game',
                 description: [
                     'Led and coordinated a multi-disciplinary team of over 8 people for a Game Jam project in <strong>Godot</strong>. My core responsibilities included co-designing the game concept, translating the vision into documentation, and acting as the intermediary between all departments.',
-                    '<hr class="my-3">', // Separador
+                    '<hr class="my-3">',
                     '<strong>Challenge (Team):</strong> The project suffered from a significant imbalance: a large design team and only one programmer, creating a major development bottleneck.',
                     '<strong>Solution (Coordination):</strong> I implemented a GitHub repository for version control and pivoted the team to focus documentation on a single core mechanic, realistically reducing scope.',
                     '<strong>Design Solution:</strong> To manifest the "Risk/Reward" theme, we designed two distinct areas: a safe "hub" zone and a "hostile" zone shrouded in fog. All progression (items, enemies) was placed in the hostile zone, forcing players to choose between safety and progression.'
@@ -251,9 +270,10 @@
             {
                 title: 'Ax-Terion',
                 role: 'Game Designer and Developer',
+                type: 'game',
                 description: [
-                    'Developed a course project in <strong>Construct 3</strong> as part of a three-person team. I was responsible for the initial concept, <strong>Level Design</strong>, and the entire development implementation of the game mechanics.',
-                    '<hr class="my-3">', // Separador
+                    'Developed a course project in <strong>Construct 3</strong>. I was responsible for the initial concept, <strong>Level Design</strong>, and full development implementation.',
+                    '<hr class="my-3">',
                     '<strong>Challenge (Core Mechanic):</strong> Implementing the map rotation was difficult. A resulting bug also inverted player controls upon rotation, and we were unable to implement a "fog of war" to balance difficulty.',
                     '<strong>Solution (Turning Bugs into Features):</strong> We achieved the rotation by rotating the entire game layout. We then made a conscious design decision to <strong>keep the inverted controls</strong> as an intentional feature. This "bug" became a mechanic that added the desired difficulty, compensating for the lack of a fog of war.'
                 ],
@@ -265,9 +285,10 @@
             {
                 title: 'Loopean Timing',
                 role: 'Designer and Developer (Solo Jam Project)',
+                type: 'game',
                 description: [
-                    'A precision platformer developed for a Game Jam with the theme "Loop." The core design links the conceptual "loop" of the theme to the literal gameplay "loop" of falling and restarting.',
-                    '<hr class="my-3">', // Separador
+                    'A precision platformer for a Game Jam with the theme "Loop." The core design links the conceptual "loop" to the literal gameplay "loop" of falling and restarting.',
+                    '<hr class="my-3">',
                     '<strong>Challenge:</strong> The main difficulty was tuning the core gameplay to feel responsive and translating the simple concept (calculating where to fall) into a fun, engaging experience.',
                     '<strong>Solution:</strong> I relied heavily on iterative development and <strong>external playtesting</strong>. Feedback from other people was crucial and led directly to implementing key features, balancing the difficulty, and adding multiple modes to increase versatility and replayability.'
                 ],
@@ -279,9 +300,10 @@
             {
                 title: 'Viper Assault',
                 role: 'Designer and Developer',
+                type: 'game',
                 description: [
                     'Conceptualized and developed a modern re-imagining of the classic "Snake" game, featuring combat mechanics, special abilities, boss battles, and a structured campaign mode.',
-                    '<hr class="my-3">', // Separador
+                    '<hr class="my-3">',
                     '<strong>Origin:</strong> This project began as a university assignment to "re-imagine" the classic "Snake" concept. I decided to develop it into a functional prototype.',
                     '<strong>Challenge (Scope):</strong> My initial vision was ambitious, with many levels and a full story. The challenge was scoping this down to something functional that clearly communicated the core idea.',
                     '<strong>Challenge (Design):</strong> Tuning the new combat mechanics and abilities to feel intuitive and fun was the most complex part of the design.',
@@ -293,15 +315,72 @@
                 demoReelEmbed: 'https://www.youtube.com/embed/zH-ud44oXj4',
                 artstationLink: null
             },
+
+            // --- PRODUCTION ARTIFACTS & CASE STUDIES ---
+            {
+                title: 'MARATHON (FPS Shooter) - Production Artifacts',
+                role: 'Producer | Strategic Planning',
+                type: 'production',
+                description: [
+                    'Strategic Planning: Designed a 6-month Roadmap (May-Oct) and Gantt Chart, managing dependencies for a cross-functional team to ensure MVP delivery on time.',
+                    'Resource Management: Estimated project Budget and resource allocation based on seniority rates and capacity planning.',
+                    '<hr class="my-4">',
+                    '<h4 class="text-lg font-bold text-gray-800">📌 Development Roadmap (May - Oct)</h4>',
+                    'Defined a 6-month macro-schedule. May focused on Pre-Production (Kick-off, High Concept). June-August on Production (Core mechanics, Asset integration). September-October on Polish & Release (QA, Bug fixing, MVP delivery).',
+                    '<a href="https://i.imgur.com/GzimsYC.png" target="_blank" title="Click to enlarge"><img src="https://i.imgur.com/GzimsYC.png" alt="Marathon Roadmap" class="w-full rounded-lg mt-2 shadow-sm border border-gray-200 zoomable-img"></a>',
+                    '<div class="text-center text-xs text-gray-500 mb-4">(Click image to enlarge)</div>',
+                    
+                    '<h4 class="text-lg font-bold text-gray-800">📝 Product Backlog & Scrum Planning</h4>',
+                    'Defined User Stories and tasks to structure the development sprints.',
+                    '<a href="https://i.imgur.com/kij65M8.png" target="_blank" title="Click to enlarge"><img src="https://i.imgur.com/kij65M8.png" alt="Marathon Product Backlog" class="w-full rounded-lg mt-2 shadow-sm border border-gray-200 zoomable-img"></a>',
+                    '<div class="text-center text-xs text-gray-500 mb-4">(Click image to enlarge)</div>',
+
+                    '<h4 class="text-lg font-bold text-gray-800">📊 Gantt Chart & Dependencies</h4>',
+                    'Created a waterfall schedule to identify the Critical Path. Mapped dependencies between Art, Dev, and QA to prevent bottlenecks. Tracked specific tasks against strict deadlines.',
+                    '<a href="https://i.imgur.com/OUwqIcb.png" target="_blank" title="Click to enlarge"><img src="https://i.imgur.com/OUwqIcb.png" alt="Marathon Gantt Chart" class="w-full rounded-lg mt-2 shadow-sm border border-gray-200 zoomable-img"></a>',
+                    '<div class="text-center text-xs text-gray-500 mb-4">(Click image to enlarge)</div>',
+                    
+                    '<h4 class="text-lg font-bold text-gray-800">💰 Project Budgeting</h4>',
+                    'Estimated development costs based on Resource Capacity and Seniority Rates (Ssr/Sr). Calculated total man-hours per role including buffers for contingencies.',
+                    '<a href="https://i.imgur.com/fRzY4Bg.png" target="_blank" title="Click to enlarge"><img src="https://i.imgur.com/fRzY4Bg.png" alt="Marathon Budget" class="w-full rounded-lg mt-2 shadow-sm border border-gray-200 zoomable-img"></a>',
+                    '<div class="text-center text-xs text-gray-500 mb-4">(Click image to enlarge)</div>'
+                ],
+                link: null,
+                imageUrl: 'https://i.imgur.com/fRzY4Bg.png',
+                demoReelEmbed: null,
+                artstationLink: null
+            },
+            {
+                title: 'FRACTURED MIND - Agile Management',
+                role: 'Agile Producer | Scope Management',
+                type: 'production',
+                description: [
+                    'Agile Scope Management: Built a Visual Story Map to define the User Journey and prioritized a Product Backlog with detailed Acceptance Criteria for QA validation.',
+                    'Utilized VSM techniques to map the entire User Journey, prioritizing "Must-Have" features over "Nice-to-Haves" to define a feasible scope.',
+                    '<hr class="my-4">',
+                    '<h4 class="text-lg font-bold text-gray-800">🗺️ Visual Story Map (VSM)</h4>',
+                    'Mapped the user journey from menu navigation to win states. Structured narrative flow to ensure logical gameplay progression.',
+                    '<a href="https://i.imgur.com/s4itJ8U.png" target="_blank" title="Click to enlarge"><img src="https://i.imgur.com/s4itJ8U.png" alt="Fractured Mind VSM" class="w-full rounded-lg mt-2 shadow-sm border border-gray-200 zoomable-img"></a>',
+                    '<div class="text-center text-xs text-gray-500 mb-4">(Click image to enlarge)</div>',
+                    
+                    '<h4 class="text-lg font-bold text-gray-800">📝 Agile Product Backlog</h4>',
+                    'Translated abstract design pillars into actionable User Stories. Defined clear Acceptance Criteria for every story to enable objective QA validation.',
+                    '<div class="flex justify-center mt-2"><a href="https://i.imgur.com/qsh4Jr4.png" target="_blank" title="Click to enlarge" class="w-full md:w-1/2"><img src="https://i.imgur.com/qsh4Jr4.png" alt="Fractured Mind Backlog" class="w-full rounded-lg shadow-sm border border-gray-200 zoomable-img"></a></div>',
+                    '<div class="text-center text-xs text-gray-500 mb-4">(Click image to enlarge)</div>'
+                ],
+                link: null,
+                imageUrl: 'https://i.imgur.com/s4itJ8U.png',
+                demoReelEmbed: null,
+                artstationLink: null
+            },
             {
                 title: 'Design Documentation & Case Studies',
                 role: 'Document Designer & Systems Balancer',
+                type: 'production',
                 description: [
-                    'A curated collection of my professional design documents, including <strong>Game Design Documents (GDDs)</strong>, presentations, and balance spreadsheets. This collection includes both university projects and personal case studies.',
-                    '<hr class="my-3">', // Separador
-                    '<strong>Included Case Study: "Cazadores del Abismo" (Print & Play)</strong>',
-                    '<strong>Challenge:</strong> Designing a Print & Play game required balancing complex ludic concepts, asymmetric player roles, and strategic round systems.',
-                    '<strong>Solution:</strong> I focused heavily on <strong>difficulty balancing</strong> and creating a crystal-clear rulebook. This involved iterative paper prototyping to ensure all asymmetric roles were viable and the core loop was engaging.'
+                    'A curated collection of my professional design documents, including <strong>Game Design Documents (GDDs)</strong>, presentations, and balance spreadsheets.',
+                    'This also includes the "Cazadores del Abismo" Print and Play, where I managed complex ludic concepts, asymmetric roles, and strategic round systems, focusing on <strong>difficulty balancing</strong> and rulebook creation.',
+                    'These documents showcase my theoretical knowledge, professional documentation standards, and ongoing progression in game development.'
                 ],
                 link: 'https://drive.google.com/drive/folders/1xSNCguAGh1YzwuqoPHQuGEO0Nk7E4PCJ',
                 imageUrl: 'https://placehold.co/400x200/e5e7eb/424242?text=Faculty+Projects',
@@ -310,9 +389,11 @@
             }
         ];
 
-        const projectsContainer = document.querySelector('#projects .grid');
+        // Referencias a los contenedores
+        const gamesContainer = document.querySelector('#games-grid');
+        const productionContainer = document.querySelector('#production-grid');
         
-        // Cargar proyectos dinámicamente
+        // Cargar proyectos dinámicamente según su tipo
         projectsData.forEach((project, index) => {
             const projectCard = document.createElement('div');
             projectCard.className = 'bg-white rounded-2xl shadow-md flex flex-col hover:-translate-y-2 transition-all duration-300 cursor-pointer overflow-hidden card-hover';
@@ -321,31 +402,48 @@
                 <div class="p-6 flex flex-col flex-grow">
                     <h3 class="text-xl font-bold text-gray-900">${project.title}</h3>
                     <p class="text-gray-700 font-medium mb-3">${project.role}</p>
-                    <p class="text-gray-600 text-sm flex-grow">${project.description[0].substring(0, 100)}...</p>
+                    <p class="text-gray-600 text-sm flex-grow">${project.description[0].replace(/<[^>]*>?/gm, '').substring(0, 100)}...</p>
                     <button data-index="${index}" class="open-modal-btn mt-4 btn-black font-bold py-2 px-4 rounded-full w-full">View Details</button>
                 </div>
             `;
-            projectsContainer.appendChild(projectCard);
+            
+            // Distribuir en la grilla correcta
+            if (project.type === 'game') {
+                if (gamesContainer) gamesContainer.appendChild(projectCard);
+            } else if (project.type === 'production') {
+                if (productionContainer) productionContainer.appendChild(projectCard);
+            }
         });
 
         // Configuración del Modal
         const modal = document.getElementById('project-modal');
         const modalContentWrapper = document.getElementById('modal-content-wrapper');
         const closeModalBtn = document.getElementById('close-modal');
-        const openModalBtns = document.querySelectorAll('.open-modal-btn');
-
         const modalTitle = document.getElementById('modal-title');
         const modalDescription = document.getElementById('modal-description');
         const modalLink = document.getElementById('modal-link');
         const modalArtstationLink = document.getElementById('modal-artstation-link');
-        
         const modalDemoReelContainer = document.getElementById('modal-demo-reel-container');
         const modalDemoReelIframe = document.getElementById('modal-demo-reel-iframe');
+
+        // Event delegation
+        document.addEventListener('click', function(e) {
+            if (e.target.matches('.open-modal-btn')) {
+                const index = e.target.dataset.index;
+                openModal(index);
+            }
+        });
 
         function openModal(index) {
             const project = projectsData[index];
             modalTitle.textContent = project.title;
-            modalDescription.innerHTML = project.description.map(p => `<p>${p}</p>`).join('');
+            
+            // Renderizar descripción 
+            modalDescription.innerHTML = project.description.map(p => {
+                // Si el string empieza con < (es html), lo dejamos tal cual. Si no, lo envolvemos en <p>
+                if (p.trim().startsWith('<')) return p;
+                return `<p>${p}</p>`;
+            }).join('');
             
             if (project.link) {
                 modalLink.href = project.link;
@@ -354,11 +452,10 @@
                 modalLink.style.display = 'none';
             }
 
-            // Manejar links especiales
             if (project.title.includes('Design Documentation')) {
                 modalLink.textContent = 'View Documents (Drive)';
             } else {
-                modalLink.textContent = 'Go to Project (itch.io)';
+                modalLink.textContent = 'Go to Project';
             }
 
             // Manejar Demo Reel
@@ -380,7 +477,7 @@
             
             modal.classList.remove('opacity-0', 'pointer-events-none');
             modalContentWrapper.classList.remove('scale-95');
-            modalContentWrapper.scrollTop = 0; // Reset scroll to top
+            modalContentWrapper.scrollTop = 0;
         }
 
         function closeModal() {
@@ -388,15 +485,9 @@
             modalContentWrapper.classList.add('scale-95');
             setTimeout(() => {
                  modal.classList.add('pointer-events-none');
-                 modalDemoReelIframe.src = ''; // Detener video al cerrar
+                 modalDemoReelIframe.src = ''; 
             }, 300);
         }
-
-        openModalBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                openModal(btn.dataset.index);
-            });
-        });
 
         closeModalBtn.addEventListener('click', closeModal);
         modal.addEventListener('click', (e) => {
@@ -411,16 +502,10 @@
             }
         });
 
-        // Observer para la navegación activa
+        // Observer
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.nav-link');
-
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.4 
-        };
-
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.4 };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -433,10 +518,7 @@
                 }
             });
         }, observerOptions);
-
-        sections.forEach(section => {
-            observer.observe(section);
-        });
+        sections.forEach(section => { observer.observe(section); });
     </script>
 </body>
 </html>
