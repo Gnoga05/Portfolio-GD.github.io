@@ -16,42 +16,57 @@
             -webkit-font-smoothing: antialiased;
         }
         .nav-link.active { color: #2563eb; font-weight: 700; }
-        .glass-effect { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+        
+        /* Performance Optimization: Reduced blur radius for better FPS */
+        .glass-effect { background: rgba(255, 255, 255, 0.90); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+        
         .card-project { 
-            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1); 
+            transition: transform 0.3s cubic-bezier(0.2, 0, 0.2, 1), box-shadow 0.3s ease; 
             border: 1px solid rgba(0,0,0,0.03); 
             background: #fff;
+            /* Hardware Acceleration Hints */
+            will-change: transform;
+            transform: translateZ(0); 
+            backface-visibility: hidden;
         }
+        
         .card-project:hover { 
-            transform: translateY(-12px); 
-            box-shadow: 0 30px 60px -12px rgba(0,0,0,0.12); 
+            transform: translateY(-8px); 
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1); 
             border-color: rgba(37, 99, 235, 0.1); 
         }
+        
         .badge { @apply px-3 py-1 text-[10px] font-extrabold uppercase tracking-widest rounded-full; }
         .badge-prod { background-color: #f3f4f6; color: #4b5563; }
         .badge-tech { background-color: #eff6ff; color: #2563eb; }
         
-        /* Custom Scrollbar for a premium look */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f1f1; }
         ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
 
-        .image-zoom-container { overflow: hidden; }
-        .card-project:hover .zoom-img { transform: scale(1.08); }
-        .zoom-img { transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1); }
+        .image-zoom-container { overflow: hidden; position: relative; }
+        
+        /* Zoom Fixes: Reduced scale and added rendering hints */
+        .card-project:hover .zoom-img { transform: scale(1.03); }
+        .zoom-img { 
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+            image-rendering: -webkit-optimize-contrast; /* Attempts to keep edges sharp */
+            transform-origin: center center;
+            will-change: transform;
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-blue-600 selection:text-white">
 
     <!-- Header Navigation -->
     <header class="glass-effect sticky top-0 z-50">
-        <nav class="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
+        <nav class="max-w-7xl mx-auto px-6 md:px-8 h-20 flex items-center justify-between">
             <div class="flex flex-col">
                 <span class="text-2xl font-extrabold tracking-tighter uppercase leading-none">Nogarotto</span>
                 <span class="text-[9px] font-bold text-blue-600 tracking-[0.3em] uppercase mt-1">Operational Excellence</span>
             </div>
-            <div class="hidden md:flex space-x-10 items-center">
+            <div class="hidden md:flex space-x-8 lg:space-x-10 items-center">
                 <a href="#profile" class="text-[11px] font-bold uppercase tracking-widest hover:text-blue-600 transition-colors">About</a>
                 <a href="#production" class="text-[11px] font-bold uppercase tracking-widest hover:text-blue-600 transition-colors">Strategic Case Studies</a>
                 <a href="#projects" class="text-[11px] font-bold uppercase tracking-widest hover:text-blue-600 transition-colors">Product Portfolio</a>
@@ -61,7 +76,7 @@
         </nav>
     </header>
 
-    <main class="max-w-7xl mx-auto px-8 py-20">
+    <main class="max-w-7xl mx-auto px-6 md:px-8 py-20">
         
         <!-- Hero Section -->
         <section id="profile" class="mb-40">
@@ -70,15 +85,15 @@
                     <span class="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></span>
                     Ready for Global Operations
                 </span>
-                <h1 class="text-7xl md:text-8xl font-extrabold tracking-tighter text-slate-900 mb-10 leading-[0.95]">
+                <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter text-slate-900 mb-10 leading-[0.95]">
                     Orchestrating <br><span class="text-slate-300">Success Stories.</span>
                 </h1>
-                <p class="text-2xl text-slate-500 leading-relaxed font-medium mb-12">
+                <p class="text-xl md:text-2xl text-slate-500 leading-relaxed font-medium mb-12">
                     Associate Producer specialized in <strong class="text-slate-900">technical coordination and Agile frameworks</strong>. I bridge the gap between creative ambition and commercial viability, ensuring on-time delivery through risk mitigation and strategic planning.
                 </p>
                 <div class="flex flex-wrap gap-6">
-                    <a href="https://www.linkedin.com/in/gabriel-nogarotto-35a7b02a9" target="_blank" class="flex items-center gap-3 bg-white border border-slate-200 px-8 py-4 rounded-2xl font-bold hover:shadow-xl transition-all">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    <a href="https://www.linkedin.com/in/gabriel-nogarotto-35a7b02a9" target="_blank" class="flex items-center gap-3 bg-white border border-slate-200 px-8 py-4 rounded-2xl font-bold hover:shadow-xl transition-all group">
+                        <svg class="w-5 h-5 text-slate-400 group-hover:text-blue-600 transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                         Professional LinkedIn
                     </a>
                 </div>
@@ -89,12 +104,12 @@
         <section id="production" class="mb-32 scroll-mt-28">
             <div class="flex flex-col md:flex-row justify-between items-baseline mb-16 border-b border-slate-100 pb-8">
                 <div>
-                    <h2 class="text-4xl font-extrabold tracking-tighter mb-2">Strategic Management</h2>
+                    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tighter mb-2">Strategic Management</h2>
                     <p class="text-slate-500 font-medium">Core artifacts for Roadmap planning, Agile delivery, and Resource Allocation.</p>
                 </div>
                 <span class="text-[10px] font-black text-slate-300 tracking-widest uppercase mt-4 md:mt-0">Operations Unit</span>
             </div>
-            <div id="production-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div id="production-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
                 <!-- Injected by JS -->
             </div>
         </section>
@@ -103,20 +118,20 @@
         <section id="projects" class="mb-32 scroll-mt-28">
             <div class="flex flex-col md:flex-row justify-between items-baseline mb-16 border-b border-slate-100 pb-8">
                 <div>
-                    <h2 class="text-4xl font-extrabold tracking-tighter mb-2">Product Development</h2>
+                    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tighter mb-2">Product Development</h2>
                     <p class="text-slate-500 font-medium">Managing full project lifecycles, technical architecture, and system scaling.</p>
                 </div>
                 <span class="text-[10px] font-black text-slate-300 tracking-widest uppercase mt-4 md:mt-0">Delivery Unit</span>
             </div>
-            <div id="games-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div id="games-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
                 <!-- Injected by JS -->
             </div>
         </section>
 
         <!-- Skills Section -->
         <section id="skills" class="mb-32 scroll-mt-28">
-            <div class="bg-black rounded-[48px] p-12 md:p-20 text-white">
-                <h2 class="text-center text-4xl font-extrabold tracking-tighter mb-20 uppercase tracking-[0.1em]">Expertise Matrix</h2>
+            <div class="bg-black rounded-[48px] p-10 md:p-20 text-white">
+                <h2 class="text-center text-3xl md:text-4xl font-extrabold tracking-tighter mb-20 uppercase tracking-[0.1em]">Expertise Matrix</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                     <div>
                         <h3 class="font-black text-blue-500 text-[10px] uppercase tracking-[0.3em] mb-8">Production</h3>
@@ -160,11 +175,11 @@
     </main>
 
     <!-- Project Modal -->
-    <div id="project-modal" class="fixed inset-0 bg-slate-950/80 z-[60] flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-500 backdrop-blur-sm">
-        <div id="modal-content-wrapper" class="bg-white w-full max-w-6xl max-h-[90vh] rounded-[40px] overflow-hidden shadow-2xl transform scale-90 opacity-0 transition-all duration-500 flex flex-col md:flex-row">
+    <div id="project-modal" class="fixed inset-0 bg-slate-950/80 z-[60] flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300 backdrop-blur-sm">
+        <div id="modal-content-wrapper" class="bg-white w-full max-w-6xl max-h-[90vh] rounded-[40px] overflow-hidden shadow-2xl transform scale-95 opacity-0 transition-all duration-300 flex flex-col md:flex-row">
             <!-- Modal Media Area -->
             <div class="w-full md:w-3/5 bg-slate-100 flex items-center justify-center relative min-h-[300px] border-r border-slate-50">
-                <button id="close-modal" class="absolute top-8 left-8 z-10 bg-white p-3 rounded-full shadow-xl text-slate-800 hover:bg-black hover:text-white transition-all transform hover:rotate-90">
+                <button id="close-modal" class="absolute top-6 left-6 z-10 bg-white p-3 rounded-full shadow-lg text-slate-800 hover:bg-black hover:text-white transition-all transform hover:scale-110">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                 </button>
                 <div id="modal-demo-container" class="w-full h-full hidden">
@@ -173,15 +188,15 @@
                 <img id="modal-image" src="" class="w-full h-full object-cover">
             </div>
             <!-- Modal Content Area -->
-            <div class="w-full md:w-2/5 p-10 md:p-14 overflow-y-auto bg-white">
-                <div class="mb-10">
+            <div class="w-full md:w-2/5 p-8 md:p-14 overflow-y-auto bg-white flex flex-col">
+                <div class="mb-8">
                     <span id="modal-role" class="text-blue-600 font-extrabold text-[10px] uppercase tracking-[0.3em] block mb-3"></span>
-                    <h3 id="modal-title" class="text-4xl font-extrabold tracking-tighter text-slate-900 leading-tight"></h3>
+                    <h3 id="modal-title" class="text-3xl md:text-4xl font-extrabold tracking-tighter text-slate-900 leading-tight"></h3>
                 </div>
-                <div id="modal-body" class="space-y-6 text-slate-600 text-lg leading-relaxed font-medium"></div>
-                <div class="mt-12 pt-8 border-t border-slate-100 flex flex-wrap gap-4">
-                    <a id="modal-primary-link" href="#" target="_blank" class="bg-black text-white px-10 py-5 rounded-2xl font-bold hover:bg-blue-600 transition-all shadow-lg">Experience Now</a>
-                    <a id="modal-secondary-link" href="#" target="_blank" class="hidden border border-slate-200 px-10 py-5 rounded-2xl font-bold text-slate-900 hover:bg-slate-50 transition-all">View Artifacts</a>
+                <div id="modal-body" class="space-y-6 text-slate-600 text-lg leading-relaxed font-medium flex-grow"></div>
+                <div class="mt-10 pt-8 border-t border-slate-100 flex flex-wrap gap-4">
+                    <a id="modal-primary-link" href="#" target="_blank" class="bg-black text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-600 transition-all shadow-lg text-sm md:text-base text-center w-full md:w-auto"></a>
+                    <a id="modal-secondary-link" href="#" target="_blank" class="hidden border border-slate-200 px-8 py-4 rounded-2xl font-bold text-slate-900 hover:bg-slate-50 transition-all text-sm md:text-base text-center w-full md:w-auto">View Artifacts</a>
                 </div>
             </div>
         </div>
@@ -229,7 +244,7 @@
                 link: null,
                 secondaryLink: 'https://i.imgur.com/qsh4Jr4.png'
             },
-            // --- PRODUCT DEVELOPMENT (NEW PROJECT ADDED HERE) ---
+            // --- PRODUCT DEVELOPMENT ---
             {
                 title: 'Vessel Mask: Ritual Color (GGJ 2026)',
                 role: 'Product Lead & Coordinator',
@@ -314,10 +329,10 @@
             projectsData.forEach((p, i) => {
                 const card = `
                     <div class="card-project rounded-[40px] overflow-hidden cursor-pointer flex flex-col h-full" onclick="openModal(${i})">
-                        <div class="h-64 image-zoom-container bg-slate-100">
-                            <img src="${p.imageUrl}" class="w-full h-full object-cover zoom-img grayscale-[0.3] hover:grayscale-0">
+                        <div class="h-64 image-zoom-container bg-slate-100 relative">
+                            <img src="${p.imageUrl}" class="w-full h-full object-cover zoom-img grayscale-[0.2] hover:grayscale-0" loading="lazy">
                         </div>
-                        <div class="p-10 flex flex-col flex-grow">
+                        <div class="p-8 md:p-10 flex flex-col flex-grow">
                             <div class="flex items-center gap-3 mb-6">
                                 <span class="badge ${p.type === 'production' ? 'badge-prod' : 'badge-tech'}">${p.type}</span>
                             </div>
@@ -360,7 +375,16 @@
             if(p.link) {
                 mainBtn.href = p.link;
                 mainBtn.classList.remove('hidden');
-                mainBtn.innerText = p.type === 'production' ? 'Access Knowledge' : 'View Live Demo';
+                
+                // Smart Button Text Logic
+                if (p.link.includes('itch.io')) {
+                    mainBtn.innerText = 'Play on itch.io';
+                } else if (p.link.includes('drive.google')) {
+                    mainBtn.innerText = 'Access Artifacts';
+                } else {
+                    mainBtn.innerText = p.type === 'production' ? 'View Docs' : 'Experience Project';
+                }
+                
             } else {
                 mainBtn.classList.add('hidden');
             }
@@ -375,12 +399,12 @@
 
             modal.classList.remove('opacity-0', 'pointer-events-none');
             setTimeout(() => {
-                modalContent.classList.remove('scale-90', 'opacity-0');
+                modalContent.classList.remove('scale-95', 'opacity-0');
             }, 10);
         };
 
         document.getElementById('close-modal').onclick = () => {
-            modalContent.classList.add('scale-90', 'opacity-0');
+            modalContent.classList.add('scale-95', 'opacity-0');
             setTimeout(() => {
                 modal.classList.add('opacity-0', 'pointer-events-none');
                 modalVideo.src = ""; // Hard stop video
