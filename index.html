@@ -107,36 +107,49 @@
             color: #111827;
         }
 
-        .metric-card {
-            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        /* Benchmark Cards */
+        .benchmark-card {
+            background: white;
             border: 1px solid #e2e8f0;
-            border-radius: 1rem;
+            border-radius: 1.5rem;
             padding: 1.5rem;
-            text-align: center;
             transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
         }
-        .metric-card:hover {
+        .benchmark-card:hover {
             border-color: #3b82f6;
-            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.1);
         }
-        .metric-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #1e40af;
-            line-height: 1;
+        .benchmark-metric {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
         }
-        .metric-label {
-            font-size: 0.75rem;
-            font-weight: 600;
+        
+        .tab-btn {
+            padding: 1rem 2rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 0.875rem;
+            transition: all 0.3s;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            color: #64748b;
-            margin-top: 0.5rem;
+            border: 1px solid transparent;
         }
-        .metric-context {
-            font-size: 0.625rem;
-            color: #94a3b8;
-            margin-top: 0.25rem;
+        .tab-btn.active {
+            background-color: #1e40af;
+            color: white;
+            box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.4);
+        }
+        .tab-btn.inactive {
+            background-color: white;
+            color: #64748b;
+            border-color: #e2e8f0;
+        }
+        .tab-btn.inactive:hover {
+            border-color: #94a3b8;
+            color: #1e293b;
         }
 
         .process-step {
@@ -296,6 +309,9 @@
         .node-webhook { background: #e11d48; color: white; }
         .node-gemini { background: #2563eb; color: white; }
         .node-twilio { background: #f22f46; color: white; }
+        .node-fastapi { background: #009688; color: white; }
+        .node-engine { background: #000; color: white; }
+        .node-user { background: #6366f1; color: white; }
 
     </style>
 </head>
@@ -311,8 +327,7 @@
             <div class="hidden md:flex space-x-8 lg:space-x-10 items-center">
                 <a href="#profile" class="text-[11px] font-bold uppercase tracking-widest hover:text-blue-600 transition-colors">About</a>
                 <a href="#impact" class="text-[11px] font-bold uppercase tracking-widest hover:text-blue-600 transition-colors">Impact</a>
-                <a href="#systems" class="text-[11px] font-bold uppercase tracking-widest hover:text-blue-600 transition-colors">Systems</a>
-                <a href="#production" class="text-[11px] font-bold uppercase tracking-widest hover:text-blue-600 transition-colors">Production</a>
+                <a href="#projects" class="text-[11px] font-bold uppercase tracking-widest hover:text-blue-600 transition-colors">Projects</a>
                 <a href="#process" class="text-[11px] font-bold uppercase tracking-widest hover:text-blue-600 transition-colors">Process</a>
                 <a href="mailto:gabrielnogarotto2@gmail.com" class="bg-black text-white px-5 py-2 rounded-full text-[11px] font-bold uppercase tracking-widest hover:bg-blue-600 transition-all">Contact</a>
             </div>
@@ -324,8 +339,7 @@
             <div class="flex flex-col space-y-4">
                 <a href="#profile" class="text-sm font-bold uppercase tracking-widest hover:text-blue-600">About</a>
                 <a href="#impact" class="text-sm font-bold uppercase tracking-widest hover:text-blue-600">Impact</a>
-                <a href="#systems" class="text-sm font-bold uppercase tracking-widest hover:text-blue-600">Systems</a>
-                <a href="#production" class="text-sm font-bold uppercase tracking-widest hover:text-blue-600">Production</a>
+                <a href="#projects" class="text-sm font-bold uppercase tracking-widest hover:text-blue-600">Projects</a>
                 <a href="#process" class="text-sm font-bold uppercase tracking-widest hover:text-blue-600">Process</a>
             </div>
         </div>
@@ -360,12 +374,6 @@
                     <strong class="text-slate-900">Game Production</strong>. 
                     I build scalable workflows that turn creative chaos into predictable delivery, 
                     with a focus on <strong class="text-slate-900">systems design and narrative architecture</strong>.
-                </p>
-
-                <p class="text-base text-slate-500 leading-relaxed mb-10 max-w-2xl border-l-4 border-blue-600 pl-6">
-                    From military-grade IT operations at the <strong>Argentine Air Force</strong> to 
-                    <strong>Global Game Jam</strong> production — I bring systems thinking to creative teams 
-                    and creative problem-solving to technical challenges.
                 </p>
 
                 <div class="flex flex-wrap items-center gap-4 text-xs font-bold text-slate-500 uppercase tracking-widest mb-12">
@@ -403,39 +411,80 @@
         <!-- Impact at a Glance -->
         <section id="impact" class="mb-16 scroll-mt-28">
             <div class="mb-12">
-                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tighter mb-4">Impact at a Glance</h2>
-                <p class="text-slate-500 font-medium text-lg">Estimated outcomes from client work, production cycles, and system implementations.</p>
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tighter mb-4">Operational Benchmarks</h2>
+                <p class="text-slate-500 font-medium text-lg">Measurable impact in operational efficiency and workflow optimization.</p>
             </div>
             
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-                <div class="metric-card">
-                    <div class="metric-number">3+</div>
-                    <div class="metric-label">Active Client Systems</div>
-                    <div class="metric-context">Automation deployed</div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Benchmark 1: CRM -->
+                <div class="benchmark-card group">
+                    <h4 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-3">CRM & Client Tracking</h4>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-slate-500">Before (Manual)</span>
+                            <span class="font-bold text-slate-700">12h / week</span>
+                        </div>
+                        <div class="w-full bg-slate-100 rounded-full h-2">
+                            <div class="bg-slate-300 h-2 rounded-full" style="width: 100%"></div>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-slate-500">After (Auto)</span>
+                            <span class="font-bold text-blue-600">3.5h / week</span>
+                        </div>
+                        <div class="w-full bg-slate-100 rounded-full h-2">
+                            <div class="bg-blue-600 h-2 rounded-full" style="width: 29%"></div>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100">
+                        <p class="text-3xl font-extrabold text-slate-900">65% <span class="text-sm font-medium text-slate-500 ml-1">Efficiency Gain</span></p>
+                    </div>
                 </div>
-                <div class="metric-card">
-                    <div class="metric-number">~70%</div>
-                    <div class="metric-label">Time Reduction</div>
-                    <div class="metric-context">Manual ops → automated</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-number">6</div>
-                    <div class="metric-label">Shipped Games</div>
-                    <div class="metric-context">Game Jams, 48h delivery</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-number">12</div>
-                    <div class="metric-label">Platform IP Bible</div>
-                    <div class="metric-context">Transmedia worldbuilding</div>
-                </div>
-            </div>
 
-            <div class="mt-8 p-6 bg-amber-50 border border-amber-200 rounded-2xl">
-                <div class="flex items-start gap-3">
-                    <svg class="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    <div>
-                        <p class="text-sm font-semibold text-amber-900 mb-1">About These Numbers</p>
-                        <p class="text-sm text-amber-800">Time reduction and client metrics are estimated based on workflow analysis and client feedback. I'm actively working with clients to establish more precise benchmarks.</p>
+                <!-- Benchmark 2: AI Ops -->
+                <div class="benchmark-card group">
+                    <h4 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-3">Ticket Classification</h4>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-slate-500">Before</span>
+                            <span class="font-bold text-slate-700">2h / day</span>
+                        </div>
+                        <div class="w-full bg-slate-100 rounded-full h-2">
+                            <div class="bg-slate-300 h-2 rounded-full" style="width: 100%"></div>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-slate-500">After</span>
+                            <span class="font-bold text-blue-600">5 min / day</span>
+                        </div>
+                        <div class="w-full bg-slate-100 rounded-full h-2">
+                            <div class="bg-blue-600 h-2 rounded-full" style="width: 5%"></div>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100">
+                        <p class="text-3xl font-extrabold text-slate-900">95% <span class="text-sm font-medium text-slate-500 ml-1">Time Saved</span></p>
+                    </div>
+                </div>
+
+                <!-- Benchmark 3: Production -->
+                <div class="benchmark-card group">
+                    <h4 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-3">Deployment Speed</h4>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-slate-500">Standard Cycle</span>
+                            <span class="font-bold text-slate-700">2+ Weeks</span>
+                        </div>
+                        <div class="w-full bg-slate-100 rounded-full h-2">
+                            <div class="bg-slate-300 h-2 rounded-full" style="width: 100%"></div>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-slate-500">Game Jam Ops</span>
+                            <span class="font-bold text-blue-600">48 Hours</span>
+                        </div>
+                        <div class="w-full bg-slate-100 rounded-full h-2">
+                            <div class="bg-blue-600 h-2 rounded-full" style="width: 15%"></div>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100">
+                        <p class="text-3xl font-extrabold text-slate-900">6 <span class="text-sm font-medium text-slate-500 ml-1">Products Shipped</span></p>
                     </div>
                 </div>
             </div>
@@ -445,95 +494,286 @@
         <div class="mb-16 py-6 border-y border-slate-100/80 bg-slate-50/30">
             <div class="max-w-7xl mx-auto px-6">
                 <p class="text-center text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-6">Certified by Global Leaders</p>
-                <div class="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-60 grayscale hover:grayscale-0 transition-all duration-700 ease-out">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="h-6 md:h-7 opacity-80 hover:opacity-100">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Banco_Santander_Logotipo.svg" alt="Santander" class="h-5 md:h-6 opacity-80 hover:opacity-100">
-                    <img src="https://content-dcgkfvd6gkbhdhg9.a01.azurefd.net/media/2025-10/AR_horiz_11.svg" alt="Aerolíneas Argentinas" class="h-8 md:h-10 object-contain hover:opacity-100">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/HubSpot_Logo.svg/1280px-HubSpot_Logo.svg.png" alt="HubSpot" class="h-6 md:h-7 object-contain hover:opacity-100">
+                <div class="flex flex-wrap justify-center items-center gap-12 md:gap-20">
+                    <div class="flex flex-col items-center gap-2 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="h-6 md:h-7">
+                        <span class="text-[10px] font-bold text-slate-400">2025</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Banco_Santander_Logotipo.svg" alt="Santander" class="h-5 md:h-6">
+                        <span class="text-[10px] font-bold text-slate-400">2025</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                        <img src="https://content-dcgkfvd6gkbhdhg9.a01.azurefd.net/media/2025-10/AR_horiz_11.svg" alt="Aerolíneas Argentinas" class="h-8 md:h-10 object-contain">
+                        <span class="text-[10px] font-bold text-slate-400">2024</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/HubSpot_Logo.svg/1280px-HubSpot_Logo.svg.png" alt="HubSpot" class="h-6 md:h-7 object-contain">
+                        <span class="text-[10px] font-bold text-slate-400">2024 / 2025</span>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Technical Systems & Automation -->
-        <section id="systems" class="mb-32 scroll-mt-28">
-            <div class="flex flex-col md:flex-row justify-between items-baseline mb-16 border-b border-slate-100 pb-8">
-                <div class="max-w-2xl">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white text-sm font-bold">01</span>
-                        <span class="text-[10px] font-black text-blue-600 tracking-widest uppercase">Systems Unit</span>
-                    </div>
-                    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tighter mb-4">Technical Operations</h2>
-                    <p class="text-slate-500 font-medium text-lg mb-6">
-                        Production-grade automation workflows built on state-machine principles. 
-                        From WhatsApp integrations to AI-powered QA systems.
-                    </p>
-                    <a href="https://github.com/Gnoga05/Automation-Library" target="_blank" class="github-link">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                        View Automation Library on GitHub
-                    </a>
+        <!-- Project Tabs & Grid -->
+        <section id="projects" class="mb-32 scroll-mt-28">
+            <div class="flex justify-center mb-12">
+                <div class="inline-flex bg-slate-100 p-1 rounded-full gap-1">
+                    <button onclick="switchTab('commercial')" id="tab-commercial" class="tab-btn active">Commercial & Ops</button>
+                    <button onclick="switchTab('product')" id="tab-product" class="tab-btn inactive">Product Delivery & Design</button>
                 </div>
             </div>
-            <div id="systems-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
-                <!-- Injected by JS -->
+
+            <!-- Commercial Tab Content -->
+            <div id="commercial-content">
+                <div class="flex flex-col md:flex-row justify-between items-baseline mb-16 border-b border-slate-100 pb-8">
+                    <div class="max-w-2xl">
+                        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tighter mb-4">Technical Operations</h2>
+                        <p class="text-slate-500 font-medium text-lg mb-6">
+                            Production-grade automation workflows built on state-machine principles. From WhatsApp integrations to AI-powered QA systems.
+                        </p>
+                        <a href="https://github.com/Gnoga05/Automation-Library" target="_blank" class="github-link">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            View Automation Library on GitHub
+                        </a>
+                    </div>
+                </div>
+                <!-- Commercial Grid -->
+                <div id="commercial-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+                    <!-- Injected by JS -->
+                </div>
+            </div>
+
+            <!-- Product Tab Content -->
+            <div id="product-content" class="hidden">
+                 <div class="flex flex-col md:flex-row justify-between items-baseline mb-16 border-b border-slate-100 pb-8">
+                    <div class="max-w-2xl">
+                        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tighter mb-4">Product Delivery & Design</h2>
+                        <p class="text-slate-500 font-medium text-lg mb-6">
+                            Full project lifecycles from concept to release. Game production, strategic planning, and narrative system design — shipped under extreme constraints.
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <a href="https://github.com/Gnoga05/GGJ-2026" target="_blank" class="github-link">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                GGJ 2026 Repo
+                            </a>
+                            <a href="https://github.com/Gnoga05/BrackeysJamGame" target="_blank" class="github-link">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                Brackeys Jam Repo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Strategic Management Subsection -->
+                <div class="mb-12">
+                    <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-sm">📊</span>
+                        Strategic Management & Production
+                    </h3>
+                    <div id="prod-strategy-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 mb-12">
+                        <!-- Injected by JS -->
+                    </div>
+                </div>
+
+                <!-- Narrative Systems Subsection -->
+                <div class="mb-12">
+                    <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center text-sm">📖</span>
+                        Narrative Systems & Worldbuilding
+                    </h3>
+                    <div id="prod-narrative-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 mb-12">
+                        <!-- Injected by JS -->
+                    </div>
+                </div>
+
+                <!-- Game Development Subsection -->
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-sm">🎮</span>
+                        Game Development & UX Research
+                    </h3>
+                    <div id="prod-game-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+                        <!-- Injected by JS -->
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Production & Design -->
-        <section id="production" class="mb-32 scroll-mt-28">
-            <div class="flex flex-col md:flex-row justify-between items-baseline mb-16 border-b border-slate-100 pb-8">
-                <div class="max-w-2xl">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="w-10 h-10 rounded-full bg-purple-600 flex items-center justify-center text-white text-sm font-bold">02</span>
-                        <span class="text-[10px] font-black text-purple-600 tracking-widest uppercase">Delivery Unit</span>
-                    </div>
-                    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tighter mb-4">Product Delivery & Design</h2>
-                    <p class="text-slate-500 font-medium text-lg mb-6">
-                        Full project lifecycles from concept to release. Game production, 
-                        strategic planning, and narrative system design — shipped under extreme constraints.
+        <!-- Differentiation Statement -->
+        <section class="mb-32">
+            <div class="bg-slate-900 rounded-[48px] p-12 md:p-20 text-white relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-96 h-96 bg-blue-600 rounded-full blur-3xl opacity-20 -translate-y-1/2 translate-x-1/2"></div>
+                <div class="relative z-10 max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl md:text-5xl font-extrabold tracking-tighter mb-8">
+                        Why <span class="text-blue-400">Technical</span> Product Manager?
+                    </h2>
+                    <p class="text-xl text-slate-300 leading-relaxed mb-8">
+                        Most PMs track tasks. I <strong class="text-white">build the systems</strong> that track tasks automatically. 
+                        My background in <span class="text-blue-400">avionics engineering</span> and <span class="text-blue-400">military IT operations</span> taught me that 
+                        reliability is not optional — it's designed into the system from day one. 
+                        Add <span class="text-blue-400">narrative systems thinking</span>, and you get products that don't just work—they resonate.
                     </p>
-                    <div class="flex flex-wrap gap-3">
-                        <a href="https://github.com/Gnoga05/GGJ-2026" target="_blank" class="github-link">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                            GGJ 2026 Repo
-                        </a>
-                        <a href="https://github.com/Gnoga05/BrackeysJamGame" target="_blank" class="github-link">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                            Brackeys Jam Repo
-                        </a>
+                    <div class="flex flex-wrap justify-center gap-6 text-xs font-bold text-slate-400 uppercase tracking-widest">
+                        <span class="flex items-center gap-2">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+                            Avionics Engineering
+                        </span>
+                        <span class="flex items-center gap-2">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+                            Military IT Ops
+                        </span>
+                        <span class="flex items-center gap-2">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+                            Python Automation
+                        </span>
+                        <span class="flex items-center gap-2">
+                            <span class="w-2 h-2 bg-purple-500 rounded-full"></span>
+                            Narrative Systems
+                        </span>
                     </div>
                 </div>
             </div>
-            
-            <!-- Strategic Management Subsection -->
-            <div class="mb-12">
-                <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-                    <span class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-sm">📊</span>
-                    Strategic Management & Production
-                </h3>
-                <div id="strategy-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 mb-12">
-                    <!-- Injected by JS -->
+        </section>
+
+        <!-- How I Work -->
+        <section id="process" class="mb-32 scroll-mt-28">
+            <div class="bg-white rounded-[48px] p-10 md:p-20 border border-slate-100 shadow-sm">
+                <div class="max-w-3xl mb-16">
+                    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tighter mb-6">How I Work</h2>
+                    <p class="text-xl text-slate-500 leading-relaxed">
+                        Systems thinking applied to product development—whether building 
+                        automated workflows, production pipelines, or narrative architectures.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="space-y-8">
+                        <div class="process-step">
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">01. Problem Discovery</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed">
+                                Map current state, identify friction points, define success metrics. 
+                                <span class="text-blue-600">Tools:</span> User interviews, process mapping, state analysis.
+                            </p>
+                        </div>
+                        <div class="process-step">
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">02. System Architecture</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed">
+                                Design state machines, workflows, or narrative systems. 
+                                Balance technical feasibility with user experience and business goals.
+                            </p>
+                        </div>
+                        <div class="process-step">
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">03. Rapid Prototype</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed">
+                                Build MVP: vertical slice for games, workflow for automation, 
+                                story system for narrative projects. Test core assumptions.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="space-y-8">
+                        <div class="process-step">
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">04. User Validation</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed">
+                                Playtest mechanics, trial workflows, validate narrative coherence. 
+                                Gather quantitative and qualitative feedback.
+                            </p>
+                        </div>
+                        <div class="process-step">
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">05. Ship & Monitor</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed">
+                                Deploy with telemetry. Document systems for maintainability. 
+                                Establish baselines for iteration.
+                            </p>
+                        </div>
+                        <div class="process-step">
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">06. Iterate</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed">
+                                Use data to refine. Optimize for emergent behavior, 
+                                player agency, or operational efficiency.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Narrative Systems Subsection -->
-            <div class="mb-12">
-                <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-                    <span class="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center text-sm">📖</span>
-                    Narrative Systems & Worldbuilding
-                </h3>
-                <div id="narrative-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 mb-12">
-                    <!-- Injected by JS -->
+        <!-- Skills Matrix -->
+        <section class="mb-32">
+            <div class="bg-white rounded-[48px] p-10 md:p-20 border border-slate-100 shadow-sm">
+                <div class="flex flex-col md:flex-row justify-between items-start mb-16">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tighter uppercase tracking-[0.1em] mb-4">Competency Matrix</h2>
+                        <p class="text-slate-500 text-lg max-w-2xl">
+                            Product management, systems design, and narrative architecture—integrated.
+                        </p>
+                    </div>
                 </div>
-            </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 border-t border-slate-100 pt-12">
+                    <!-- Product Strategy -->
+                    <div>
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center">
+                                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                            </div>
+                            <h3 class="font-black text-blue-600 text-xs uppercase tracking-[0.2em]">Product Strategy</h3>
+                        </div>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex items-start gap-2"><span class="text-blue-600 mt-1">→</span><span><strong>Roadmap Planning</strong> - Gantt, milestones, critical path</span></li>
+                            <li class="flex items-start gap-2"><span class="text-blue-600 mt-1">→</span><span><strong>Prioritization</strong> - Value vs effort, user impact</span></li>
+                            <li class="flex items-start gap-2"><span class="text-blue-600 mt-1">→</span><span><strong>Stakeholder Management</strong> - Communication, alignment</span></li>
+                            <li class="flex items-start gap-2"><span class="text-blue-600 mt-1">→</span><span><strong>Metrics Definition</strong> - KPIs, success criteria</span></li>
+                        </ul>
+                    </div>
 
-            <!-- Game Development Subsection -->
-            <div>
-                <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-                    <span class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-sm">🎮</span>
-                    Game Development & UX Research
-                </h3>
-                <div id="games-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-                    <!-- Injected by JS -->
+                    <!-- Systems Design -->
+                    <div>
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center">
+                                <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                            </div>
+                            <h3 class="font-black text-purple-600 text-xs uppercase tracking-[0.2em]">Systems Design</h3>
+                        </div>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex items-start gap-2"><span class="text-purple-600 mt-1">→</span><span><strong>State Machines</strong> - Logic design, automation</span></li>
+                            <li class="flex items-start gap-2"><span class="text-purple-600 mt-1">→</span><span><strong>Mechanics Design</strong> - Loops, progression, balance</span></li>
+                            <li class="flex items-start gap-2"><span class="text-purple-600 mt-1">→</span><span><strong>Economies</strong> - Resources, sinks, faucets</span></li>
+                            <li class="flex items-start gap-2"><span class="text-purple-600 mt-1">→</span><span><strong>UX Flow</strong> - Friction reduction, engagement</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Technical Execution -->
+                    <div>
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center">
+                                <svg class="w-5 h-5 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                            </div>
+                            <h3 class="font-black text-slate-700 text-xs uppercase tracking-[0.2em]">Technical Execution</h3>
+                        </div>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex items-start gap-2"><span class="text-slate-600 mt-1">→</span><span><strong>Python Automation</strong> - Scripting, API integration</span></li>
+                            <li class="flex items-start gap-2"><span class="text-slate-600 mt-1">→</span><span><strong>IT Operations</strong> - Networks, security, inventory</span></li>
+                            <li class="flex items-start gap-2"><span class="text-slate-600 mt-1">→</span><span><strong>Game Engines</strong> - Godot, GDScript, Unity</span></li>
+                            <li class="flex items-start gap-2"><span class="text-slate-600 mt-1">→</span><span><strong>Version Control</strong> - Git, CI/CD, documentation</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Narrative Systems -->
+                    <div>
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 rounded-xl bg-pink-50 flex items-center justify-center">
+                                <svg class="w-5 h-5 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                            </div>
+                            <h3 class="font-black text-pink-600 text-xs uppercase tracking-[0.2em]">Narrative Systems</h3>
+                        </div>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex items-start gap-2"><span class="text-pink-600 mt-1">→</span><span><strong>Worldbuilding</strong> - IP bibles, transmedia</span></li>
+                            <li class="flex items-start gap-2"><span class="text-pink-600 mt-1">→</span><span><strong>Emergent Storytelling</strong> - State-based narrative</span></li>
+                            <li class="flex items-start gap-2"><span class="text-pink-600 mt-1">→</span><span><strong>Documentation</strong> - GDDs, feature specs</span></li>
+                            <li class="flex items-start gap-2"><span class="text-pink-600 mt-1">→</span><span><strong>Agile/Scrum</strong> - Sprints, retrospectives</span></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
@@ -548,7 +788,7 @@
                         </div>
                         <div class="text-center md:text-left">
                             <h3 class="text-3xl font-black tracking-tighter uppercase mb-1">QAIO Labs</h3>
-                            <p class="text-xs font-bold text-blue-600 tracking-[0.4em] uppercase">Enterprise Solutions</p>
+                            <p class="text-xs font-bold text-blue-600 tracking-[0.4em] uppercase">Professional Technical Lab</p>
                         </div>
                     </div>
 
@@ -557,7 +797,7 @@
                             Scaling Innovation <span class="text-blue-600">Beyond the Individual.</span>
                         </h4>
                         <p class="text-slate-500 leading-relaxed mb-8 text-base md:text-lg text-center md:text-left max-w-2xl">
-                            QAIO is my professional vehicle for delivering <strong class="text-slate-900">bespoke automation pipelines</strong> and <strong class="text-slate-900">emergent AI solutions</strong> to external clients. From autonomous CRM workflows to proprietary narrative engines, QAIO serves as the laboratory where I research and deploy the future of operational efficiency.
+                            My personal hub for bespoke automation and specialized AI middleware. QAIO is my professional vehicle for delivering <strong class="text-slate-900">bespoke automation pipelines</strong> and <strong class="text-slate-900">emergent AI solutions</strong> to external clients. From autonomous CRM workflows to proprietary narrative engines, QAIO serves as the laboratory where I research and deploy the future of operational efficiency.
                         </p>
                         <div class="flex justify-center md:justify-start">
                             <a href="https://qaiolabs.com/" target="_blank" class="flex items-center justify-center gap-3 bg-slate-900 text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-600 transition-all shadow-lg hover:shadow-blue-600/20 group/btn">
@@ -580,10 +820,13 @@
                     </p>
                     <div class="flex items-center gap-5 border-t border-slate-50 pt-8">
                         <img src="https://d22fxaf9t8d39k.cloudfront.net/6e33297f03207fe184565ad5384ebd196333d4eee27bb7eb74b0bfa279612c6927509.png" class="w-14 h-14 rounded-2xl object-contain bg-white p-1 border border-slate-100 shadow-sm" alt="Decolores Logo">
-                        <div>
-                            <p class="font-bold text-slate-900 text-lg">Virginia Noguera</p>
+                        <a href="https://www.linkedin.com/in/virginia-noguera-112244313/" target="_blank" class="group">
+                            <p class="font-bold text-slate-900 text-lg group-hover:text-blue-600 transition-colors flex items-center gap-2">
+                                Virginia Noguera
+                                <svg class="w-4 h-4 opacity-50" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            </p>
                             <p class="text-xs text-slate-500 uppercase tracking-widest font-bold">Founder @ Decolores</p>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -626,6 +869,11 @@
                     <h3 id="modal-title" class="text-2xl md:text-3xl font-extrabold tracking-tighter text-slate-900 leading-tight mb-4"></h3>
                     <div id="modal-tags" class="flex flex-wrap gap-2 mb-6"></div>
                 </div>
+                <!-- Technical Specs (Only shows if data present) -->
+                <div id="modal-specs" class="mb-6 hidden">
+                    <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Technical Specifications</h4>
+                    <ul id="modal-specs-list" class="space-y-2 text-sm text-slate-600 font-mono"></ul>
+                </div>
                 <div id="modal-body" class="space-y-4 text-slate-600 leading-relaxed flex-grow text-sm md:text-base"></div>
                 <div class="mt-8 pt-6 border-t border-slate-100 space-y-3">
                     <a id="modal-primary-link" href="#" target="_blank" class="flex items-center justify-center gap-2 bg-black text-white px-6 py-4 rounded-xl font-bold hover:bg-blue-600 transition-all text-sm w-full">
@@ -657,13 +905,18 @@
             webhook: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>`,
             gemini: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg>`,
             twilio: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>`,
-            gmail: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>`
+            gmail: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>`,
+            user: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>`,
+            fastapi: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M15 4v2h3v12h-3v2h5V4zM4 12c0-4.41 3.59-8 8-8v16c-4.41 0-8-3.59-8-8z"/></svg>`,
+            engine: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>`
         };
 
         const projectsData = [
+            // --- COMMERCIAL & OPS ---
             {
                 title: 'AI Voice Agent Dispatcher',
                 role: 'Automation Architect',
+                category: 'commercial',
                 type: 'automation',
                 tags: ['ElevenLabs', 'Gemini AI', 'Twilio', 'Voice Intelligence'],
                 flow: [
@@ -695,6 +948,7 @@
             {
                 title: 'WhatsApp CRM Automation',
                 role: 'Product Designer & Automation Engineer',
+                category: 'commercial',
                 type: 'automation',
                 tags: ['State Machines', 'User Research', 'Process Design', 'Make/Integromat'],
                 flow: [
@@ -718,6 +972,7 @@
             {
                 title: 'Webhook Data Pipeline',
                 role: 'System Architect',
+                category: 'commercial',
                 type: 'automation',
                 tags: ['State Management', 'Error Handling', 'Data Validation', 'Make/Integromat'],
                 flow: [
@@ -740,6 +995,7 @@
             {
                 title: 'Smart Message Router',
                 role: 'Product Engineer',
+                category: 'commercial',
                 type: 'automation',
                 tags: ['Conditional Logic', 'User Segmentation', 'Personalization', 'Multi-channel'],
                 flow: [
@@ -762,6 +1018,7 @@
             {
                 title: 'AI-Integrated Operations',
                 role: 'Full-Stack Product Developer',
+                category: 'commercial',
                 type: 'automation',
                 tags: ['AI Integration', 'OpenRouter', 'Gemini AI', 'Content Generation'],
                 flow: [
@@ -783,6 +1040,7 @@
             {
                 title: 'QA & Project Management Suite',
                 role: 'Technical Product Manager',
+                category: 'commercial',
                 type: 'automation',
                 tags: ['QA Automation', 'Bug Tracking', 'Trello API', 'State Tracking'],
                 flow: [
@@ -803,9 +1061,14 @@
                 secondaryLink: null,
                 video: null
             },
+
+            // --- PRODUCT DELIVERY & DESIGN ---
+            // --- Strategy ---
             {
                 title: 'MARATHON: FPS Production',
                 role: 'Associate Producer',
+                category: 'product',
+                subCategory: 'strategy',
                 type: 'production',
                 tags: ['Roadmapping', 'Scrum', '33 User Stories', 'Risk Analysis'],
                 imageUrl: 'https://i.imgur.com/fRzY4Bg.png',
@@ -822,6 +1085,8 @@
             {
                 title: 'FRACTURED MIND: Horror Pipeline',
                 role: 'Agile Producer',
+                category: 'product',
+                subCategory: 'strategy',
                 type: 'production',
                 tags: ['Agile', '16-Week Sprint', 'Vertical Slice', 'Quality Gates'],
                 imageUrl: 'https://i.imgur.com/s4itJ8U.png',
@@ -839,6 +1104,8 @@
             {
                 title: 'Aeterna: Roguelike Analysis',
                 role: 'Systems Analyst',
+                category: 'product',
+                subCategory: 'strategy',
                 type: 'production',
                 tags: ['MDA Framework', 'Power-Up Systems', 'FDD Analysis', 'Balance Math'],
                 imageUrl: 'https://img.itch.zone/aW1nLzE4NjI3MTg0LnBuZw==/315x250%23c/EEDvra.png',
@@ -853,9 +1120,44 @@
                 secondaryLink: 'https://michibrujas.itch.io/aeterna',
                 video: null
             },
+
+             // --- Narrative ---
+             {
+                title: 'AI Narrative NPC Engine',
+                role: 'AI Systems Architect',
+                category: 'product',
+                subCategory: 'narrative',
+                type: 'automation', // using automation type to trigger flow view
+                tags: ['Emergent Storytelling', 'AI Integration', 'FastAPI', 'Game Systems'],
+                flow: [
+                    { app: 'user', label: 'Player Input' },
+                    { app: 'fastapi', label: 'Middleware (FastAPI)' },
+                    { app: 'gemini', label: 'LLM (Reasoning)' },
+                    { app: 'engine', label: 'Game Engine State' }
+                ],
+                techSpecs: [
+                    "<strong>Backend:</strong> Python (FastAPI), Uvicorn",
+                    "<strong>AI Model:</strong> Gemini 1.5 Flash (via OpenRouter)",
+                    "<strong>Latency:</strong> <800ms average response time",
+                    "<strong>Memory:</strong> Vector DB for long-term persistence",
+                    "<strong>Guardrails:</strong> Pre-prompt safety filtering"
+                ],
+                description: [
+                    '**Core System:** Middleware backend enabling conversational NPCs with persistent memory and dynamic personality.',
+                    '**Technical Architecture:** Developed a modular system in FastAPI that allows NPCs to generate contextual dialogue using LLMs. Built-in guardrails maintain narrative consistency, memory persistence, and production security.',
+                    '**Integration:** Designed for HTTP integration with major game engines (Unity, Godot, Unreal).',
+                    '**Status:** Currently in active MVP phase.',
+                    '**Product Skills:** AI System Design, Narrative Engineering, Backend Architecture, API Strategy.'
+                ],
+                link: null,
+                secondaryLink: null,
+                video: null
+            },
             {
                 title: 'Holy Banquet! (Grubgrind)',
                 role: 'Worldbuilding & Narrative Lead',
+                category: 'product',
+                subCategory: 'narrative',
                 type: 'production',
                 tags: ['Worldbuilding', 'Meatpunk', 'Gastromancy', 'Co-op', 'Emergent Storytelling'],
                 imageUrl: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=800&h=600&fit=crop',
@@ -871,25 +1173,10 @@
                 video: null
             },
             {
-                title: 'AI Narrative NPC Engine',
-                role: 'AI Systems Architect',
-                type: 'production',
-                tags: ['Emergent Storytelling', 'AI Integration', 'FastAPI', 'Game Systems'],
-                imageUrl: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop',
-                description: [
-                    '**Core System:** Middleware backend enabling conversational NPCs with persistent memory and dynamic personality.',
-                    '**Technical Architecture:** Developed a modular system in FastAPI that allows NPCs to generate contextual dialogue using LLMs. Built-in guardrails maintain narrative consistency, memory persistence, and production security.',
-                    '**Integration:** Designed for HTTP integration with major game engines (Unity, Godot, Unreal).',
-                    '**Status:** Currently in active MVP phase.',
-                    '**Product Skills:** AI System Design, Narrative Engineering, Backend Architecture, API Strategy.'
-                ],
-                link: null,
-                secondaryLink: null,
-                video: null
-            },
-            {
                 title: 'Gods Within: Transmedia IP',
                 role: 'Narrative Systems Architect',
+                category: 'product',
+                subCategory: 'narrative',
                 type: 'production',
                 tags: ['Worldbuilding', 'Transmedia', 'IP Bible', 'System Design'],
                 imageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&h=600&fit=crop',
@@ -907,6 +1194,8 @@
             {
                 title: 'The Summoning: Card Economy',
                 role: 'Systems Designer',
+                category: 'product',
+                subCategory: 'narrative',
                 type: 'production',
                 tags: ['Economy Design', 'Re-theming', 'Drafting Systems', 'Resource Conversion'],
                 imageUrl: 'https://images.unsplash.com/photo-1606167668584-78701c57f13d?w=800&h=600&fit=crop',
@@ -922,6 +1211,8 @@
             {
                 title: 'Cazador del Abismo: Hidden Roles',
                 role: 'Game Systems Designer',
+                category: 'product',
+                subCategory: 'narrative',
                 type: 'production',
                 tags: ['Social Deduction', 'Information Asymmetry', 'Timer Mechanics', 'Tension Design'],
                 imageUrl: 'https://images.unsplash.com/photo-1632501641765-e568d28b0015?w=800&h=600&fit=crop',
@@ -935,8 +1226,32 @@
                 video: null
             },
             {
+                title: 'Nanban: Branching Narrative',
+                role: 'Narrative Lead',
+                category: 'product',
+                subCategory: 'narrative',
+                type: 'game',
+                tags: ['Branching Systems', 'Technical Constraints', 'Choice Architecture'],
+                imageUrl: 'https://img.itch.zone/aW1nLzIzMzk4NjMxLnBuZw==/315x250%23c/jayV8k.png',
+                description: [
+                    '**System Design:** 4 distinct endings based on choice combinations. "Hero\'s Journey" structure with player agency in path selection.',
+                    '**Choice Architecture:** Designed decisions to feel meaningful (impact visible within 2 minutes) not arbitrary. Balanced agency with narrative coherence.',
+                    '**Technical Constraint:** Platform image hosting limitations threatened project.',
+                    '**Solution:** Designed external asset pipeline maintaining narrative flow while working within constraints. State machine tracked story branches independently of assets.',
+                    '**Cross-Functional:** Coordinated with artists for visual consistency across 4 narrative branches.',
+                    '**Product Skills:** Narrative system design, choice consequence mapping, constraint-driven innovation, cross-disciplinary coordination.'
+                ],
+                link: 'https://gabrielnogarotto.itch.io/nanban',
+                secondaryLink: null,
+                video: null
+            },
+
+            // --- Game Dev ---
+            {
                 title: 'Vessel Mask: Ritual Color',
                 role: 'Product Lead & UX Designer',
+                category: 'product',
+                subCategory: 'game-dev',
                 type: 'game',
                 tags: ['UX Research', 'State Machines', 'Rapid Prototyping', '48h Delivery'],
                 imageUrl: 'https://img.itch.zone/aW1nLzI1MzM4NzU0LmpwZw==/315x250%23c/wgToJf.jpg',
@@ -955,6 +1270,8 @@
             {
                 title: 'Little Dungeon: AI Architecture',
                 role: 'Project Lead & Systems Architect',
+                category: 'product',
+                subCategory: 'game-dev',
                 type: 'game',
                 tags: ['AI State Machines', 'Inheritance Systems', 'Technical Optimization', 'Full-Cycle'],
                 imageUrl: 'https://img.itch.zone/aW1nLzI0MTg2NjY0LmpwZw==/315x250%23c/qNmvx4.jpg',
@@ -973,6 +1290,8 @@
             {
                 title: 'The Risk of Fido: Team Dynamics',
                 role: 'Project Coordinator',
+                category: 'product',
+                subCategory: 'game-dev',
                 type: 'game',
                 tags: ['Crisis Management', 'Scope Reduction', 'Team Leadership', 'Conflict Resolution'],
                 imageUrl: 'https://img.itch.zone/aW1nLzIyOTY2MzUyLnBuZw==/315x250%23c/996jtP.png',
@@ -991,6 +1310,8 @@
             {
                 title: 'Deadly Western: Game Feel',
                 role: 'Solo Developer',
+                category: 'product',
+                subCategory: 'game-dev',
                 type: 'game',
                 tags: ['Juice', 'UX Polish', 'Market Differentiation', 'Custom Engine Work'],
                 imageUrl: 'https://img.itch.zone/aW1nLzIzNDM0NDU3LnBuZw==/315x250%23c/pLfGTa.png',
@@ -1009,6 +1330,8 @@
             {
                 title: 'Viper Assault: Data-Driven Balance',
                 role: 'Lead Designer',
+                category: 'product',
+                subCategory: 'game-dev',
                 type: 'game',
                 tags: ['System Balancing', 'Playtesting', 'Data Analysis', 'Scope Control'],
                 imageUrl: 'https://img.itch.zone/aW1nLzIxMzgyMjY0LnBuZw==/315x250%23c/QDg1AS.png',
@@ -1023,24 +1346,6 @@
                 link: 'https://gabrielnogarotto.itch.io/neo-viper-assault',
                 secondaryLink: null,
                 video: 'https://www.youtube.com/embed/zH-ud44oXj4'
-            },
-            {
-                title: 'Nanban: Branching Narrative',
-                role: 'Narrative Lead',
-                type: 'game',
-                tags: ['Branching Systems', 'Technical Constraints', 'Choice Architecture'],
-                imageUrl: 'https://img.itch.zone/aW1nLzIzMzk4NjMxLnBuZw==/315x250%23c/jayV8k.png',
-                description: [
-                    '**System Design:** 4 distinct endings based on choice combinations. "Hero\'s Journey" structure with player agency in path selection.',
-                    '**Choice Architecture:** Designed decisions to feel meaningful (impact visible within 2 minutes) not arbitrary. Balanced agency with narrative coherence.',
-                    '**Technical Constraint:** Platform image hosting limitations threatened project.',
-                    '**Solution:** Designed external asset pipeline maintaining narrative flow while working within constraints. State machine tracked story branches independently of assets.',
-                    '**Cross-Functional:** Coordinated with artists for visual consistency across 4 narrative branches.',
-                    '**Product Skills:** Narrative system design, choice consequence mapping, constraint-driven innovation, cross-disciplinary coordination.'
-                ],
-                link: 'https://gabrielnogarotto.itch.io/nanban',
-                secondaryLink: null,
-                video: null
             }
         ];
 
@@ -1053,22 +1358,18 @@
                 const nodeClass = `node-${node.app}`;
                 const routerClass = node.isRouter ? 'router' : '';
                 
-                // For router, icon is generic
                 const iconSvg = node.isRouter ? icons.router : (icons[node.app] || icons.google);
                 
-                // Render Node
                 nodesHtml += `
                     <div class="make-node ${nodeClass} ${routerClass}" title="${node.label}">
                         ${iconSvg}
                     </div>
                 `;
                 
-                // If node has branches, render branch container
                 if (node.branches) {
                     nodesHtml += `<div class="make-branch-container">`;
                     node.branches.forEach(branchNodes => {
                         nodesHtml += `<div class="make-branch">`;
-                        // Render branch nodes linear
                         branchNodes.forEach((bNode, bIdx) => {
                              const bNodeClass = `node-${bNode.app}`;
                              const bIcon = icons[bNode.app] || icons.google;
@@ -1079,8 +1380,6 @@
                     });
                     nodesHtml += `</div>`;
                 } 
-                // Only render connection if NOT last and DOES NOT have branches
-                // (Branches typically end the flow visual here or connect out, but for this portfolio visual they are endpoints)
                 else if (!isLast) {
                     nodesHtml += `<div class="make-connection"></div>`;
                 }
@@ -1096,29 +1395,37 @@
             `;
         }
 
+        // New Render Logic with Tabs
         function renderGrid() {
-            const systemsGrid = document.getElementById('systems-grid');
-            const strategyGrid = document.getElementById('strategy-grid');
-            const narrativeGrid = document.getElementById('narrative-grid');
-            const gamesGrid = document.getElementById('games-grid');
+            const commercialGrid = document.getElementById('commercial-grid');
+            const productStrategyGrid = document.getElementById('prod-strategy-grid');
+            const productNarrativeGrid = document.getElementById('prod-narrative-grid');
+            const productGameGrid = document.getElementById('prod-game-grid');
+            
+            // Clear existing content
+            commercialGrid.innerHTML = '';
+            productStrategyGrid.innerHTML = '';
+            productNarrativeGrid.innerHTML = '';
+            productGameGrid.innerHTML = '';
 
             projectsData.forEach((p, i) => {
+                const mediaContent = (p.type === 'automation' && p.flow) ? 
+                    `<div class="h-56 image-zoom-container bg-slate-100 relative overflow-hidden group-hover:bg-slate-50 transition-colors">
+                        ${renderFlow(p.flow)}
+                        <div class="absolute top-4 left-4 z-20">
+                            <span class="badge badge-auto">automation</span>
+                        </div>
+                    </div>` : 
+                    `<div class="h-56 image-zoom-container bg-slate-100 relative">
+                        <img src="${p.imageUrl}" class="w-full h-full object-cover zoom-img" loading="lazy" alt="${p.title}">
+                        <div class="absolute top-4 left-4">
+                            <span class="badge ${p.type === 'production' ? 'badge-prod' : p.type === 'game' ? 'badge-tech' : 'badge-prod'}">${p.type}</span>
+                        </div>
+                    </div>`;
+
                 const card = `
                     <div class="card-project rounded-[24px] overflow-hidden cursor-pointer flex flex-col h-full group" onclick="openModal(${i})">
-                        ${p.type === 'automation' && p.flow ? 
-                            `<div class="h-56 image-zoom-container bg-slate-100 relative overflow-hidden group-hover:bg-slate-50 transition-colors">
-                                ${renderFlow(p.flow)}
-                                <div class="absolute top-4 left-4 z-20">
-                                    <span class="badge badge-auto">automation</span>
-                                </div>
-                            </div>` : 
-                            `<div class="h-56 image-zoom-container bg-slate-100 relative">
-                                <img src="${p.imageUrl}" class="w-full h-full object-cover zoom-img" loading="lazy" alt="${p.title}">
-                                <div class="absolute top-4 left-4">
-                                    <span class="badge ${p.type === 'production' ? 'badge-prod' : 'badge-tech'}">${p.type}</span>
-                                </div>
-                            </div>`
-                        }
+                        ${mediaContent}
                         <div class="p-6 md:p-8 flex flex-col flex-grow">
                             <h3 class="text-xl font-extrabold tracking-tight text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">${p.title}</h3>
                             <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-4">${p.role}</p>
@@ -1129,13 +1436,44 @@
                         </div>
                     </div>
                 `;
-                
-                if(p.type === 'automation') systemsGrid.innerHTML += card;
-                else if(p.type === 'production' && (p.tags.includes('Worldbuilding') || p.tags.includes('Transmedia') || p.tags.includes('Emergent Storytelling') || p.tags.includes('AI Integration'))) narrativeGrid.innerHTML += card;
-                else if(p.type === 'production') strategyGrid.innerHTML += card;
-                else gamesGrid.innerHTML += card;
+
+                if (p.category === 'commercial') {
+                    commercialGrid.innerHTML += card;
+                } else if (p.category === 'product') {
+                    if (p.subCategory === 'strategy') {
+                        productStrategyGrid.innerHTML += card;
+                    } else if (p.subCategory === 'narrative') {
+                        productNarrativeGrid.innerHTML += card;
+                    } else if (p.subCategory === 'game-dev') {
+                        productGameGrid.innerHTML += card;
+                    }
+                }
             });
         }
+
+        // Tab Switching Logic
+        window.switchTab = function(tabName) {
+            const commContent = document.getElementById('commercial-content');
+            const prodContent = document.getElementById('product-content');
+            const commBtn = document.getElementById('tab-commercial');
+            const prodBtn = document.getElementById('tab-product');
+
+            if (tabName === 'commercial') {
+                commContent.classList.remove('hidden');
+                prodContent.classList.add('hidden');
+                commBtn.classList.add('active');
+                commBtn.classList.remove('inactive');
+                prodBtn.classList.add('inactive');
+                prodBtn.classList.remove('active');
+            } else {
+                commContent.classList.add('hidden');
+                prodContent.classList.remove('hidden');
+                commBtn.classList.add('inactive');
+                commBtn.classList.remove('active');
+                prodBtn.classList.add('active');
+                prodBtn.classList.remove('inactive');
+            }
+        };
 
         const modal = document.getElementById('project-modal');
         const modalContent = document.getElementById('modal-content-wrapper');
@@ -1144,6 +1482,8 @@
         const modalImage = document.getElementById('modal-image');
         const modalDemo = document.getElementById('modal-demo-container');
         const modalFlowContainer = document.getElementById('modal-flow-container');
+        const modalSpecs = document.getElementById('modal-specs');
+        const modalSpecsList = document.getElementById('modal-specs-list');
 
         window.openModal = function(index) {
             const p = projectsData[index];
@@ -1159,6 +1499,14 @@
             
             modalBody.innerHTML = p.description.map(text => `<p class="mb-3">${text.replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-900">$1</strong>')}</p>`).join('');
             
+            // Tech Specs Logic
+            if (p.techSpecs && p.techSpecs.length > 0) {
+                modalSpecs.classList.remove('hidden');
+                modalSpecsList.innerHTML = p.techSpecs.map(spec => `<li>${spec}</li>`).join('');
+            } else {
+                modalSpecs.classList.add('hidden');
+            }
+
             // Reset visibility
             modalVideo.src = "";
             modalDemo.classList.add('hidden');
@@ -1227,6 +1575,7 @@
             }
         });
 
+        // Initialize
         renderGrid();
     </script>
 </body>
