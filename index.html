@@ -51,6 +51,22 @@
             border-color: rgba(37, 99, 235, 0.15); 
         }
         
+        /* Labs Card Specifics */
+        .card-lab {
+            background: #0f172a; /* Slate 900 */
+            border: 1px solid #1e293b;
+            color: white;
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-lab:hover {
+            border-color: #3b82f6;
+            transform: translateY(-4px);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
+        }
+        
         .badge { 
             padding: 0.25rem 0.75rem; 
             font-size: 0.625rem; 
@@ -62,6 +78,7 @@
         .badge-prod { background-color: #f3f4f6; color: #4b5563; }
         .badge-tech { background-color: #eff6ff; color: #2563eb; }
         .badge-auto { background-color: #dbeafe; color: #1e40af; border: 1px solid #3b82f6; }
+        .badge-lab { background-color: rgba(59, 130, 246, 0.1); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.2); }
         
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f1f1; }
@@ -136,6 +153,7 @@
             text-transform: uppercase;
             letter-spacing: 0.05em;
             border: 1px solid transparent;
+            white-space: nowrap;
         }
         .tab-btn.active {
             background-color: #1e40af;
@@ -511,14 +529,18 @@
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/HubSpot_Logo.svg/1280px-HubSpot_Logo.svg.png" alt="HubSpot" class="h-6 md:h-7 object-contain">
                         <span class="text-[10px] font-bold text-slate-400">2024 / 2025</span>
                     </div>
+                    <div class="flex flex-col items-center gap-2 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                        <img src="https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/anthropic.png" alt="Anthropic" class="h-6 md:h-7">
+                        <span class="text-[10px] font-bold text-slate-400">2026</span>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Project Tabs & Grid -->
         <section id="projects" class="mb-32 scroll-mt-28">
-            <div class="flex justify-center mb-12">
-                <div class="inline-flex bg-slate-100 p-1 rounded-full gap-1">
+            <div class="flex justify-center mb-12 overflow-x-auto pb-4 md:pb-0">
+                <div class="inline-flex bg-slate-100 p-1 rounded-full gap-1 min-w-max">
                     <button onclick="switchTab('commercial')" id="tab-commercial" class="tab-btn active">Commercial & Ops</button>
                     <button onclick="switchTab('product')" id="tab-product" class="tab-btn inactive">Product Delivery & Design</button>
                 </div>
@@ -594,6 +616,29 @@
                         Game Development & UX Research
                     </h3>
                     <div id="prod-game-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+                        <!-- Injected by JS -->
+                    </div>
+                    <!-- ITCH IO BUTTON -->
+                    <div class="mt-8 flex justify-center md:justify-start">
+                        <a href="https://gabrielnogarotto.itch.io/" target="_blank" class="github-link group px-6 py-3 bg-white border-2 border-slate-100 hover:border-[#fa5c5c] hover:bg-white transition-all">
+                            <span class="text-slate-900 group-hover:text-[#fa5c5c] font-bold">Explore all games on itch.io</span>
+                            <svg class="w-5 h-5 text-slate-400 group-hover:text-[#fa5c5c] group-hover:translate-x-1 transition-all" fill="currentColor" viewBox="0 0 24 24"><path d="M19.332 5.097c-1.32-.47-2.66-.71-4-.71-.87 0-1.74.09-2.58.28-.21.05-.44.09-.67.14l-.67-.14c-.84-.19-1.71-.28-2.58-.28-1.34 0-2.66.24-4 .71-1.32.47-1.32 1.41-1.32 2.58 0 1.25.13 2.58.38 3.91.24 1.34 1.5 5.56 5.86 6.91 1.77.56 2.89.04 3.32-.23l.16-.13.33.24c.05.04.1.09.16.13.43.27 1.55.79 3.32.23 4.36-1.35 5.62-5.57 5.86-6.91.25-1.33.38-2.66.38-3.91 0-1.17 0-2.11-1.32-2.58-.58-.2-1.16-.36-1.73-.49l.64 2.82H6.96l.66-2.83c-.57.13-1.15.29-1.73.49-1.32.47-1.32 1.41-1.32 2.58 0 1.25.13 2.58.38 3.91.24 1.34 1.5 5.56 5.86 6.91 1.77.56 2.89.04 3.32-.23l.16-.13.33.24c.05.04.1.09.16.13.43.27 1.55.79 3.32.23 4.36-1.35 5.62-5.57 5.86-6.91.25-1.33.38-2.66.38-3.91 0-1.17 0-2.11-1.32-2.58zm-7.33 2.9c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm-6 2c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Future Labs Subsection -->
+                <div class="mt-20 pt-10 border-t border-slate-100">
+                    <div class="flex items-center gap-4 mb-10">
+                        <div class="w-12 h-12 rounded-xl bg-slate-900 flex items-center justify-center shadow-lg">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-extrabold tracking-tighter text-slate-900">Future Labs & R&D</h3>
+                            <p class="text-slate-500 font-medium text-sm">Experimental prototypes and bleeding-edge integrations currently in development.</p>
+                        </div>
+                    </div>
+                    <div id="labs-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <!-- Injected by JS -->
                     </div>
                 </div>
@@ -819,14 +864,16 @@
                         "Gabriel opened the door to an unknown world that managed to <span class="text-slate-900 bg-blue-50 px-1 decoration-blue-200 underline decoration-2 underline-offset-4">optimize our work and made us forget about repetitive tasks</span>. He has great skill in analyzing and adding tools and ideas that help us as entrepreneurs."
                     </p>
                     <div class="flex items-center gap-5 border-t border-slate-50 pt-8">
-                        <img src="https://d22fxaf9t8d39k.cloudfront.net/6e33297f03207fe184565ad5384ebd196333d4eee27bb7eb74b0bfa279612c6927509.png" class="w-14 h-14 rounded-2xl object-contain bg-white p-1 border border-slate-100 shadow-sm" alt="Decolores Logo">
-                        <a href="https://www.linkedin.com/in/virginia-noguera-112244313/" target="_blank" class="group">
-                            <p class="font-bold text-slate-900 text-lg group-hover:text-blue-600 transition-colors flex items-center gap-2">
-                                Virginia Noguera
-                                <svg class="w-4 h-4 opacity-50" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                            </p>
-                            <p class="text-xs text-slate-500 uppercase tracking-widest font-bold">Founder @ Decolores</p>
+                        <a href="https://www.instagram.com/decoloresreposteria/" target="_blank" class="shrink-0 group">
+                            <img src="https://d22fxaf9t8d39k.cloudfront.net/6e33297f03207fe184565ad5384ebd196333d4eee27bb7eb74b0bfa279612c6927509.png" class="w-14 h-14 rounded-2xl object-contain bg-white p-1 border border-slate-100 shadow-sm group-hover:border-pink-200 transition-colors" alt="Decolores Logo">
                         </a>
+                        <div>
+                            <p class="font-bold text-slate-900 text-lg">Virginia Noguera</p>
+                            <a href="https://www.instagram.com/decoloresreposteria/" target="_blank" class="group inline-flex items-center gap-2 text-xs text-slate-500 uppercase tracking-widest font-bold hover:text-pink-600 transition-colors">
+                                Founder @ <span class="underline decoration-pink-300 underline-offset-2 group-hover:text-pink-600">Decolores</span>
+                                <svg class="w-4 h-4 text-pink-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -874,7 +921,7 @@
                     <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Technical Specifications</h4>
                     <ul id="modal-specs-list" class="space-y-2 text-sm text-slate-600 font-mono"></ul>
                 </div>
-                <div id="modal-body" class="space-y-4 text-slate-600 leading-relaxed flex-grow text-sm md:text-base"></div>
+                <div id="modal-body" class="space-y-4 text-slate-600 leading-relaxed flex-grow text-base md:text-lg"></div>
                 <div class="mt-8 pt-6 border-t border-slate-100 space-y-3">
                     <a id="modal-primary-link" href="#" target="_blank" class="flex items-center justify-center gap-2 bg-black text-white px-6 py-4 rounded-xl font-bold hover:bg-blue-600 transition-all text-sm w-full">
                         <span>View Project</span>
@@ -919,6 +966,8 @@
                 category: 'commercial',
                 type: 'automation',
                 tags: ['ElevenLabs', 'Gemini AI', 'Twilio', 'Voice Intelligence'],
+                benchmark: '+95% Time Saved',
+                result: 'Automated 100% of initial call triage, reducing manual screening from hours to seconds.',
                 flow: [
                     { app: 'webhook', label: 'Call Transcript' },
                     { app: 'gemini', label: 'Analyze & Categorize' },
@@ -951,6 +1000,8 @@
                 category: 'commercial',
                 type: 'automation',
                 tags: ['State Machines', 'User Research', 'Process Design', 'Make/Integromat'],
+                benchmark: '+65% Efficiency',
+                result: 'Reduced manual messaging time from ~15h/week to ~4h/week.',
                 flow: [
                     { app: 'sheets', label: 'Watch Rows' },
                     { app: 'trello', label: 'Create Card' },
@@ -975,6 +1026,8 @@
                 category: 'commercial',
                 type: 'automation',
                 tags: ['State Management', 'Error Handling', 'Data Validation', 'Make/Integromat'],
+                benchmark: '<1% Error Rate',
+                result: 'Error rate reduced from 8% to <1% while scaling processing capacity 10x.',
                 flow: [
                     { app: 'forms', label: 'Watch Responses' },
                     { app: 'router', label: 'Router', isRouter: true },
@@ -998,6 +1051,8 @@
                 category: 'commercial',
                 type: 'automation',
                 tags: ['Conditional Logic', 'User Segmentation', 'Personalization', 'Multi-channel'],
+                benchmark: '+35% Engagement',
+                result: 'Engagement rates improved by ~30% through hyper-personalized messaging.',
                 flow: [
                     { app: 'trello', label: 'Watch Activities' },
                     { app: 'trello', label: 'Get Card' },
@@ -1021,6 +1076,8 @@
                 category: 'commercial',
                 type: 'automation',
                 tags: ['AI Integration', 'OpenRouter', 'Gemini AI', 'Content Generation'],
+                benchmark: '-95% Manual Work',
+                result: '2-hour daily manual process transformed into a 5-minute automated workflow.',
                 flow: [
                     { app: 'deepseek', label: 'Generate Ideas' },
                     { app: 'deepseek', label: 'Review' },
@@ -1043,6 +1100,8 @@
                 category: 'commercial',
                 type: 'automation',
                 tags: ['QA Automation', 'Bug Tracking', 'Trello API', 'State Tracking'],
+                benchmark: '-60% Prep Time',
+                result: 'QA preparation time reduced by estimated 60% via automated bug triage.',
                 flow: [
                     { app: 'forms', label: 'Watch' },
                     { app: 'openai', label: 'Analyze' },
@@ -1071,6 +1130,8 @@
                 subCategory: 'strategy',
                 type: 'production',
                 tags: ['Roadmapping', 'Scrum', '33 User Stories', 'Risk Analysis'],
+                benchmark: 'Risk Mitigation',
+                result: 'Delivered stable build by identifying critical path dependencies early.',
                 imageUrl: 'https://i.imgur.com/fRzY4Bg.png',
                 description: [
                     '**Scope:** 12-month FPS development, 13 sprints (2 weeks each), 33 detailed user stories covering core mechanics (movement, weapons, enemies).',
@@ -1089,6 +1150,8 @@
                 subCategory: 'strategy',
                 type: 'production',
                 tags: ['Agile', '16-Week Sprint', 'Vertical Slice', 'Quality Gates'],
+                benchmark: 'On-Time Delivery',
+                result: 'Core horror mechanics validated before full production via Vertical Slice.',
                 imageUrl: 'https://i.imgur.com/s4itJ8U.png',
                 description: [
                     '**Constraint:** 16-week development with 4 milestones. Horror genre requiring specific tech (shaders, AI) validated early.',
@@ -1108,6 +1171,8 @@
                 subCategory: 'strategy',
                 type: 'production',
                 tags: ['MDA Framework', 'Power-Up Systems', 'FDD Analysis', 'Balance Math'],
+                benchmark: 'System Clarity',
+                result: 'Reverse-engineered complex progression systems into actionable FDDs.',
                 imageUrl: 'https://img.itch.zone/aW1nLzE4NjI3MTg0LnBuZw==/315x250%23c/EEDvra.png',
                 description: [
                     '**Analysis Framework:** Formal Design Document (FDD) analysis of Aeterna\'s Tarot card system vs Hades (Boons) and TBoI (Items).',
@@ -1129,6 +1194,8 @@
                 subCategory: 'narrative',
                 type: 'automation', // using automation type to trigger flow view
                 tags: ['Emergent Storytelling', 'AI Integration', 'FastAPI', 'Game Systems'],
+                benchmark: '<800ms Latency',
+                result: 'Achieved sub-second response time for real-time conversation.',
                 flow: [
                     { app: 'user', label: 'Player Input' },
                     { app: 'fastapi', label: 'Middleware (FastAPI)' },
@@ -1160,6 +1227,8 @@
                 subCategory: 'narrative',
                 type: 'production',
                 tags: ['Worldbuilding', 'Meatpunk', 'Gastromancy', 'Co-op', 'Emergent Storytelling'],
+                benchmark: 'Lore Cohesion',
+                result: 'Integrated gameplay loops (cooking/fighting) into theological lore.',
                 imageUrl: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=800&h=600&fit=crop',
                 description: [
                     '**Premise:** Co-op Hack & Slash meets cooking sim in a "Meatpunk" kingdom. Heroes: Morfer (Muscle) and Bondiu (Chef/Brain) bound by a cursed Rabbit Foot.',
@@ -1179,6 +1248,8 @@
                 subCategory: 'narrative',
                 type: 'production',
                 tags: ['Worldbuilding', 'Transmedia', 'IP Bible', 'System Design'],
+                benchmark: 'Scalable IP',
+                result: 'Designed a consistent internal logic scalable across 12 platforms.',
                 imageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&h=600&fit=crop',
                 description: [
                     '**Challenge:** Design fantasy universe expandable across multiple platforms (game, novel, TCG) with consistent internal logic.',
@@ -1198,6 +1269,8 @@
                 subCategory: 'narrative',
                 type: 'production',
                 tags: ['Economy Design', 'Re-theming', 'Drafting Systems', 'Resource Conversion'],
+                benchmark: 'System Integrity',
+                result: 'Maintained mathematical balance while completely re-skinning theme.',
                 imageUrl: 'https://images.unsplash.com/photo-1606167668584-78701c57f13d?w=800&h=600&fit=crop',
                 description: [
                     '**Design Challenge:** Re-theme 7 Wonders drafting mechanics with horror narrative.',
@@ -1215,6 +1288,8 @@
                 subCategory: 'narrative',
                 type: 'production',
                 tags: ['Social Deduction', 'Information Asymmetry', 'Timer Mechanics', 'Tension Design'],
+                benchmark: 'Social Dynamics',
+                result: 'Engineered information asymmetry to force emergent player conflict.',
                 imageUrl: 'https://images.unsplash.com/photo-1632501641765-e568d28b0015?w=800&h=600&fit=crop',
                 description: [
                     '**Core System:** 4-8 players, hidden roles, missions with strict timers.',
@@ -1232,6 +1307,8 @@
                 subCategory: 'narrative',
                 type: 'game',
                 tags: ['Branching Systems', 'Technical Constraints', 'Choice Architecture'],
+                benchmark: 'Choice Impact',
+                result: 'Implemented 4 distinct endings based on complex choice combinations.',
                 imageUrl: 'https://img.itch.zone/aW1nLzIzMzk4NjMxLnBuZw==/315x250%23c/jayV8k.png',
                 description: [
                     '**System Design:** 4 distinct endings based on choice combinations. "Hero\'s Journey" structure with player agency in path selection.',
@@ -1254,6 +1331,8 @@
                 subCategory: 'game-dev',
                 type: 'game',
                 tags: ['UX Research', 'State Machines', 'Rapid Prototyping', '48h Delivery'],
+                benchmark: '+40% Completion',
+                result: 'Improved session completion by ~40% after retry loop tuning.',
                 imageUrl: 'https://img.itch.zone/aW1nLzI1MzM4NzU0LmpwZw==/315x250%23c/wgToJf.jpg',
                 description: [
                     '**Product Challenge:** Compelling MVP in 48 hours with new team, no established workflow.',
@@ -1274,6 +1353,8 @@
                 subCategory: 'game-dev',
                 type: 'game',
                 tags: ['AI State Machines', 'Inheritance Systems', 'Technical Optimization', 'Full-Cycle'],
+                benchmark: '40% Code Reduction',
+                result: 'Reduced code duplication significantly via hierarchical state machines.',
                 imageUrl: 'https://img.itch.zone/aW1nLzI0MTg2NjY0LmpwZw==/315x250%23c/qNmvx4.jpg',
                 description: [
                     '**Technical Challenge:** Build scalable AI handling multiple enemy types without code duplication.',
@@ -1294,6 +1375,8 @@
                 subCategory: 'game-dev',
                 type: 'game',
                 tags: ['Crisis Management', 'Scope Reduction', 'Team Leadership', 'Conflict Resolution'],
+                benchmark: 'Crisis Resolution',
+                result: 'Successfully shipped by pivoting scope 60% mid-jam without morale loss.',
                 imageUrl: 'https://img.itch.zone/aW1nLzIyOTY2MzUyLnBuZw==/315x250%23c/996jtP.png',
                 description: [
                     '**Team Challenge:** Led 8+ person remote team during high-pressure pivot.',
@@ -1314,6 +1397,8 @@
                 subCategory: 'game-dev',
                 type: 'game',
                 tags: ['Juice', 'UX Polish', 'Market Differentiation', 'Custom Engine Work'],
+                benchmark: '+50% Response Speed',
+                result: 'Custom state machine improved input response by 50% vs default engine.',
                 imageUrl: 'https://img.itch.zone/aW1nLzIzNDM0NDU3LnBuZw==/315x250%23c/pLfGTa.png',
                 description: [
                     '**Market Analysis:** Identified oversaturated "gallery shooter" genre. Differentiated through western aesthetic and heavy "juice" (feedback).',
@@ -1334,6 +1419,8 @@
                 subCategory: 'game-dev',
                 type: 'game',
                 tags: ['System Balancing', 'Playtesting', 'Data Analysis', 'Scope Control'],
+                benchmark: '-60% Frustration',
+                result: 'Reduced "unfair death" perception by ~60% through heat-map analysis.',
                 imageUrl: 'https://img.itch.zone/aW1nLzIxMzgyMjY0LnBuZw==/315x250%23c/QDg1AS.png',
                 description: [
                     '**Design Challenge:** Reimagine Snake with combat while maintaining accessibility.',
@@ -1348,6 +1435,60 @@
                 video: 'https://www.youtube.com/embed/zH-ud44oXj4'
             }
         ];
+        
+        const labsData = [
+            {
+                title: "Immersive Gesture Controller",
+                role: "R&D Lead",
+                techStack: ["MediaPipe", "Python", "Godot/Unity", "Haptic Feedback"],
+                goal: "Eliminate expensive hardware to achieve social interactions and combat mechanics using computer vision.",
+                link: "https://docs.google.com/document/d/1oJKR-dw2f7_wtVs73EKaoXkKIZ1Zdk5H3JsK-izzRLM/edit?usp=sharing",
+                imageUrl: null // No image provided, will use placeholder logic
+            },
+            {
+                title: "Industrial AI Pocket-Node",
+                role: "Hardware Prototyper",
+                techStack: ["ESP32", "C++", "FastAPI", "Make/n8n"],
+                goal: "Unify industrial and domestic hardware control via AI-processed voice commands.",
+                imageUrl: "https://i.imgur.com/leQw7SV.png"
+            }
+        ];
+
+        function renderLabs() {
+            const labsGrid = document.getElementById('labs-grid');
+            labsGrid.innerHTML = '';
+            
+            labsData.forEach(lab => {
+                const media = lab.imageUrl 
+                    ? `<img src="${lab.imageUrl}" class="w-full h-48 object-cover rounded-xl mb-6 border border-slate-700">`
+                    : `<div class="w-full h-48 bg-slate-800 rounded-xl mb-6 flex items-center justify-center border border-slate-700 border-dashed">
+                            <span class="text-slate-600 font-mono text-xs uppercase tracking-widest">Blueprint Pending</span>
+                       </div>`;
+
+                const linkBtn = lab.link ? 
+                    `<a href="${lab.link}" target="_blank" class="text-xs font-bold text-blue-400 hover:text-blue-300 uppercase tracking-widest flex items-center gap-2 mt-4">
+                        View Research Docs 
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>` : '';
+
+                const card = `
+                    <div class="card-lab p-8 rounded-[32px]">
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="badge badge-lab">Prototype</span>
+                        </div>
+                        ${media}
+                        <h3 class="text-2xl font-bold text-white mb-2">${lab.title}</h3>
+                        <p class="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-4">${lab.role}</p>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">${lab.goal}</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            ${lab.techStack.map(t => `<span class="text-[10px] font-mono text-slate-300 bg-slate-800 px-2 py-1 rounded border border-slate-700">${t}</span>`).join('')}
+                        </div>
+                        ${linkBtn}
+                    </div>
+                `;
+                labsGrid.innerHTML += card;
+            });
+        }
 
         function renderFlow(flow) {
             if(!flow) return '';
@@ -1423,13 +1564,26 @@
                         </div>
                     </div>`;
 
+                // Micro-benchmark badge
+                let benchmarkBadge = '';
+                if(p.benchmark) {
+                    benchmarkBadge = `
+                    <div class="mb-3 inline-block">
+                        <span class="text-[10px] font-bold text-green-600 bg-green-50 px-2 py-1 rounded border border-green-100 flex items-center gap-1 w-max">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            ${p.benchmark}
+                        </span>
+                    </div>`;
+                }
+
                 const card = `
                     <div class="card-project rounded-[24px] overflow-hidden cursor-pointer flex flex-col h-full group" onclick="openModal(${i})">
                         ${mediaContent}
                         <div class="p-6 md:p-8 flex flex-col flex-grow">
-                            <h3 class="text-xl font-extrabold tracking-tight text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">${p.title}</h3>
+                            <h3 class="text-xl font-extrabold tracking-tight text-slate-900 mb-1 group-hover:text-blue-600 transition-colors">${p.title}</h3>
+                            ${benchmarkBadge}
                             <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-4">${p.role}</p>
-                            <p class="text-slate-500 text-sm leading-relaxed line-clamp-3 mb-4 flex-grow">${p.description[0].replace(/\*\*/g, '')}</p>
+                            <p class="text-slate-500 text-base leading-relaxed line-clamp-3 mb-4 flex-grow">${p.description[0].replace(/\*\*/g, '')}</p>
                             <div class="flex flex-wrap gap-2 mt-auto">
                                 ${p.tags ? p.tags.slice(0, 3).map(tag => `<span class="text-[10px] font-semibold text-slate-400 bg-slate-50 px-2 py-1 rounded">${tag}</span>`).join('') : ''}
                             </div>
@@ -1497,7 +1651,14 @@
             const tagsEl = document.getElementById('modal-tags');
             tagsEl.innerHTML = p.tags ? p.tags.map(tag => `<span class="text-xs font-semibold text-slate-500 bg-slate-100 px-3 py-1 rounded-full">${tag}</span>`).join('') : '';
             
-            modalBody.innerHTML = p.description.map(text => `<p class="mb-3">${text.replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-900">$1</strong>')}</p>`).join('');
+            // Build body with Result Context first
+            let resultHtml = '';
+            if(p.result) {
+                resultHtml = `<div class="bg-blue-50 border-l-4 border-blue-600 p-4 mb-6 rounded-r text-sm md:text-base text-slate-700"><strong>Result:</strong> ${p.result}</div>`;
+            }
+
+            const descHtml = p.description.map(text => `<p class="mb-3">${text.replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-900">$1</strong>')}</p>`).join('');
+            modalBody.innerHTML = resultHtml + descHtml;
             
             // Tech Specs Logic
             if (p.techSpecs && p.techSpecs.length > 0) {
@@ -1577,6 +1738,7 @@
 
         // Initialize
         renderGrid();
+        renderLabs();
     </script>
 </body>
 </html>
