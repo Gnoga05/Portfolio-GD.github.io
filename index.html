@@ -6,11 +6,19 @@
     <meta name="description" content="Gabriel Nogarotto - Technical Product Manager & Systems Architect. Avionics Engineering background, Python automation, Game Production, UX Design. Buenos Aires / Remote.">
     <meta name="keywords" content="Technical Product Manager, Product Operations, Systems Architect, UX Design, Game Production, Python Automation, Agile, Buenos Aires, Remote">
     
-    <!-- Open Graph -->
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://portfolio-nogarottogabriel.vercel.app/">
     <meta property="og:title" content="Gabriel Nogarotto | Technical Product Manager & Systems Architect">
     <meta property="og:description" content="Bridging Avionics Engineering, Python Automation, and Game Production. Military-grade IT ops meets product operations.">
-    <meta property="og:image" content="https://portfolio-nogarottogabriel.vercel.app/og-image.jpg">
-    <meta property="og:url" content="https://portfolio-nogarottogabriel.vercel.app/">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1200&auto=format&fit=crop">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://portfolio-nogarottogabriel.vercel.app/">
+    <meta property="twitter:title" content="Gabriel Nogarotto | Technical Product Manager & Systems Architect">
+    <meta property="twitter:description" content="Bridging Avionics Engineering, Python Automation, and Game Production. Military-grade IT ops meets product operations.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1200&auto=format&fit=crop">
     
     <!-- Favicon GN Logo -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232563eb'/%3E%3Ctext x='50' y='55' font-family='Arial, sans-serif' font-weight='bold' font-size='45' fill='white' text-anchor='middle' dy='.3em'%3EGN%3C/text%3E%3C/svg%3E">
@@ -51,22 +59,6 @@
             border-color: rgba(37, 99, 235, 0.15); 
         }
         
-        /* Labs Card Specifics */
-        .card-lab {
-            background: #0f172a; /* Slate 900 */
-            border: 1px solid #1e293b;
-            color: white;
-            transition: all 0.3s ease;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        .card-lab:hover {
-            border-color: #3b82f6;
-            transform: translateY(-4px);
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
-        }
-        
         .badge { 
             padding: 0.25rem 0.75rem; 
             font-size: 0.625rem; 
@@ -78,7 +70,6 @@
         .badge-prod { background-color: #f3f4f6; color: #4b5563; }
         .badge-tech { background-color: #eff6ff; color: #2563eb; }
         .badge-auto { background-color: #dbeafe; color: #1e40af; border: 1px solid #3b82f6; }
-        .badge-lab { background-color: rgba(59, 130, 246, 0.1); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.2); }
         
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f1f1; }
@@ -212,7 +203,7 @@
         .make-nodes-wrapper {
             display: flex;
             align-items: center;
-            gap: 10px; /* Reduced gap for tighter layout */
+            gap: 10px;
             z-index: 10;
             padding: 20px;
         }
@@ -228,7 +219,7 @@
             position: relative;
             transition: transform 0.2s;
             border: 2px solid white;
-            flex-shrink: 0; /* Prevent shrinking */
+            flex-shrink: 0; 
         }
         .card-project:hover .make-node {
             transform: scale(1.1);
@@ -270,13 +261,12 @@
             position: relative;
             justify-content: center;
         }
-        /* Vertical connector line for branches */
         .make-branch-container::before {
             content: '';
             position: absolute;
             left: -10px;
-            top: 22px; /* Approx center of first node */
-            bottom: 22px; /* Approx center of last node */
+            top: 22px; 
+            bottom: 22px;
             width: 2px;
             background-color: #cbd5e1;
         }
@@ -285,7 +275,6 @@
             align-items: center;
             position: relative;
         }
-        /* Horizontal connector from vertical line to node */
         .make-branch::before {
             content: '';
             position: absolute;
@@ -295,7 +284,6 @@
             height: 2px;
             background-color: #cbd5e1;
         }
-        /* Connector from Router to Branch Container */
         .make-node.router + .make-branch-container::after {
             content: '';
             position: absolute;
@@ -347,8 +335,7 @@
                 <a href="#impact" class="text-[11px] font-bold uppercase tracking-widest hover:text-blue-600 transition-colors">Impact</a>
                 <a href="#projects" class="text-[11px] font-bold uppercase tracking-widest hover:text-blue-600 transition-colors">Projects</a>
                 <a href="#process" class="text-[11px] font-bold uppercase tracking-widest hover:text-blue-600 transition-colors">Process</a>
-                <!-- Updated Mailto link to open Gmail Composer -->
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=gabrielnogarotto2@gmail.com" target="_blank" class="p-2 text-slate-500 hover:text-blue-600 transition-colors" title="Contact Me">
+                <a href="mailto:gabrielnogarotto2@gmail.com" class="p-2 text-slate-500 hover:text-blue-600 transition-colors" title="Contact Me">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                 </a>
             </div>
@@ -386,15 +373,11 @@
                 <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter text-slate-900 mb-6 leading-[0.95]">
                     Technical Product<br>
                     <span class="gradient-text">Manager.</span><br>
-                    <span class="text-slate-300 text-4xl md:text-6xl">Systems & Operations.</span>
+                    <span class="text-slate-300 text-4xl md:text-6xl">Systems Architect.</span>
                 </h1>
 
                 <p class="text-lg md:text-xl text-slate-600 leading-relaxed font-medium mb-8 max-w-3xl">
-                    Bridging <strong class="text-slate-900">Avionics Engineering</strong>, 
-                    <strong class="text-slate-900">Python Automation</strong>, and 
-                    <strong class="text-slate-900">Game Production</strong>. 
-                    I build scalable workflows that turn creative chaos into predictable delivery, 
-                    with a focus on <strong class="text-slate-900">systems design and narrative architecture</strong>.
+                    I build <strong class="text-slate-900">scalable systems and automated workflows</strong> that turn operational bottlenecks into predictable delivery. Blending a diverse technical background to solve complex product challenges and optimize business operations.
                 </p>
 
                 <div class="flex flex-wrap items-center gap-4 text-xs font-bold text-slate-500 uppercase tracking-widest mb-12">
@@ -412,7 +395,7 @@
                     </span>
                     <span class="flex items-center gap-2 bg-slate-50 px-3 py-2 rounded-lg">
                         <span class="w-1.5 h-1.5 bg-blue-600 rounded-full"></span>
-                        Narrative Systems
+                        Ops Architecture
                     </span>
                 </div>
 
@@ -422,7 +405,7 @@
                         Work With Me
                     </a>
                     <a href="#projects" class="flex items-center gap-3 bg-white border border-slate-200 px-8 py-4 rounded-2xl font-bold hover:shadow-xl transition-all group">
-                        <svg class="w-5 h-5 text-slate-400 group-hover:text-slate-900 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+                        <svg class="w-5 h-5 text-slate-400 group-hover:text-slate-900 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
                         View Projects
                     </a>
                 </div>
@@ -509,6 +492,13 @@
                     </div>
                 </div>
             </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#contact" class="inline-flex items-center gap-2 text-blue-600 font-bold hover:text-blue-700 transition-colors">
+                    Want similar results for your team? Let's talk
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+            </div>
         </section>
 
         <!-- Trust Bar / Certified By -->
@@ -541,7 +531,7 @@
         </div>
 
         <!-- Project Tabs & Grid -->
-        <section id="projects" class="mb-32 scroll-mt-28">
+        <section id="projects" class="mb-20 scroll-mt-28">
             <div class="flex justify-center mb-12 overflow-x-auto pb-4 md:pb-0">
                 <div class="inline-flex bg-slate-100 p-1 rounded-full gap-1 min-w-max">
                     <button onclick="switchTab('commercial')" id="tab-commercial" class="tab-btn active">Commercial & Ops</button>
@@ -625,26 +615,17 @@
                     <div class="mt-8 flex justify-center md:justify-start">
                         <a href="https://gabrielnogarotto.itch.io/" target="_blank" class="github-link group px-6 py-3 bg-white border-2 border-slate-100 hover:border-[#fa5c5c] hover:bg-white transition-all">
                             <span class="text-slate-900 group-hover:text-[#fa5c5c] font-bold">Explore all games on itch.io</span>
-                            <svg class="w-5 h-5 text-slate-400 group-hover:text-[#fa5c5c] group-hover:translate-x-1 transition-all" fill="currentColor" viewBox="0 0 24 24"><path d="M19.332 5.097c-1.32-.47-2.66-.71-4-.71-.87 0-1.74.09-2.58.28-.21.05-.44.09-.67.14l-.67-.14c-.84-.19-1.71-.28-2.58-.28-1.34 0-2.66.24-4 .71-1.32.47-1.32 1.41-1.32 2.58 0 1.25.13 2.58.38 3.91.24 1.34 1.5 5.56 5.86 6.91 1.77.56 2.89.04 3.32-.23l.16-.13.33.24c.05.04.1.09.16.13.43.27 1.55.79 3.32.23 4.36-1.35 5.62-5.57 5.86-6.91.25-1.33.38-2.66.38-3.91 0-1.17 0-2.11-1.32-2.58zm-7.33 2.9c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm-6 2c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2z"/></svg>
+                            <svg class="w-5 h-5 text-slate-400 group-hover:text-[#fa5c5c] group-hover:translate-x-1 transition-all" fill="currentColor" viewBox="0 0 24 24"><path d="M19.332 5.097c-1.32-.47-2.66-.71-4-.71-.87 0-1.74.09-2.58.28-.21.05-.44.09-.67.14l-.67-.14c-.84-.19-1.71-.28-2.58-.28-1.34 0-2.66.24-4 .71-1.32.47-1.32 1.41-1.32 2.58 0 1.25.13 2.58.38 3.91.24 1.34 1.5 5.56 5.86 6.91 1.77.56 2.89.04 3.32-.23l.16-.13.33.24c.05.04.1.09.16.13.43.27 1.55.79 3.32.23 4.36-1.35 5.62-5.57 5.86-6.91.25-1.33.38-2.66.38-3.91 0-1.17 0-2.11-1.32-2.58-.58-.2-1.16-.36-1.73-.49l.64 2.82H6.96l.66-2.83c-.57.13-1.15.29-1.73.49-1.32.47-1.32 1.41-1.32 2.58 0 1.25.13 2.58.38 3.91.24 1.34 1.5 5.56 5.86 6.91 1.77.56 2.89.04 3.32-.23l.16-.13.33.24c.05.04.1.09.16.13.43.27 1.55.79 3.32.23 4.36-1.35 5.62-5.57 5.86-6.91.25-1.33.38-2.66.38-3.91 0-1.17 0-2.11-1.32-2.58zm-7.33 2.9c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm-6 2c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2z"/></svg>
                         </a>
                     </div>
                 </div>
-
-                <!-- Future Labs Subsection -->
-                <div class="mt-20 pt-10 border-t border-slate-100">
-                    <div class="flex items-center gap-4 mb-10">
-                        <div class="w-12 h-12 rounded-xl bg-slate-900 flex items-center justify-center shadow-lg">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-extrabold tracking-tighter text-slate-900">Future Labs & R&D</h3>
-                            <p class="text-slate-500 font-medium text-sm">Experimental prototypes and bleeding-edge integrations currently in development.</p>
-                        </div>
-                    </div>
-                    <div id="labs-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <!-- Injected by JS -->
-                    </div>
-                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <a href="#contact" class="inline-flex items-center gap-3 bg-slate-900 text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-600 transition-all shadow-lg hover:shadow-blue-600/20">
+                    Discuss your next project
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
             </div>
         </section>
 
@@ -660,7 +641,7 @@
                         Most PMs track tasks. I <strong class="text-white">build the systems</strong> that track tasks automatically. 
                         My background in <span class="text-blue-400">avionics engineering</span> and <span class="text-blue-400">military IT operations</span> taught me that 
                         reliability is not optional — it's designed into the system from day one. 
-                        Add <span class="text-blue-400">narrative systems thinking</span>, and you get products that don't just work—they resonate.
+                        Add <span class="text-blue-400">systems thinking</span>, and you get products that don't just work—they scale efficiently.
                     </p>
                     <div class="flex flex-wrap justify-center gap-6 text-xs font-bold text-slate-400 uppercase tracking-widest">
                         <span class="flex items-center gap-2">
@@ -677,7 +658,7 @@
                         </span>
                         <span class="flex items-center gap-2">
                             <span class="w-2 h-2 bg-purple-500 rounded-full"></span>
-                            Narrative Systems
+                            Process Architecture
                         </span>
                     </div>
                 </div>
@@ -691,7 +672,7 @@
                     <h2 class="text-3xl md:text-4xl font-extrabold tracking-tighter mb-6">How I Work</h2>
                     <p class="text-xl text-slate-500 leading-relaxed">
                         Systems thinking applied to product development—whether building 
-                        automated workflows, production pipelines, or narrative architectures.
+                        automated workflows, production pipelines, or complex architectures.
                     </p>
                 </div>
 
@@ -707,7 +688,7 @@
                         <div class="process-step">
                             <h3 class="text-lg font-bold text-slate-900 mb-2">02. System Architecture</h3>
                             <p class="text-slate-500 text-sm leading-relaxed">
-                                Design state machines, workflows, or narrative systems. 
+                                Design state machines, workflows, or data systems. 
                                 Balance technical feasibility with user experience and business goals.
                             </p>
                         </div>
@@ -715,7 +696,7 @@
                             <h3 class="text-lg font-bold text-slate-900 mb-2">03. Rapid Prototype</h3>
                             <p class="text-slate-500 text-sm leading-relaxed">
                                 Build MVP: vertical slice for games, workflow for automation, 
-                                story system for narrative projects. Test core assumptions.
+                                or system core logic. Test core assumptions.
                             </p>
                         </div>
                     </div>
@@ -723,7 +704,7 @@
                         <div class="process-step">
                             <h3 class="text-lg font-bold text-slate-900 mb-2">04. User Validation</h3>
                             <p class="text-slate-500 text-sm leading-relaxed">
-                                Playtest mechanics, trial workflows, validate narrative coherence. 
+                                Playtest mechanics, trial workflows, validate coherence. 
                                 Gather quantitative and qualitative feedback.
                             </p>
                         </div>
@@ -737,8 +718,8 @@
                         <div class="process-step">
                             <h3 class="text-lg font-bold text-slate-900 mb-2">06. Iterate</h3>
                             <p class="text-slate-500 text-sm leading-relaxed">
-                                Use data to refine. Optimize for emergent behavior, 
-                                player agency, or operational efficiency.
+                                Use data to refine. Optimize for operational efficiency 
+                                or engagement metrics.
                             </p>
                         </div>
                     </div>
@@ -753,7 +734,7 @@
                     <div>
                         <h2 class="text-3xl md:text-4xl font-extrabold tracking-tighter uppercase tracking-[0.1em] mb-4">Competency Matrix</h2>
                         <p class="text-slate-500 text-lg max-w-2xl">
-                            Product management, systems design, and narrative architecture—integrated.
+                            Product management, systems design, and technical architecture—integrated.
                         </p>
                     </div>
                 </div>
@@ -807,18 +788,18 @@
                         </ul>
                     </div>
 
-                    <!-- Narrative Systems -->
+                    <!-- Operations Architecture -->
                     <div>
                         <div class="flex items-center gap-3 mb-6">
                             <div class="w-10 h-10 rounded-xl bg-pink-50 flex items-center justify-center">
                                 <svg class="w-5 h-5 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
                             </div>
-                            <h3 class="font-black text-pink-600 text-xs uppercase tracking-[0.2em]">Narrative Systems</h3>
+                            <h3 class="font-black text-pink-600 text-xs uppercase tracking-[0.2em]">Ops Architecture</h3>
                         </div>
                         <ul class="space-y-3 text-sm">
-                            <li class="flex items-start gap-2"><span class="text-pink-600 mt-1">→</span><span><strong>Worldbuilding</strong> - IP bibles, transmedia</span></li>
-                            <li class="flex items-start gap-2"><span class="text-pink-600 mt-1">→</span><span><strong>Emergent Storytelling</strong> - State-based narrative</span></li>
-                            <li class="flex items-start gap-2"><span class="text-pink-600 mt-1">→</span><span><strong>Documentation</strong> - GDDs, feature specs</span></li>
+                            <li class="flex items-start gap-2"><span class="text-pink-600 mt-1">→</span><span><strong>Data Pipelines</strong> - Integration, validation, ETL</span></li>
+                            <li class="flex items-start gap-2"><span class="text-pink-600 mt-1">→</span><span><strong>AI Workflows</strong> - LLM integration, prompt engineering</span></li>
+                            <li class="flex items-start gap-2"><span class="text-pink-600 mt-1">→</span><span><strong>Documentation</strong> - Specs, flowcharts, requirements</span></li>
                             <li class="flex items-start gap-2"><span class="text-pink-600 mt-1">→</span><span><strong>Agile/Scrum</strong> - Sprints, retrospectives</span></li>
                         </ul>
                     </div>
@@ -893,7 +874,7 @@
                     <!-- Hiring -->
                     <div class="flex flex-col gap-3">
                         <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Looking to hire?</span>
-                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=gabrielnogarotto2@gmail.com" target="_blank" class="bg-white border-2 border-slate-200 text-slate-900 px-6 py-4 rounded-2xl font-bold hover:border-slate-900 transition-all flex items-center justify-center gap-2 h-full">
+                        <a href="mailto:gabrielnogarotto2@gmail.com" class="bg-white border-2 border-slate-200 text-slate-900 px-6 py-4 rounded-2xl font-bold hover:border-slate-900 transition-all flex items-center justify-center gap-2 h-full">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                             Email Me
                         </a>
@@ -930,8 +911,8 @@
                 <span class="text-xs text-slate-400 mt-1">Technical Product Manager & Systems Architect</span>
             </div>
             <div class="text-sm text-slate-400 text-center md:text-right">
-                <p>© 2025 Gabriel Nogarotto. All rights reserved.</p>
-                <p class="mt-1">Built with precision. Deployed with confidence.</p>
+                <p>© 2026 Gabriel Nogarotto. All rights reserved.</p>
+                <p class="mt-1">Engineering systems that scale. Designing products that matter.</p>
             </div>
         </div>
     </footer>
@@ -1281,7 +1262,7 @@
                 tags: ['Worldbuilding', 'Meatpunk', 'Gastromancy', 'Co-op', 'Emergent Storytelling'],
                 benchmark: 'Lore Cohesion',
                 result: 'Integrated gameplay loops (cooking/fighting) into theological lore.',
-                imageUrl: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=800&h=600&fit=crop',
+                imageUrl: './public/Dracula_board_V2.png',
                 description: [
                     '**Premise:** Co-op Hack & Slash meets cooking sim in a "Meatpunk" kingdom. Heroes: Morfer (Muscle) and Bondiu (Chef/Brain) bound by a cursed Rabbit Foot.',
                     '**World Architecture:** Created "Grubgrind" universe. History: The "Butchery Schism" (God murdered/eaten) caused cosmic indigestion, rotting reality.',
@@ -1323,7 +1304,7 @@
                 tags: ['Economy Design', 'Re-theming', 'Drafting Systems', 'Resource Conversion'],
                 benchmark: 'System Integrity',
                 result: 'Maintained mathematical balance while completely re-skinning theme.',
-                imageUrl: 'https://images.unsplash.com/photo-1606167668584-78701c57f13d?w=800&h=600&fit=crop',
+                imageUrl: './public/Dracula_board_V2.png',
                 description: [
                     '**Design Challenge:** Re-theme 7 Wonders drafting mechanics with horror narrative.',
                     '**Balance Analysis:** Preserved original curves while creating distinct flavor.',
@@ -1342,7 +1323,7 @@
                 tags: ['Social Deduction', 'Information Asymmetry', 'Timer Mechanics', 'Tension Design'],
                 benchmark: 'Social Dynamics',
                 result: 'Engineered information asymmetry to force emergent player conflict.',
-                imageUrl: 'https://images.unsplash.com/photo-1632501641765-e568d28b0015?w=800&h=600&fit=crop',
+                imageUrl: './public/Screenshot%202026-03-04%20163008.png',
                 description: [
                     '**Core System:** 4-8 players, hidden roles, missions with strict timers.',
                     '**Balance:** Demon team minority sabotage advantage vs Hunter coordination.',
@@ -1487,60 +1468,6 @@
                 video: 'https://www.youtube.com/embed/zH-ud44oXj4'
             }
         ];
-        
-        const labsData = [
-            {
-                title: "Immersive Gesture Controller",
-                role: "R&D Lead",
-                techStack: ["MediaPipe", "Python", "Godot/Unity", "Haptic Feedback"],
-                goal: "Eliminate expensive hardware to achieve social interactions and combat mechanics using computer vision.",
-                link: "https://docs.google.com/document/d/1oJKR-dw2f7_wtVs73EKaoXkKIZ1Zdk5H3JsK-izzRLM/edit?usp=sharing",
-                imageUrl: null // No image provided, will use placeholder logic
-            },
-            {
-                title: "Industrial AI Pocket-Node",
-                role: "Hardware Prototyper",
-                techStack: ["ESP32", "C++", "FastAPI", "Make/n8n"],
-                goal: "Unify industrial and domestic hardware control via AI-processed voice commands.",
-                imageUrl: "https://i.imgur.com/leQw7SV.png"
-            }
-        ];
-
-        function renderLabs() {
-            const labsGrid = document.getElementById('labs-grid');
-            labsGrid.innerHTML = '';
-            
-            labsData.forEach(lab => {
-                const media = lab.imageUrl 
-                    ? `<img src="${lab.imageUrl}" class="w-full h-48 object-cover rounded-xl mb-6 border border-slate-700">`
-                    : `<div class="w-full h-48 bg-slate-800 rounded-xl mb-6 flex items-center justify-center border border-slate-700 border-dashed">
-                            <span class="text-slate-600 font-mono text-xs uppercase tracking-widest">Blueprint Pending</span>
-                       </div>`;
-
-                const linkBtn = lab.link ? 
-                    `<a href="${lab.link}" target="_blank" class="text-xs font-bold text-blue-400 hover:text-blue-300 uppercase tracking-widest flex items-center gap-2 mt-4">
-                        View Research Docs 
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </a>` : '';
-
-                const card = `
-                    <div class="card-lab p-8 rounded-[32px]">
-                        <div class="flex justify-between items-start mb-6">
-                            <span class="badge badge-lab">Prototype</span>
-                        </div>
-                        ${media}
-                        <h3 class="text-2xl font-bold text-white mb-2">${lab.title}</h3>
-                        <p class="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-4">${lab.role}</p>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">${lab.goal}</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            ${lab.techStack.map(t => `<span class="text-[10px] font-mono text-slate-300 bg-slate-800 px-2 py-1 rounded border border-slate-700">${t}</span>`).join('')}
-                        </div>
-                        ${linkBtn}
-                    </div>
-                `;
-                labsGrid.innerHTML += card;
-            });
-        }
 
         function renderFlow(flow) {
             if(!flow) return '';
@@ -1790,7 +1717,6 @@
 
         // Initialize
         renderGrid();
-        renderLabs();
     </script>
 </body>
 </html>
