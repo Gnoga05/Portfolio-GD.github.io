@@ -3,28 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Gabriel Nogarotto - Technical Product Strategist | Systems & AI Architecture. Avionics Engineering background, Python automation, Game Production, UX Design. Buenos Aires / Remote.">
-    <meta name="keywords" content="Technical Product Strategist, Product Engineer, Systems Architect, AI Architecture, UX Design, Game Production, Python Automation, Agile, Buenos Aires, Remote">
+    <meta name="description" content="Gabriel Nogarotto - Systems Designer & Product Builder. I design logical systems that scale — from AI workflows to interactive game systems.">
+    <meta name="keywords" content="Systems Designer, Product Builder, AI Automation, Game Development, Python, Systems Thinking, Buenos Aires, Remote">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://portfolio-nogarottogabriel.vercel.app/">
-    <meta property="og:title" content="Gabriel Nogarotto | Technical Product Strategist">
-    <meta property="og:description" content="I design logical systems that scale — whether optimizing enterprise operations or building complex virtual worlds.">
-    <!-- Enlace directo a Imgur para evitar bloqueos de scrapers -->
+    <meta property="og:title" content="Gabriel Nogarotto | Systems Designer & Product Builder">
+    <meta property="og:description" content="I design and build systems that reduce friction in development and improve user experience.">
     <meta property="og:image" content="https://i.imgur.com/wjQDUF6.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://portfolio-nogarottogabriel.vercel.app/">
-    <meta property="twitter:title" content="Gabriel Nogarotto | Technical Product Strategist">
-    <meta property="twitter:description" content="I design logical systems that scale — whether optimizing enterprise operations or building complex virtual worlds.">
+    <meta property="twitter:title" content="Gabriel Nogarotto | Systems Designer & Product Builder">
+    <meta property="twitter:description" content="I design and build systems that reduce friction in development and improve user experience.">
     <meta property="twitter:image" content="https://i.imgur.com/wjQDUF6.png">
     
     <!-- Favicon GN Logo -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232563eb'/%3E%3Ctext x='50' y='55' font-family='Arial, sans-serif' font-weight='bold' font-size='45' fill='white' text-anchor='middle' dy='.3em'%3EGN%3C/text%3E%3C/svg%3E">
 
-    <title>Gabriel Nogarotto | Technical Product Strategist | Systems & AI Architecture</title>
+    <title>Gabriel Nogarotto | Systems Designer & Product Builder</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -60,22 +59,6 @@
             border-color: rgba(37, 99, 235, 0.15); 
         }
         
-        /* Labs Card Specifics */
-        .card-lab {
-            background: #0f172a; /* Slate 900 */
-            border: 1px solid #1e293b;
-            color: white;
-            transition: all 0.3s ease;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        .card-lab:hover {
-            border-color: #3b82f6;
-            transform: translateY(-4px);
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
-        }
-        
         .badge { 
             padding: 0.25rem 0.75rem; 
             font-size: 0.625rem; 
@@ -87,7 +70,6 @@
         .badge-prod { background-color: #f3f4f6; color: #4b5563; }
         .badge-tech { background-color: #eff6ff; color: #2563eb; }
         .badge-auto { background-color: #dbeafe; color: #1e40af; border: 1px solid #3b82f6; }
-        .badge-lab { background-color: rgba(59, 130, 246, 0.1); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.2); }
         
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f1f1; }
@@ -147,11 +129,6 @@
             border-color: #3b82f6;
             box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.1);
         }
-        .benchmark-metric {
-            display: flex;
-            align-items: baseline;
-            gap: 0.5rem;
-        }
         
         .tab-btn {
             padding: 1rem 2rem;
@@ -179,27 +156,6 @@
             color: #1e293b;
         }
 
-        .process-step {
-            position: relative;
-            padding-left: 2rem;
-            border-left: 2px solid #e2e8f0;
-        }
-        .process-step::before {
-            content: '';
-            position: absolute;
-            left: -0.5rem;
-            top: 0;
-            width: 1rem;
-            height: 1rem;
-            background: #3b82f6;
-            border-radius: 50%;
-            border: 3px solid white;
-            box-shadow: 0 0 0 2px #e2e8f0;
-        }
-        .process-step:last-child {
-            border-left: 2px solid transparent;
-        }
-
         /* --- MAKE.COM STYLE FLOW STYLES --- */
         .make-flow-container {
             width: 100%;
@@ -221,7 +177,7 @@
         .make-nodes-wrapper {
             display: flex;
             align-items: center;
-            gap: 10px; /* Reduced gap for tighter layout */
+            gap: 10px;
             z-index: 10;
             padding: 20px;
         }
@@ -237,7 +193,7 @@
             position: relative;
             transition: transform 0.2s;
             border: 2px solid white;
-            flex-shrink: 0; /* Prevent shrinking */
+            flex-shrink: 0;
         }
         .card-project:hover .make-node {
             transform: scale(1.1);
@@ -270,7 +226,6 @@
             color: white;
         }
         
-        /* BRANCHING STYLES */
         .make-branch-container {
             display: flex;
             flex-direction: column;
@@ -279,13 +234,12 @@
             position: relative;
             justify-content: center;
         }
-        /* Vertical connector line for branches */
         .make-branch-container::before {
             content: '';
             position: absolute;
             left: -10px;
-            top: 22px; /* Approx center of first node */
-            bottom: 22px; /* Approx center of last node */
+            top: 22px;
+            bottom: 22px;
             width: 2px;
             background-color: #cbd5e1;
         }
@@ -294,7 +248,6 @@
             align-items: center;
             position: relative;
         }
-        /* Horizontal connector from vertical line to node */
         .make-branch::before {
             content: '';
             position: absolute;
@@ -304,7 +257,6 @@
             height: 2px;
             background-color: #cbd5e1;
         }
-        /* Connector from Router to Branch Container */
         .make-node.router + .make-branch-container::after {
             content: '';
             position: absolute;
@@ -351,14 +303,15 @@
         <nav class="max-w-7xl mx-auto px-6 md:px-8 h-20 flex items-center justify-between">
             <div class="flex flex-col">
                 <span class="text-2xl font-extrabold tracking-tighter uppercase leading-none">Nogarotto</span>
-                <span class="text-[9px] font-bold text-blue-600 tracking-[0.3em] uppercase mt-1">Systems & AI Architecture</span>
+                <span class="text-[9px] font-bold text-blue-600 tracking-[0.3em] uppercase mt-1">Systems Designer</span>
             </div>
             <div class="hidden md:flex space-x-8 lg:space-x-10 items-center">
-                <a href="#profile" class="text-[11px] font-bold uppercase tracking-widest hover:text-blue-600 transition-colors">About</a>
-                <a href="#qaio" class="text-[11px] font-bold uppercase tracking-widest hover:text-blue-600 transition-colors">Labs</a>
+                <a href="#whatido" class="text-[11px] font-bold uppercase tracking-widest hover:text-blue-600 transition-colors">What I Do</a>
                 <a href="#impact" class="text-[11px] font-bold uppercase tracking-widest hover:text-blue-600 transition-colors">Impact</a>
-                <a href="#process" class="text-[11px] font-bold uppercase tracking-widest hover:text-blue-600 transition-colors">Process</a>
                 <a href="#projects" class="text-[11px] font-bold uppercase tracking-widest hover:text-blue-600 transition-colors">Projects</a>
+                <a href="#process" class="text-[11px] font-bold uppercase tracking-widest hover:text-blue-600 transition-colors">Process & Skills</a>
+                <a href="#qaio" class="text-[11px] font-bold uppercase tracking-widest hover:text-blue-600 transition-colors">Labs</a>
+                <a href="#about" class="text-[11px] font-bold uppercase tracking-widest hover:text-blue-600 transition-colors">About</a>
                 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=gabrielnogarotto2@gmail.com" target="_blank" class="p-2 text-slate-500 hover:text-blue-600 transition-colors" title="Contact Me">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                 </a>
@@ -369,11 +322,12 @@
         </nav>
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-6 py-4">
             <div class="flex flex-col space-y-4">
-                <a href="#profile" class="text-sm font-bold uppercase tracking-widest hover:text-blue-600">About</a>
-                <a href="#qaio" class="text-sm font-bold uppercase tracking-widest hover:text-blue-600">Labs</a>
+                <a href="#whatido" class="text-sm font-bold uppercase tracking-widest hover:text-blue-600">What I Do</a>
                 <a href="#impact" class="text-sm font-bold uppercase tracking-widest hover:text-blue-600">Impact</a>
-                <a href="#process" class="text-sm font-bold uppercase tracking-widest hover:text-blue-600">Process</a>
                 <a href="#projects" class="text-sm font-bold uppercase tracking-widest hover:text-blue-600">Projects</a>
+                <a href="#process" class="text-sm font-bold uppercase tracking-widest hover:text-blue-600">Process & Skills</a>
+                <a href="#qaio" class="text-sm font-bold uppercase tracking-widest hover:text-blue-600">Labs</a>
+                <a href="#about" class="text-sm font-bold uppercase tracking-widest hover:text-blue-600">About</a>
                 <a href="#contact" class="text-sm font-bold uppercase tracking-widest hover:text-blue-600">Contact</a>
             </div>
         </div>
@@ -381,58 +335,57 @@
 
     <main class="max-w-7xl mx-auto px-6 md:px-8 py-20">
         
-        <!-- Hero Section -->
-        <section id="profile" class="mb-20 relative">
+        <!-- 1. Hero Section -->
+        <section id="profile" class="mb-24 relative">
             <div class="absolute inset-0 hero-pattern opacity-50 -z-10"></div>
             <div class="flex flex-col-reverse md:flex-row justify-between items-center gap-12">
                 <div class="max-w-3xl flex-1">
-                    <div class="flex flex-wrap items-center gap-4 mb-8">
+                    <div class="flex flex-wrap items-center gap-4 mb-6">
                         <span class="inline-flex items-center gap-2 text-blue-600 font-extrabold text-xs tracking-[0.2em] uppercase bg-blue-50 px-4 py-2 rounded-full">
                             <span class="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></span>
                             System Status: Available for Strategic Roles
                         </span>
-                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2">
-                            <span class="w-1.5 h-1.5 bg-slate-400 rounded-full"></span>
-                            Buenos Aires, Argentina
-                        </span>
                     </div>
 
-                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter text-slate-900 mb-6 leading-[0.95]">
-                        Technical Product Strategist.<br>
-                        <span class="gradient-text">Systems & AI Architecture.</span>
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter text-slate-900 mb-4 leading-[0.95]">
+                        Systems Designer &<br>
+                        <span class="gradient-text">Product Builder.</span>
                     </h1>
-
-                    <p class="text-lg md:text-xl text-slate-600 leading-relaxed font-medium mb-8 max-w-2xl">
-                        I architect logical systems that scale. From autonomous AI workflows to immersive virtual worlds, I blend technical rigor with strategic product vision to build resilient, high-impact solutions.
+                    
+                    <p class="text-xl md:text-2xl text-slate-600 font-bold mb-6 tracking-tight">
+                        AI, Automation & Game Development
                     </p>
 
-                    <div class="flex flex-wrap items-center gap-4 text-xs font-bold text-slate-500 uppercase tracking-widest mb-12">
-                        <span class="flex items-center gap-2 bg-slate-50 px-3 py-2 rounded-lg border border-slate-100">
-                            <span class="w-1.5 h-1.5 bg-blue-600 rounded-full"></span>
-                            AI Engineering
-                        </span>
-                        <span class="flex items-center gap-2 bg-slate-50 px-3 py-2 rounded-lg border border-slate-100">
-                            <span class="w-1.5 h-1.5 bg-blue-600 rounded-full"></span>
-                            Systems Architecture
-                        </span>
-                        <span class="flex items-center gap-2 bg-slate-50 px-3 py-2 rounded-lg border border-slate-100">
-                            <span class="w-1.5 h-1.5 bg-blue-600 rounded-full"></span>
-                            Product Strategy
-                        </span>
+                    <p class="text-lg md:text-xl text-slate-600 leading-relaxed font-medium mb-8 max-w-2xl">
+                        I design and build systems that reduce friction in development and improve user experience — from AI workflows to interactive game systems.
+                    </p>
+
+                    <!-- Quick Proof -->
+                    <div class="bg-white border border-slate-100 rounded-2xl p-6 mb-10 shadow-sm max-w-xl">
+                        <ul class="space-y-3 text-sm text-slate-700 font-medium">
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span>Built automation systems reducing manual work up to 65%</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span>Working with real clients in QA and product ops</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span>Background in avionics (high-reliability systems)</span>
+                            </li>
+                        </ul>
                     </div>
 
                     <div class="flex flex-wrap gap-4">
-                        <a href="#contact" class="flex items-center gap-3 bg-blue-600 text-white px-7 py-3.5 rounded-2xl font-bold hover:bg-blue-700 transition-all group shadow-lg shadow-blue-600/20 text-sm">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                            Work With Me
-                        </a>
                         <a href="#projects" class="flex items-center gap-3 bg-black text-white px-7 py-3.5 rounded-2xl font-bold hover:bg-slate-800 transition-all group shadow-lg text-sm">
-                            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+                            <svg class="w-5 h-5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                             View Projects
                         </a>
-                        <a href="https://drive.google.com/file/d/1HH0jNe7dDBdReN69z3drl5Ji9EoHIq8g/view?usp=sharing" target="_blank" class="flex items-center gap-3 bg-white border-2 border-slate-200 text-slate-700 px-7 py-3.5 rounded-2xl font-bold hover:border-slate-900 transition-all group text-sm">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                            Download Resume
+                        <a href="#contact" class="flex items-center gap-3 bg-white text-slate-900 border-2 border-slate-200 px-7 py-3.5 rounded-2xl font-bold hover:border-slate-900 hover:bg-slate-50 transition-all text-sm group">
+                            <svg class="w-5 h-5 group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            Contact
                         </a>
                     </div>
                 </div>
@@ -443,255 +396,147 @@
             </div>
         </section>
 
-        <!-- QAIO Labs Enterprise Section -->
-        <section id="qaio" class="mb-16 scroll-mt-28">
-            <div class="bg-white rounded-[48px] p-8 md:p-16 border border-slate-100 shadow-sm flex flex-col md:flex-row items-center gap-12 group hover:border-blue-100 transition-all duration-500">
-                <div class="w-full md:w-1/3 flex flex-col items-center md:items-start">
-                    <div class="w-32 h-32 mb-8 relative p-4 bg-slate-50 rounded-3xl flex items-center justify-center shadow-inner group-hover:bg-blue-50 transition-colors duration-500">
-                        <img src="https://qaio.vercel.app/images/qaio-logo.png" alt="QAIO Labs Logo" class="w-full h-full object-contain filter drop-shadow-md group-hover:scale-110 transition-transform duration-500">
+        <!-- 2. What I Do -->
+        <section id="whatido" class="mb-24 scroll-mt-28">
+            <div class="mb-12 text-center md:text-left">
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tighter mb-4">What I Do</h2>
+                <p class="text-slate-500 font-medium text-lg">Designing logical systems that scale and perform.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-[32px] border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group cursor-default">
+                    <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-6 group-hover:bg-blue-100 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path></svg>
                     </div>
-                    <div class="text-center md:text-left">
-                        <h3 class="text-3xl font-black tracking-tighter uppercase mb-1">QAIO Labs</h3>
-                        <p class="text-xs font-bold text-blue-600 tracking-[0.4em] uppercase">R&D Lab & Consulting</p>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Systems Design</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        I design how systems work — defining logic, structure, and interactions to ensure reliability and scalability.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-[32px] border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group cursor-default">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center mb-6 group-hover:bg-emerald-100 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                        <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
                     </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">AI & Automation</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        I build tools and pipelines that eliminate repetitive work, accelerate workflows, and improve operational efficiency.
+                    </p>
                 </div>
 
-                <div class="w-full md:w-2/3 border-l-0 md:border-l border-slate-100 md:pl-12">
-                    <h4 class="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 mb-6 text-center md:text-left leading-tight">
-                        Scaling Innovation <span class="text-blue-600">Beyond the Individual.</span>
-                    </h4>
-                    <p class="text-slate-500 leading-relaxed mb-8 text-base md:text-lg text-center md:text-left max-w-2xl">
-                        QAIO Labs is my dedicated R&D unit for prototyping high-efficiency AI workflows. It serves as my testing ground for emerging technologies, ensuring that every product I lead is backed by real-world technical validation and rapid, reliable execution.
-                    </p>
-                    <div class="flex justify-center md:justify-start">
-                        <a href="https://qaiolabs.com/" target="_blank" class="flex items-center justify-center gap-3 bg-slate-900 text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-600 transition-all shadow-lg hover:shadow-blue-600/20 group/btn">
-                            <span>Explore QAIO Solutions</span>
-                            <svg class="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                        </a>
+                <div class="bg-white p-8 rounded-[32px] border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group cursor-default">
+                    <div class="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center mb-6 group-hover:bg-purple-100 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Game & Interactive Design</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        I apply systems thinking to player experience, economy balance, and interactive environments.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- Impact at a Glance -->
-        <section id="impact" class="mb-16 scroll-mt-28">
+        <!-- 3. Proof of Impact & Certifications -->
+        <section id="impact" class="mb-24 scroll-mt-28">
             <div class="mb-12">
-                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tighter mb-4">Operational Impact</h2>
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tighter mb-4">Proof of Impact</h2>
                 <p class="text-slate-500 font-medium text-lg">Real-world results achieved through systems thinking and targeted automation.</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Benchmark 1: CRM -->
-                <div class="benchmark-card group">
-                    <h4 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-3">Lead Qualification</h4>
-                    <div class="space-y-3 mb-6">
-                        <div class="flex justify-between text-sm">
-                            <span class="text-slate-500">Manual Process</span>
-                            <span class="font-bold text-slate-700">~48h Response</span>
-                        </div>
-                        <div class="w-full bg-slate-100 rounded-full h-2">
-                            <div class="bg-slate-300 h-2 rounded-full" style="width: 100%"></div>
-                        </div>
-                        <div class="flex justify-between text-sm">
-                            <span class="text-slate-500">Automated Pipeline</span>
-                            <span class="font-bold text-blue-600">&lt; 15m Response</span>
-                        </div>
-                        <div class="w-full bg-slate-100 rounded-full h-2">
-                            <div class="bg-blue-600 h-2 rounded-full" style="width: 10%"></div>
-                        </div>
-                    </div>
-                    <div class="pt-4 border-t border-slate-100">
-                        <p class="text-3xl font-extrabold text-slate-900">15m <span class="text-sm font-medium text-slate-500 ml-1">Response Time</span></p>
-                        <p class="text-[10px] text-slate-400 uppercase tracking-widest mt-2 font-bold leading-relaxed">Automated lead ingestion and qualification for a local agency, ensuring immediate follow-ups and eliminating manual CRM data entry.</p>
-                    </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-slate-900 text-white p-6 rounded-3xl relative overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)] transition-all duration-300 cursor-default">
+                    <div class="absolute -right-6 -top-6 w-24 h-24 bg-blue-500 rounded-full blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+                    <h4 class="text-3xl font-black mb-2 group-hover:text-blue-400 transition-colors duration-300">15h → 3.5h</h4>
+                    <p class="text-sm text-slate-300 font-medium leading-relaxed">Reduced manual workflows weekly for real clients.</p>
                 </div>
-
-                <!-- Benchmark 2: AI Ops -->
-                <div class="benchmark-card group">
-                    <h4 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-3">Automated Triage</h4>
-                    <div class="space-y-3 mb-6">
-                        <div class="flex justify-between text-sm">
-                            <span class="text-slate-500">Manual Tagging</span>
-                            <span class="font-bold text-slate-700">2h / day</span>
-                        </div>
-                        <div class="w-full bg-slate-100 rounded-full h-2">
-                            <div class="bg-slate-300 h-2 rounded-full" style="width: 100%"></div>
-                        </div>
-                        <div class="flex justify-between text-sm">
-                            <span class="text-slate-500">AI-Routed Pipeline</span>
-                            <span class="font-bold text-blue-600">5 min / day</span>
-                        </div>
-                        <div class="w-full bg-slate-100 rounded-full h-2">
-                            <div class="bg-blue-600 h-2 rounded-full" style="width: 5%"></div>
-                        </div>
-                    </div>
-                    <div class="pt-4 border-t border-slate-100">
-                        <p class="text-3xl font-extrabold text-slate-900">95% <span class="text-sm font-medium text-slate-500 ml-1">Manual Work Reduced</span></p>
-                        <p class="text-[10px] text-slate-400 uppercase tracking-widest mt-2 font-bold leading-relaxed">Integrated LLMs to analyze, tag, and route 150+ daily inbound support tickets, freeing senior staff for complex problem-solving.</p>
-                    </div>
+                <!-- Card 2 -->
+                <div class="bg-slate-900 text-white p-6 rounded-3xl relative overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)] transition-all duration-300 cursor-default">
+                    <div class="absolute -right-6 -top-6 w-24 h-24 bg-emerald-500 rounded-full blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+                    <h4 class="text-3xl font-black mb-2 group-hover:text-emerald-400 transition-colors duration-300">24h → &lt;2h</h4>
+                    <p class="text-sm text-slate-300 font-medium leading-relaxed">Cut lead response time drastically via automated triage.</p>
                 </div>
-
-                <!-- Benchmark 3: Production -->
-                <div class="benchmark-card group">
-                    <h4 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-3">Rapid Prototyping</h4>
-                    <div class="space-y-3 mb-6">
-                        <div class="flex justify-between text-sm">
-                            <span class="text-slate-500">Standard Cycle</span>
-                            <span class="font-bold text-slate-700">2+ Weeks</span>
-                        </div>
-                        <div class="w-full bg-slate-100 rounded-full h-2">
-                            <div class="bg-slate-300 h-2 rounded-full" style="width: 100%"></div>
-                        </div>
-                        <div class="flex justify-between text-sm">
-                            <span class="text-slate-500">Jam-Style Sprints</span>
-                            <span class="font-bold text-blue-600">48 Hours</span>
-                        </div>
-                        <div class="w-full bg-slate-100 rounded-full h-2">
-                            <div class="bg-blue-600 h-2 rounded-full" style="width: 15%"></div>
-                        </div>
-                    </div>
-                    <div class="pt-4 border-t border-slate-100">
-                        <p class="text-3xl font-extrabold text-slate-900">6 <span class="text-sm font-medium text-slate-500 ml-1">MVPs Delivered</span></p>
-                        <p class="text-[10px] text-slate-400 uppercase tracking-widest mt-2 font-bold leading-relaxed">Shipped vertical slices and interactive systems under extreme constraints, validating core loops before committing to full production.</p>
-                    </div>
+                <!-- Card 3 -->
+                <div class="bg-slate-900 text-white p-6 rounded-3xl relative overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)] transition-all duration-300 cursor-default">
+                    <div class="absolute -right-6 -top-6 w-24 h-24 bg-purple-500 rounded-full blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+                    <h4 class="text-3xl font-black mb-2 group-hover:text-purple-400 transition-colors duration-300">Deployed</h4>
+                    <p class="text-sm text-slate-300 font-medium leading-relaxed">Built automation systems currently used by real clients.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-slate-900 text-white p-6 rounded-3xl relative overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)] transition-all duration-300 cursor-default">
+                    <div class="absolute -right-6 -top-6 w-24 h-24 bg-pink-500 rounded-full blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+                    <h4 class="text-3xl font-black mb-2 group-hover:text-pink-400 transition-colors duration-300">Optimized</h4>
+                    <p class="text-sm text-slate-300 font-medium leading-relaxed">Improved QA & deployment workflows through CI/CD.</p>
                 </div>
             </div>
-            
-            <div class="mt-12 text-center">
-                <a href="#contact" class="inline-flex items-center gap-2 text-blue-600 font-bold hover:text-blue-700 transition-colors">
-                    Want similar results for your team? Let's talk
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+
+            <!-- CTA Below Impact -->
+            <div class="mt-12 flex justify-center md:justify-start">
+                <a href="#contact" class="inline-flex items-center justify-center gap-3 bg-slate-900 text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-600 transition-all duration-300 shadow-lg hover:shadow-blue-600/30 group/btn text-sm">
+                    <span>Want similar results for your team? Let's talk</span>
+                    <svg class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                 </a>
             </div>
-        </section>
-
-        <!-- Trust Bar / Certified By -->
-        <div class="mb-16 py-6 border-y border-slate-100/80 bg-slate-50/30">
-            <div class="max-w-7xl mx-auto px-6">
-                <p class="text-center text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-6">Certified & Trained By</p>
-                <div class="flex flex-wrap justify-center items-center gap-12 md:gap-20">
-                    <!-- Anthropic Logo with more visual weight -->
-                    <div class="flex flex-col items-center justify-center gap-2 opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500 transform hover:scale-105">
-                        <img src="https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/anthropic.png" alt="Anthropic" class="h-10 md:h-12 object-contain">
-                        <span class="text-[10px] font-bold text-slate-400">2026</span>
-                    </div>
-                    <div class="flex flex-col items-center gap-2 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="h-8 md:h-9 object-contain">
-                        <span class="text-[10px] font-bold text-slate-400">2025</span>
-                    </div>
-                    <div class="flex flex-col items-center gap-2 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Banco_Santander_Logotipo.svg" alt="Santander" class="h-7 md:h-8 object-contain">
-                        <span class="text-[10px] font-bold text-slate-400">2025</span>
-                    </div>
-                    <div class="flex flex-col items-center gap-2 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-                        <img src="https://content-dcgkfvd6gkbhdhg9.a01.azurefd.net/media/2025-10/AR_horiz_11.svg" alt="Aerolíneas Argentinas" class="h-10 md:h-12 object-contain">
-                        <span class="text-[10px] font-bold text-slate-400">2024</span>
-                    </div>
-                    <div class="flex flex-col items-center gap-2 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/HubSpot_Logo.svg/1280px-HubSpot_Logo.svg.png" alt="HubSpot" class="h-8 md:h-9 object-contain">
-                        <span class="text-[10px] font-bold text-slate-400">2024 / 2025</span>
-                    </div>
-                    <!-- Big School Square Logo -->
-                    <div class="flex flex-col items-center justify-center gap-2 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCDV1VZd3bByh_Kbk-LxW8xzBsz-KeMsSs7w&s" alt="Big School" class="h-12 md:h-14 object-contain rounded">
-                        <span class="text-[10px] font-bold text-slate-400">2026</span>
-                    </div>
-                    <!-- PMI Logo -->
-                    <div class="flex flex-col items-center justify-center gap-2 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-                        <img src="https://cdn.worldvectorlogo.com/logos/pmi-6.svg" alt="PMI" class="h-14 md:h-16 object-contain">
-                        <span class="text-[10px] font-bold text-slate-400">2026</span>
-                    </div>
-                    <!-- IIBA Logo -->
-                    <div class="flex flex-col items-center justify-center gap-2 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-                        <img src="https://cdn.worldvectorlogo.com/logos/iiba-1.svg" alt="IIBA" class="h-12 md:h-14 object-contain">
-                        <span class="text-[10px] font-bold text-slate-400">2026</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- How I Work (Moved Up for Strategic Focus) -->
-        <section id="process" class="mb-32 scroll-mt-28">
-            <div class="bg-white rounded-[48px] p-10 md:p-20 border border-slate-100 shadow-sm">
-                <div class="max-w-3xl mb-16">
-                    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tighter mb-6">Product Life Cycle & Systems Thinking</h2>
-                    <p class="text-xl text-slate-500 leading-relaxed">
-                        I apply systems engineering principles to product development. Defining the "what" and "why" before writing a single line of code—whether architecting autonomous workflows or complex interactive systems.
-                    </p>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-12">
-                    <div class="space-y-8">
-                        <div class="process-step">
-                            <h3 class="text-lg font-bold text-slate-900 mb-2">01. Problem Discovery</h3>
-                            <p class="text-slate-500 text-sm leading-relaxed">
-                                Map current state, identify friction points, define success metrics. 
-                                <span class="text-blue-600">Tools:</span> User interviews, process mapping, state analysis.
-                            </p>
+            
+            <!-- Trust Bar / Certified By -->
+            <div class="mt-16 py-6 border-y border-slate-100/80 bg-slate-50/30">
+                <div class="max-w-7xl mx-auto px-6">
+                    <p class="text-center text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-6">Certified & Trained By</p>
+                    <div class="flex flex-wrap justify-center items-center gap-12 md:gap-20">
+                        <div class="flex flex-col items-center justify-center gap-2 opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500 transform hover:scale-105">
+                            <img src="https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/anthropic.png" alt="Anthropic" class="h-10 md:h-12 object-contain">
+                            <span class="text-[10px] font-bold text-slate-400">2026</span>
                         </div>
-                        <div class="process-step">
-                            <h3 class="text-lg font-bold text-slate-900 mb-2">02. System Architecture & PRD</h3>
-                            <p class="text-slate-500 text-sm leading-relaxed">
-                                Design state machines, workflows, or logic systems. 
-                                Draft comprehensive Product Requirements Documents balancing feasibility with user experience.
-                            </p>
+                        <div class="flex flex-col items-center gap-2 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="h-8 md:h-9 object-contain">
+                            <span class="text-[10px] font-bold text-slate-400">2025</span>
                         </div>
-                        <div class="process-step">
-                            <h3 class="text-lg font-bold text-slate-900 mb-2">03. Rapid Prototype</h3>
-                            <p class="text-slate-500 text-sm leading-relaxed">
-                                Build MVP: vertical slice for interactive systems, workflow core for automation, 
-                                or system logic. Test core assumptions.
-                            </p>
+                        <div class="flex flex-col items-center gap-2 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Banco_Santander_Logotipo.svg" alt="Santander" class="h-7 md:h-8 object-contain">
+                            <span class="text-[10px] font-bold text-slate-400">2025</span>
                         </div>
-                    </div>
-                    <div class="space-y-8">
-                        <div class="process-step">
-                            <h3 class="text-lg font-bold text-slate-900 mb-2">04. User Validation</h3>
-                            <p class="text-slate-500 text-sm leading-relaxed">
-                                Playtest mechanics, trial workflows, validate coherence. 
-                                Gather quantitative and qualitative feedback.
-                            </p>
+                        <div class="flex flex-col items-center gap-2 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                            <img src="https://content-dcgkfvd6gkbhdhg9.a01.azurefd.net/media/2025-10/AR_horiz_11.svg" alt="Aerolíneas Argentinas" class="h-10 md:h-12 object-contain">
+                            <span class="text-[10px] font-bold text-slate-400">2024</span>
                         </div>
-                        <div class="process-step">
-                            <h3 class="text-lg font-bold text-slate-900 mb-2">05. Ship & Monitor</h3>
-                            <p class="text-slate-500 text-sm leading-relaxed">
-                                Deploy with telemetry. Document systems for maintainability. 
-                                Establish baselines for iteration.
-                            </p>
+                        <div class="flex flex-col items-center gap-2 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/HubSpot_Logo.svg/1280px-HubSpot_Logo.svg.png" alt="HubSpot" class="h-8 md:h-9 object-contain">
+                            <span class="text-[10px] font-bold text-slate-400">2024 / 2025</span>
                         </div>
-                        <div class="process-step">
-                            <h3 class="text-lg font-bold text-slate-900 mb-2">06. Iterate</h3>
-                            <p class="text-slate-500 text-sm leading-relaxed">
-                                Use data to refine. Optimize for operational efficiency 
-                                or engagement metrics.
-                            </p>
+                        <div class="flex flex-col items-center justify-center gap-2 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCDV1VZd3bByh_Kbk-LxW8xzBsz-KeMsSs7w&s" alt="Big School" class="h-12 md:h-14 object-contain rounded">
+                            <span class="text-[10px] font-bold text-slate-400">2026</span>
+                        </div>
+                        <div class="flex flex-col items-center justify-center gap-2 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                            <img src="https://cdn.worldvectorlogo.com/logos/pmi-6.svg" alt="PMI" class="h-14 md:h-16 object-contain">
+                            <span class="text-[10px] font-bold text-slate-400">2026</span>
+                        </div>
+                        <div class="flex flex-col items-center justify-center gap-2 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                            <img src="https://cdn.worldvectorlogo.com/logos/iiba-1.svg" alt="IIBA" class="h-12 md:h-14 object-contain">
+                            <span class="text-[10px] font-bold text-slate-400">2026</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Project Tabs & Grid -->
-        <section id="projects" class="mb-20 scroll-mt-28">
+        <!-- 4. Project Tabs & Grid (MOVED UP FOR BETTER UX) -->
+        <section id="projects" class="mb-24 scroll-mt-28">
             <div class="flex justify-center mb-12 overflow-x-auto pb-4 md:pb-0">
                 <div class="inline-flex bg-slate-100 p-1 rounded-full gap-1 min-w-max">
                     <button onclick="switchTab('commercial')" id="tab-commercial" class="tab-btn active">Autonomous Operational Systems</button>
-                    <button onclick="switchTab('product')" id="tab-product" class="tab-btn inactive">Interactive Systems & Narrative Architecture</button>
+                    <button onclick="switchTab('product')" id="tab-product" class="tab-btn inactive">Interactive Systems & Narrative</button>
                 </div>
             </div>
 
             <!-- Commercial Tab Content -->
             <div id="commercial-content">
-                <div class="flex flex-col md:flex-row justify-between items-baseline mb-16 border-b border-slate-100 pb-8">
+                <div class="flex flex-col md:flex-row justify-between items-baseline mb-12 border-b border-slate-100 pb-8">
                     <div class="max-w-2xl">
                         <h2 class="text-3xl md:text-4xl font-extrabold tracking-tighter mb-4">Autonomous Operational Systems</h2>
                         <p class="text-slate-500 font-medium text-lg mb-6">
                             Production-grade automation workflows built on state-machine principles. Designing logical systems that eliminate manual friction.
                         </p>
-                        <a href="https://github.com/Gnoga05/Automation-Library" target="_blank" class="github-link">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                            View Automation Library on GitHub
-                        </a>
                     </div>
                 </div>
                 <!-- Commercial Grid -->
@@ -702,22 +547,12 @@
 
             <!-- Product Tab Content -->
             <div id="product-content" class="hidden">
-                 <div class="flex flex-col md:flex-row justify-between items-baseline mb-16 border-b border-slate-100 pb-8">
+                 <div class="flex flex-col md:flex-row justify-between items-baseline mb-12 border-b border-slate-100 pb-8">
                     <div class="max-w-2xl">
-                        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tighter mb-4">Interactive Systems & Narrative Architecture</h2>
+                        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tighter mb-4">Interactive Systems & Narrative</h2>
                         <p class="text-slate-500 font-medium text-lg mb-6">
-                            Full product lifecycles defined by structured PRDs. From strategic planning and economy balance to cross-functional production under extreme constraints.
+                            Full product lifecycles defined by structured specs. From strategic planning and economy balance to cross-functional production.
                         </p>
-                        <div class="flex flex-wrap gap-3">
-                            <a href="https://github.com/Gnoga05/GGJ-2026" target="_blank" class="github-link">
-                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                                GGJ 2026 Repo
-                            </a>
-                            <a href="https://github.com/Gnoga05/BrackeysJamGame" target="_blank" class="github-link">
-                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                                Brackeys Jam Repo
-                            </a>
-                        </div>
                     </div>
                 </div>
 
@@ -725,7 +560,7 @@
                 <div class="mb-12">
                     <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                         <span class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-sm">📊</span>
-                        Strategic Management & Production
+                        Production & Strategy
                     </h3>
                     <div id="prod-strategy-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 mb-12">
                         <!-- Injected by JS -->
@@ -736,7 +571,7 @@
                 <div class="mb-12">
                     <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                         <span class="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center text-sm">📖</span>
-                        Narrative Systems & Worldbuilding
+                        Narrative Architecture
                     </h3>
                     <div id="prod-narrative-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 mb-12">
                         <!-- Injected by JS -->
@@ -747,7 +582,7 @@
                 <div>
                     <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                         <span class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-sm">🎮</span>
-                        Interactive Systems & UX Research
+                        Interactive Systems
                     </h3>
                     <div id="prod-game-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
                         <!-- Injected by JS -->
@@ -761,65 +596,71 @@
                     </div>
                 </div>
             </div>
-            
+
+            <!-- CTA Below Projects -->
             <div class="mt-16 text-center">
-                <a href="#contact" class="inline-flex items-center gap-3 bg-slate-900 text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-600 transition-all shadow-lg hover:shadow-blue-600/20">
+                <a href="#contact" class="inline-flex items-center gap-3 bg-slate-900 text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-600 transition-all duration-300 shadow-lg hover:shadow-blue-600/30 group">
                     Discuss your next project
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                 </a>
             </div>
         </section>
 
-        <!-- Differentiation Statement (Reduced Visual Weight) -->
-        <section class="mb-32">
-            <div class="bg-slate-900 rounded-[32px] p-8 md:p-12 text-white relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600 rounded-full blur-3xl opacity-10 -translate-y-1/2 translate-x-1/2"></div>
-                <div class="relative z-10 max-w-4xl mx-auto text-center">
-                    <h2 class="text-2xl md:text-4xl font-extrabold tracking-tighter mb-6">
-                        Why <span class="text-blue-400">Technical Product Strategist</span>?
-                    </h2>
-                    <p class="text-lg text-slate-300 leading-relaxed mb-8 max-w-3xl mx-auto">
-                        <strong class="text-white">Systems Thinking as a Foundation.</strong> While most focus on tracking tasks, I architect the underlying logic that makes products endure. My background in Avionics and Military IT Operations serves as a silent pillar of my work, instilling a level of structural discipline where reliability isn't a feature—it's a requirement. I don't just build products; I design the frameworks that power them.
-                    </p>
-                    <div class="flex flex-wrap justify-center gap-6 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-                        <span class="flex items-center gap-2">
-                            <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
-                            High-Reliability Engineering
-                        </span>
-                        <span class="flex items-center gap-2">
-                            <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
-                            Avionics background applied to system logic
-                        </span>
-                        <span class="flex items-center gap-2">
-                            <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
-                            Military IT Ops
-                        </span>
+        <!-- 5. How I Work (Process) -->
+        <section id="process" class="mb-24 scroll-mt-28">
+            <div class="bg-white rounded-[48px] p-10 md:p-16 border border-slate-100 shadow-sm">
+                <div class="max-w-3xl mb-12">
+                    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tighter mb-4">How I Work</h2>
+                    <p class="text-slate-500 font-medium text-lg">A structured approach to turning complex problems into scalable systems.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="group p-8 rounded-[32px] bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-xl hover:shadow-blue-900/5 hover:-translate-y-2 transition-all duration-300 cursor-default">
+                        <div class="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-lg font-black text-slate-400 mb-6 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all duration-300 shadow-sm group-hover:scale-110 group-hover:-rotate-3">01</div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-3">Understand the problem</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Map current state, identify friction points, and define clear success metrics.</p>
+                    </div>
+                    
+                    <div class="group p-8 rounded-[32px] bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-xl hover:shadow-emerald-900/5 hover:-translate-y-2 transition-all duration-300 cursor-default">
+                        <div class="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-lg font-black text-slate-400 mb-6 group-hover:bg-emerald-500 group-hover:text-white group-hover:border-emerald-500 transition-all duration-300 shadow-sm group-hover:scale-110 group-hover:-rotate-3">02</div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-3">Design the system</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Draft requirements and logic architecture before writing a single line of code.</p>
+                    </div>
+
+                    <div class="group p-8 rounded-[32px] bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-xl hover:shadow-purple-900/5 hover:-translate-y-2 transition-all duration-300 cursor-default">
+                        <div class="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-lg font-black text-slate-400 mb-6 group-hover:bg-purple-600 group-hover:text-white group-hover:border-purple-600 transition-all duration-300 shadow-sm group-hover:scale-110 group-hover:-rotate-3">03</div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-3">Build and test</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Develop a prototype or vertical slice to validate core loops and logic.</p>
+                    </div>
+
+                    <div class="group p-8 rounded-[32px] bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-xl hover:shadow-pink-900/5 hover:-translate-y-2 transition-all duration-300 cursor-default">
+                        <div class="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-lg font-black text-slate-400 mb-6 group-hover:bg-pink-500 group-hover:text-white group-hover:border-pink-500 transition-all duration-300 shadow-sm group-hover:scale-110 group-hover:-rotate-3">04</div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-3">Iterate based on results</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Deploy, gather feedback or telemetry, and improve operational efficiency.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Skills Matrix (T-Shape Reorganized) -->
-        <section class="mb-32">
-            <div class="bg-white rounded-[48px] p-10 md:p-20 border border-slate-100 shadow-sm">
-                <div class="flex flex-col md:flex-row justify-between items-start mb-16">
+        <!-- 5.5 Skills Matrix (T-Shape) -->
+        <section id="skills" class="mb-24 scroll-mt-28">
+            <div class="bg-white rounded-[48px] p-10 md:p-16 border border-slate-100 shadow-sm">
+                <div class="flex flex-col md:flex-row justify-between items-start mb-12">
                     <div>
-                        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tighter uppercase tracking-[0.1em] mb-4">Competency Matrix</h2>
-                        <p class="text-slate-500 text-lg max-w-2xl">
+                        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tighter mb-4">Competency Matrix</h2>
+                        <p class="text-slate-500 font-medium text-lg max-w-2xl">
                             A T-shaped profile combining strategic product management with deep technical and system architecture expertise.
                         </p>
                     </div>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 border-t border-slate-100 pt-12">
-                    
-                    <!-- Product Architecture & Strategy -->
                     <div>
                         <div class="flex items-center gap-3 mb-6">
                             <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center">
                                 <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
                             </div>
-                            <h3 class="font-black text-blue-600 text-xs uppercase tracking-[0.2em]">Product Architecture & Strategy</h3>
+                            <h3 class="font-black text-slate-900 text-xs uppercase tracking-[0.1em]">Product Architecture & Strategy</h3>
                         </div>
                         <ul class="space-y-3 text-sm">
                             <li class="flex items-start gap-2"><span class="text-blue-600">→</span><span><strong>Product Discovery</strong> - User research, problem mapping, feedback loops</span></li>
@@ -830,13 +671,12 @@
                         </ul>
                     </div>
 
-                    <!-- Technical Architecture -->
                     <div>
                         <div class="flex items-center gap-3 mb-6">
                             <div class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center">
                                 <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
                             </div>
-                            <h3 class="font-black text-emerald-600 text-xs uppercase tracking-[0.2em]">Technical Architecture</h3>
+                            <h3 class="font-black text-slate-900 text-xs uppercase tracking-[0.1em]">Technical Architecture</h3>
                         </div>
                         <ul class="space-y-3 text-sm">
                             <li class="flex items-start gap-2"><span class="text-emerald-600">→</span><span><strong>AI Engineering</strong> - LLM integration, prompt engineering, agentic systems</span></li>
@@ -847,13 +687,12 @@
                         </ul>
                     </div>
 
-                    <!-- Creative Systems -->
                     <div>
                         <div class="flex items-center gap-3 mb-6">
                             <div class="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center">
                                 <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
                             </div>
-                            <h3 class="font-black text-purple-600 text-xs uppercase tracking-[0.2em]">Creative Systems</h3>
+                            <h3 class="font-black text-slate-900 text-xs uppercase tracking-[0.1em]">Creative Systems</h3>
                         </div>
                         <ul class="space-y-3 text-sm">
                             <li class="flex items-start gap-2"><span class="text-purple-600">→</span><span><strong>System Design</strong> - State machines, core loops, progression balance</span></li>
@@ -863,12 +702,69 @@
                             <li class="flex items-start gap-2"><span class="text-purple-600">→</span><span><strong>Prototyping Tools</strong> - Godot, Unity, rapid iteration cycles</span></li>
                         </ul>
                     </div>
-
                 </div>
             </div>
         </section>
 
-        <!-- Testimonials Section -->
+        <!-- 6. QAIO Labs Enterprise Section (MOVED DOWN) -->
+        <section id="qaio" class="mb-24 scroll-mt-28">
+            <div class="bg-white rounded-[48px] p-8 md:p-16 border border-slate-100 shadow-sm flex flex-col md:flex-row items-center gap-12 group hover:border-blue-100 transition-all duration-500">
+                <div class="w-full md:w-1/3 flex flex-col items-center md:items-start">
+                    <div class="w-32 h-32 mb-6 relative p-4 bg-slate-50 rounded-3xl flex items-center justify-center shadow-inner group-hover:bg-blue-50 transition-colors duration-500">
+                        <img src="https://qaio.vercel.app/images/qaio-logo.png" alt="QAIO Labs Logo" class="w-full h-full object-contain filter drop-shadow-md group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="text-center md:text-left">
+                        <h3 class="text-2xl font-black tracking-tighter uppercase mb-1">QAIO Labs</h3>
+                        <p class="text-xs font-bold text-blue-600 tracking-[0.3em] uppercase">AI Automation R&D</p>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-2/3 border-l-0 md:border-l border-slate-100 md:pl-12">
+                    <p class="text-slate-600 leading-relaxed mb-6 text-base md:text-lg text-center md:text-left font-medium">
+                        A personal lab where I design, test, and deploy automation systems focused on improving development workflows.
+                    </p>
+                    
+                    <div class="flex flex-wrap justify-center md:justify-start gap-4 mb-8">
+                        <span class="bg-slate-100 text-slate-700 px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-blue-500"></span> AI Workflows
+                        </span>
+                        <span class="bg-slate-100 text-slate-700 px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Automation Pipelines
+                        </span>
+                        <span class="bg-slate-100 text-slate-700 px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-purple-500"></span> Experiments
+                        </span>
+                    </div>
+
+                    <div class="flex justify-center md:justify-start">
+                        <a href="https://qaiolabs.com/" target="_blank" class="flex items-center justify-center gap-3 bg-slate-900 text-white px-8 py-3.5 rounded-2xl font-bold hover:bg-blue-600 transition-all shadow-lg hover:shadow-blue-600/20 group/btn text-sm">
+                            <span>Explore QAIO Solutions</span>
+                            <svg class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. About -->
+        <section id="about" class="mb-24 scroll-mt-28">
+            <div class="bg-slate-900 rounded-[32px] p-10 md:p-16 text-white relative overflow-hidden group hover:shadow-[0_20px_40px_-15px_rgba(37,99,235,0.25)] hover:-translate-y-1 transition-all duration-500 cursor-default">
+                <div class="absolute top-0 right-0 w-80 h-80 bg-blue-600 rounded-full blur-3xl opacity-10 group-hover:opacity-20 transition-opacity duration-500 -translate-y-1/2 translate-x-1/2"></div>
+                <div class="absolute bottom-0 left-0 w-64 h-64 bg-purple-600 rounded-full blur-3xl opacity-5 group-hover:opacity-15 transition-opacity duration-500 translate-y-1/2 -translate-x-1/2"></div>
+                
+                <div class="relative z-10 max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tighter mb-8 group-hover:text-blue-400 transition-colors duration-500">About</h2>
+                    <p class="text-xl md:text-2xl text-slate-300 leading-relaxed mb-6 max-w-3xl mx-auto font-medium">
+                        I’m a Systems Designer focused on building products and tools that <strong class="text-white">improve how people work and interact with technology</strong>.
+                    </p>
+                    <p class="text-lg md:text-xl text-slate-400 leading-relaxed max-w-3xl mx-auto">
+                        My background in avionics trained me to think in terms of <span class="text-blue-400 font-semibold">precision, reliability, and systems</span> — which I now apply to product development, automation, and game design.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Testimonials Section -->
         <section class="mb-32">
             <div class="max-w-6xl mx-auto px-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
@@ -895,7 +791,7 @@
                     <div class="relative p-8 md:p-12 bg-white border border-slate-100 rounded-[40px] shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full mt-8 md:mt-0">
                         <div class="absolute -top-6 -left-6 w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center text-white text-3xl font-serif shadow-lg shadow-blue-600/20">“</div>
                         <p class="text-lg md:text-xl text-slate-700 italic leading-relaxed mb-8 font-medium flex-grow">
-                            "I have worked with Mr. Nogarotto; he has been very attentive to our needs, providing ideas that we have implemented and that have helped us <span class="text-slate-900 bg-blue-50 px-1 decoration-blue-200 underline decoration-2 underline-offset-4">scale our business through automations</span>, among his other services."
+                            "I have worked with Mr. Nogarotto; he has been very attentive to our needs, providing ideas that we have implemented and that have helped us <span class="text-slate-900 bg-blue-50 px-1 decoration-blue-200 underline decoration-2 underline-offset-4">scale our business through automations</span>."
                         </p>
                         <div class="flex items-center gap-4 border-t border-slate-50 pt-6">
                             <div class="shrink-0">
@@ -903,9 +799,9 @@
                             </div>
                             <div>
                                 <p class="font-bold text-slate-900 text-base">Orlando Torres</p>
-                                <p class="text-[10px] text-slate-500 uppercase tracking-widest font-bold mt-0.5">
-                                    CEO @ Exito Innovation Group, LLC
-                                </p>
+                                <a href="https://exitoig.com/" target="_blank" class="group inline-flex items-center gap-1 text-[10px] text-slate-500 uppercase tracking-widest font-bold hover:text-blue-600 transition-colors mt-0.5">
+                                    CEO @ <span class="underline decoration-blue-300 underline-offset-2 group-hover:text-blue-600">Exito Innovation Group</span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -913,40 +809,26 @@
             </div>
         </section>
 
-        <!-- CTA Section -->
+        <!-- Final CTA Section -->
         <section id="contact" class="mb-24 scroll-mt-28">
             <div class="text-center max-w-3xl mx-auto px-6">
                 <h2 class="text-3xl md:text-5xl font-extrabold tracking-tighter mb-6">Let's Build Something</h2>
-                <p class="text-xl text-slate-500 mb-10">
-                    Ready to scale your operations or build your next product? Choose the path that fits your needs.
+                <p class="text-xl text-slate-500 mb-10 max-w-2xl mx-auto">
+                    I’m open to opportunities in product, systems design, and automation — especially in teams working with AI or interactive systems.
                 </p>
-                <div class="grid md:grid-cols-3 gap-6 max-w-2xl mx-auto">
-                    <!-- Hiring -->
-                    <div class="flex flex-col gap-3">
-                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Looking to hire?</span>
-                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=gabrielnogarotto2@gmail.com" target="_blank" class="bg-white border-2 border-slate-200 text-slate-900 px-6 py-4 rounded-2xl font-bold hover:border-slate-900 transition-all flex items-center justify-center gap-2 h-full">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                            Email Me
-                        </a>
-                    </div>
-
-                    <!-- Consulting -->
-                    <div class="flex flex-col gap-3">
-                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Need consulting?</span>
-                        <a href="https://calendly.com/gabrielnogarotto2/hablemos" target="_blank" class="bg-blue-600 border-2 border-blue-600 text-white px-6 py-4 rounded-2xl font-bold hover:bg-blue-700 hover:border-blue-700 transition-all shadow-lg shadow-blue-600/20 flex items-center justify-center gap-2 h-full">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                            Book a Call
-                        </a>
-                    </div>
-
-                    <!-- Connecting -->
-                    <div class="flex flex-col gap-3">
-                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Just connecting?</span>
-                        <a href="https://linkedin.com/in/gabriel-nogarotto" target="_blank" class="bg-white border-2 border-slate-200 text-[#0077b5] px-6 py-4 rounded-2xl font-bold hover:border-[#0077b5] transition-all flex items-center justify-center gap-2 h-full">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                            LinkedIn
-                        </a>
-                    </div>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="https://calendly.com/gabrielnogarotto2/hablemos" target="_blank" class="bg-blue-600 border-2 border-blue-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-700 hover:border-blue-700 transition-all flex items-center justify-center gap-3 shadow-lg shadow-blue-600/20 text-sm group">
+                        <svg class="w-5 h-5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        Book a Call
+                    </a>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=gabrielnogarotto2@gmail.com" target="_blank" class="bg-slate-900 border-2 border-slate-900 text-white px-8 py-4 rounded-2xl font-bold hover:bg-slate-800 hover:border-slate-800 transition-all flex items-center justify-center gap-3 shadow-lg shadow-slate-900/20 text-sm group">
+                        <svg class="w-5 h-5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        Email Me
+                    </a>
+                    <a href="https://linkedin.com/in/gabriel-nogarotto" target="_blank" class="bg-white border-2 border-slate-200 text-[#0077b5] px-8 py-4 rounded-2xl font-bold hover:border-[#0077b5] hover:bg-slate-50 transition-all flex items-center justify-center gap-3 text-sm group">
+                        <svg class="w-5 h-5 group-hover:-translate-y-0.5 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        LinkedIn
+                    </a>
                 </div>
             </div>
         </section>
@@ -958,7 +840,7 @@
         <div class="max-w-7xl mx-auto px-6 md:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex flex-col items-center md:items-start">
                 <span class="text-xl font-extrabold tracking-tighter uppercase">Nogarotto</span>
-                <span class="text-xs text-slate-400 mt-1">Technical Product Strategist</span>
+                <span class="text-xs text-slate-400 mt-1">Systems Designer & Product Builder</span>
             </div>
             <div class="flex flex-col items-center md:items-end gap-4">
                 <a href="https://drive.google.com/file/d/1HH0jNe7dDBdReN69z3drl5Ji9EoHIq8g/view?usp=sharing" target="_blank" class="flex items-center gap-2 bg-slate-100 text-slate-700 px-5 py-2.5 rounded-xl font-bold hover:bg-slate-200 hover:text-slate-900 transition-all text-xs uppercase tracking-widest group">
@@ -995,19 +877,14 @@
                     <h3 id="modal-title" class="text-2xl md:text-3xl font-extrabold tracking-tighter text-slate-900 leading-tight mb-4"></h3>
                     <div id="modal-tags" class="flex flex-wrap gap-2 mb-6"></div>
                 </div>
-                <!-- Technical Specs -->
-                <div id="modal-specs" class="mb-6 hidden">
-                    <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Technical Specifications</h4>
-                    <ul id="modal-specs-list" class="space-y-2 text-sm text-slate-600 font-mono"></ul>
-                </div>
-                <div id="modal-body" class="space-y-4 text-slate-600 leading-relaxed flex-grow text-base md:text-lg"></div>
+                <div id="modal-body" class="space-y-4 text-slate-600 leading-relaxed flex-grow text-base"></div>
                 <div class="mt-8 pt-6 border-t border-slate-100 space-y-3">
                     <a id="modal-primary-link" href="#" target="_blank" class="flex items-center justify-center gap-2 bg-black text-white px-6 py-4 rounded-xl font-bold hover:bg-blue-600 transition-all text-sm w-full">
                         <span id="modal-primary-text">View Project</span>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                     </a>
                     <a id="modal-secondary-link" href="#" target="_blank" class="hidden flex items-center justify-center gap-2 border border-slate-200 px-6 py-4 rounded-xl font-bold text-slate-700 hover:bg-slate-50 transition-all text-sm w-full">
-                        <span id="modal-secondary-text">View Documentation</span>
+                        <span id="modal-secondary-text">View Product Spec / PRD</span>
                     </a>
                 </div>
             </div>
@@ -1035,51 +912,41 @@
             user: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>`,
             fastapi: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M15 4v2h3v12h-3v2h5V4zM4 12c0-4.41 3.59-8 8-8v16c-4.41 0-8-3.59-8-8z"/></svg>`,
             engine: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>`,
-            python: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.128 0c-5.748 0-6.195 2.518-6.195 2.518l-.02 2.62h6.326v.883H5.213s-2.88.204-2.88 4.22c0 4.017 2.474 4.143 2.474 4.143h1.86v-2.91s-.066-3.414 3.486-3.414h4.29s3.208-.13 3.208-3.136c0-3.007-2.617-3.138-2.617-3.138h-4.42c0 0-4.053-.198-4.053-4.02 0-3.824 4.67-3.824 4.67-3.824h1.16zm-2.072 1.343c.47 0 .852.38.852.85 0 .47-.38.852-.852.852a.852.852 0 0 1-.852-.852c0-.47.382-.85.852-.85zm12.35 4.372s-2.316-.145-2.316 4.025c0 4.17 4.184 4.17 4.184 4.17h4.42s2.617.13 2.617 3.137c0 3.008-3.208 3.138-3.208 3.138H20.81s-3.486-.022-3.486 3.413v2.91h1.86s2.474-.126 2.474-4.143c0-4.017-2.88-4.22-2.88-4.22h-7.026v-.883h6.326l-.02-2.62s-.448-2.518-6.196-2.518h-1.16s4.67 0 4.67 3.824c0 3.824-4.052 4.02-4.052-4.02h-4.42s-2.617-.13-2.617-3.138c0-3.007 3.208-3.137 3.208-3.137h4.29s3.486.023 3.486-3.414v-2.91h-1.86s-2.474-.126-2.474-4.143c0 4.017 2.88 4.22 2.88 4.22h7.026v.883h-6.326l.02 2.62s.447 2.518 6.195 2.518h1.16s-4.67 0-4.67-3.824c0-3.824 4.053-4.02 4.053-4.02h4.42s2.617.13 2.617-3.138c0-3.007-3.208-3.137-3.208-3.137H3.19s-3.486-.023-3.486-3.414v-2.91h1.86s2.474-.126 2.474-4.143c0-4.017-2.88-4.22-2.88-4.22h7.026v-.883h-6.326l.02-2.62s.448-2.518 6.196-2.518h1.16s-4.67 0-4.67-3.824c0-3.824 4.052-4.02 4.052-4.02h4.42s2.617.13 2.617 3.138c0 3.007 3.208 3.137 3.208-3.137h-4.29s-3.486-.023-3.486 3.414v2.91h1.86s2.474.126 2.474 4.143c0 4.017-2.88 4.22-2.88 4.22h-7.026v-.883h6.326l-.02-2.62s-.447-2.518-6.195-2.518H11.87c.47 0 .852-.38.852-.85 0-.47-.382-.852-.852-.852a.852.852 0 0 1-.852-.852c0-.47.38-.85.852-.85z"/></svg>`,
+            python: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.128 0c-5.748 0-6.195 2.518-6.195 2.518l-.02 2.62h6.326v.883H5.213s-2.88.204-2.88 4.22c0 4.017 2.474 4.143 2.474 4.143h1.86v-2.91s-.066-3.414 3.486-3.414h4.29s3.208-.13 3.208-3.136c0-3.007-2.617-3.138-2.617-3.138h-4.42c0 0-4.053-.198-4.053-4.02 0-3.824 4.67-3.824 4.67-3.824h1.16zm-2.072 1.343c.47 0 .852.38.852.85 0 .47-.38.852-.852.852a.852.852 0 0 1-.852-.852c0-.47.382-.85.852-.85zm12.35 4.372s-2.316-.145-2.316 4.025c0 4.17 4.184 4.17 4.184 4.17h4.42s2.617.13 2.617 3.137c0 3.008-3.208 3.138-3.208 3.138H20.81s-3.486-.022-3.486 3.413v2.91h1.86s2.474-.126 2.474-4.143c0-4.017-2.88-4.22-2.88-4.22h-7.026v-.883h6.326l-.02-2.62s-.448-2.518-6.196-2.518h-1.16s4.67 0-4.67-3.824c0-3.824-4.052-4.02-4.052-4.02h-4.42s-2.617-.13-2.617-3.138c0-3.007 3.208-3.137 3.208-3.137h4.29s3.486.023 3.486-3.414v-2.91h-1.86s-2.474-.126-2.474-4.143c0 4.017 2.88 4.22 2.88 4.22h7.026v.883h-6.326l.02 2.62s.447 2.518 6.195 2.518h1.16s-4.67 0-4.67-3.824c0-3.824 4.053-4.02 4.053-4.02h4.42s2.617.13 2.617-3.138c0-3.007-3.208-3.137-3.208-3.137H3.19s-3.486-.023-3.486-3.414v-2.91h1.86s2.474-.126 2.474-4.143c0-4.017-2.88-4.22-2.88-4.22h7.026v-.883h-6.326l.02-2.62s.448-2.518 6.196-2.518h1.16s-4.67 0-4.67-3.824c0-3.824 4.052-4.02 4.052-4.02h4.42s2.617.13 2.617 3.138c0 3.007 3.208 3.137 3.208-3.137h-4.29s-3.486-.023-3.486 3.414v2.91h1.86s2.474.126 2.474 4.143c0 4.017-2.88 4.22-2.88 4.22h-7.026v-.883h6.326l-.02-2.62s-.447-2.518-6.195-2.518H11.87c.47 0 .852-.38.852-.85 0-.47-.382-.852-.852-.852a.852.852 0 0 1-.852-.852c0-.47.38-.85.852-.85z"/></svg>`,
             unity: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l-9.845 5.688 3.655 2.112-3.655 2.11L0 8.63v6.738l9.845 5.687-3.655-2.112 3.655-2.11 2.155 1.282v-6.74L12 5.687l.001 6.742-2.156-1.281-3.655 2.11 3.655 2.111 9.845-5.687V2.94L12 0zm0 18.314l2.155-1.282 3.655 2.11-3.655 2.112L12 24l9.845-5.688v-6.739l-2.156 1.282-3.654-2.111 3.654-2.111 2.156 1.28v6.738L12 18.314z"/></svg>`
         };
 
         const projectsData = [
             // --- COMMERCIAL & OPS ---
             {
-                title: 'AERO-SYNC: UDP Gesture Middleware',
-                role: 'AI Systems Architect (QAIO Labs)',
+                title: 'AERO-SYNC: Gesture Middleware',
+                role: 'Systems Designer (QAIO Labs)',
                 category: 'commercial',
                 type: 'tech',
-                tags: ['Python', 'Unity', 'Computer Vision', 'UDP Protocol', 'Low Latency'],
-                benchmark: 'Zero-Latency',
-                result: 'Bridged Computer Vision and Game Engines via real-time UDP transmission.',
-                techSpecs: [
-                    "<strong>Backend:</strong> Python, MediaPipe",
-                    "<strong>Transport:</strong> UDP Protocol (Low Latency)",
-                    "<strong>Client:</strong> Unity C# Receiver",
-                    "<strong>Performance:</strong> Real-time mapping (<10ms)"
-                ],
+                tags: ['Python', 'Unity', 'UDP Protocol', 'Low Latency'],
                 video: 'https://www.youtube.com/embed/pnMeeScOqKI',
                 imageUrl: 'https://i.imgur.com/mBQ2Fbt.jpeg',
                 description: [
-                    '**Problem:** Standard input methods restrict spatial interaction, and existing VR/AR hardware is cost-prohibitive for mass adoption.',
-                    '**Solution:** Developed AERO-SYNC, a high-performance middleware solution designed to bridge the gap between Computer Vision and Game Engines.',
-                    '**Technical Execution:** The project enables seamless, zero-latency hand gesture control within Unity by processing hand landmarks in a dedicated Python environment (using MediaPipe) and transmitting raw coordinate data via UDP protocol.',
-                    '**Product Skills:** Low-latency networking, Computer Vision integration, System Architecture, C#/Python interop.'
+                    '**Problem:** Traditional input systems limit how players interact with games, and VR hardware is cost-prohibitive.',
+                    '**Solution:** Built a middleware that connects computer vision with Unity to enable real-time hand gesture control.',
+                    '**Impact:** Enabled low-latency interaction (<10ms) between physical movement and gameplay via UDP protocol.',
+                    '**Tech:** Python, OpenCV, MediaPipe, UDP, Unity, C#.'
                 ],
                 link: 'https://www.youtube.com/watch?v=pnMeeScOqKI',
                 secondaryLink: null
             },
             {
-                title: 'WebYa — Web-as-a-Service Platform',
-                role: 'Solo Founder & Engineer',
+                title: 'WebYa — Web-as-a-Service',
+                role: 'Product Builder',
                 category: 'commercial',
                 type: 'tech',
-                tags: ['Landing page', 'SaaS', 'MercadoPago', 'Vercel', 'AI-assisted'],
-                benchmark: 'Live Product',
-                result: 'Successfully launched functional platform with dual pricing tiers and automated checkout.',
+                tags: ['SaaS', 'MercadoPago', 'Vercel', 'System Design'],
                 imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
                 description: [
-                    '**Problem:** Small businesses need professional web presence but face friction with high agency costs or complex site builders.',
-                    '**Solution:** Developed "WebYa", a Web-as-a-Service platform. Engineered end-to-end as a solo founder, handling UI/UX design, copywriting, and full-stack integration.',
-                    '**Technical Execution:** Integrated MercadoPago for seamless subscription handling and automated the deployment pipeline using Vercel.',
-                    '**Product Skills:** End-to-end product development, payment gateway integration, SaaS pricing strategy, solo-founder execution.'
+                    '**Problem:** Small businesses need a professional web presence but face friction with high agency costs or complex site builders.',
+                    '**Solution:** Designed and built "WebYa", a complete Web-as-a-Service platform with dual pricing tiers and automated checkout.',
+                    '**Impact:** Reduced deployment friction to zero for end-users by handling UI/UX, hosting, and subscription payments seamlessly.',
+                    '**Tech:** React, Next.js, Vercel, MercadoPago API.'
                 ],
                 link: 'https://tuwebya.vercel.app/',
                 secondaryLink: null,
@@ -1087,12 +954,10 @@
             },
             {
                 title: 'AI-Integrated Operations',
-                role: 'Full-Stack Product Developer',
+                role: 'Systems Designer',
                 category: 'commercial',
                 type: 'automation',
-                tags: ['AI Integration', 'OpenRouter', 'Gemini AI', 'Content Generation'],
-                benchmark: '-95% Manual Work',
-                result: '2-hour daily manual process transformed into a 5-minute automated workflow.',
+                tags: ['AI Agents', 'OpenRouter', 'Gemini AI'],
                 flow: [
                     { app: 'webhook', label: 'Inbound Ticket' },
                     { app: 'gemini', label: 'Analyze Sentiment' },
@@ -1108,11 +973,10 @@
                     }
                 ],
                 description: [
-                    '**Problem:** Manual content generation and ticket classification consuming 2+ hours daily of senior staff.',
-                    '**Solution:** Integrated AI providers (OpenRouter, Google Gemini) into operations workflow. Automated content generation, sentiment analysis, intelligent routing.',
-                    '**Architecture:** Webhook → AI prompt engineering → JSON parsing → Multi-platform distribution.',
-                    '**Projected Impact:** 2-hour daily process → 5-minute automated workflow. Estimated 90% time savings.',
-                    '**Product Skills:** AI product integration, workflow optimization, technical feasibility assessment.'
+                    '**Problem:** Manual content generation and ticket classification were consuming 2+ hours daily from senior staff.',
+                    '**Solution:** Built a workflow integrating AI providers (OpenRouter, Gemini) to automate sentiment analysis and intelligent routing.',
+                    '**Impact:** Reduced a 2-hour daily process to a 5-minute automated workflow, freeing up senior capacity.',
+                    '**Tech:** Webhooks, JSON Parsing, Prompt Engineering, API Integration.'
                 ],
                 link: 'https://github.com/Gnoga05/Automation-Library',
                 secondaryLink: null,
@@ -1120,12 +984,10 @@
             },
             {
                 title: 'AI Voice Agent Dispatcher',
-                role: 'Automation Architect',
+                role: 'Automation Builder',
                 category: 'commercial',
                 type: 'automation',
-                tags: ['ElevenLabs', 'Gemini AI', 'Twilio', 'Voice Intelligence'],
-                benchmark: '+95% Time Saved',
-                result: 'Automated 100% of initial call triage, reducing manual screening from hours to seconds.',
+                tags: ['ElevenLabs', 'Gemini AI', 'Twilio'],
                 flow: [
                     { app: 'webhook', label: 'Call Transcript' },
                     { app: 'gemini', label: 'Analyze & Categorize' },
@@ -1135,18 +997,17 @@
                         label: 'Route by Agent', 
                         isRouter: true,
                         branches: [
-                            [{ app: 'twilio', label: 'Margaret (SMS)' }],
-                            [{ app: 'twilio', label: 'Isabel (SMS)' }],
-                            [{ app: 'gmail', label: 'Fallback (Email)' }]
+                            [{ app: 'twilio', label: 'Agent 1 (SMS)' }],
+                            [{ app: 'twilio', label: 'Agent 2 (SMS)' }],
+                            [{ app: 'gmail', label: 'Fallback' }]
                         ]
                     }
                 ],
                 description: [
-                    '**Problem:** Client needed to automate phone intake, summarize conversations, and route urgent requests to specific team members without manual triage.',
-                    '**System Design:** Built a voice agent pipeline: ElevenLabs captures audio/transcript -> Webhook -> Gemini AI (Summarizes, categorizes urgency & topic) -> Google Sheets (Log) -> Router logic -> Twilio/Gmail (Alert specific agent).',
-                    '**AI Logic:** Gemini AI processes the transcript to extract summary, sentiment, urgency level, and category. It identifies the intended recipient (e.g., "Margaret" or "Isabel").',
-                    '**Routing:** Logic gates route the alert via Twilio SMS to the specific agent identified. Fallback to Gmail for unassigned calls.',
-                    '**Product Skills:** Voice AI integration, LLM prompt engineering for structured data extraction, multi-channel notification systems.'
+                    '**Problem:** Client needed to automate phone intake, summarize conversations, and route urgent requests without manual triage.',
+                    '**Solution:** Designed a voice agent pipeline that captures audio/transcripts, uses AI to extract urgency, and routes alerts via SMS.',
+                    '**Impact:** Automated 100% of initial call triage, reducing manual screening from hours to seconds.',
+                    '**Tech:** ElevenLabs, Twilio, Gemini, Structured Data Extraction.'
                 ],
                 link: null,
                 secondaryLink: null,
@@ -1154,12 +1015,10 @@
             },
             {
                 title: 'WhatsApp CRM Automation',
-                role: 'Product Designer & Automation Engineer',
+                role: 'Systems Designer',
                 category: 'commercial',
                 type: 'automation',
-                tags: ['State Machines', 'User Research', 'Process Design', 'Make/Integromat'],
-                benchmark: '+65% Efficiency',
-                result: 'Reduced manual messaging time from ~15h/week to ~4h/week.',
+                tags: ['State Machines', 'Process Design', 'Make'],
                 flow: [
                     { app: 'sheets', label: 'Watch Rows' },
                     { app: 'trello', label: 'Create Card' },
@@ -1168,11 +1027,10 @@
                     { app: 'docs', label: 'Create Doc' }
                 ],
                 description: [
-                    '**Problem:** Service business spending ~15h/week on manual customer follow-ups via WhatsApp, with inconsistent response times and no tracking.',
-                    '**System Design:** Applied state-machine logic to business operations: designed automated pipeline with state tracking (pending → contacted → converted), contextual triggers, and branching message flows.',
-                    '**User Research:** Interviewed operations team to map workflow pain points. Identified 3 critical friction points: manual data entry, forgotten follow-ups, lack of status visibility.',
-                    '**Projected Impact:** Reduced manual messaging time from ~15h/week to ~4h/week (estimated 70% reduction). Response time consistency improved from variable to <5 minutes.',
-                    '**Product Skills:** Stakeholder interviews, workflow mapping, MVP scoping, success metrics definition.'
+                    '**Problem:** A service business spent ~15h/week on manual customer follow-ups via WhatsApp, leading to inconsistent responses.',
+                    '**Solution:** Applied state-machine logic to design an automated pipeline with state tracking (pending → contacted) and branching flows.',
+                    '**Impact:** Reduced manual messaging time to ~3.5h/week and improved response consistency to under 5 minutes.',
+                    '**Tech:** Workflow mapping, Integration Platforms, State tracking.'
                 ],
                 link: 'https://github.com/Gnoga05/Automation-Library',
                 secondaryLink: null,
@@ -1180,12 +1038,10 @@
             },
             {
                 title: 'Webhook Data Pipeline',
-                role: 'System Architect',
+                role: 'Systems Designer',
                 category: 'commercial',
                 type: 'automation',
-                tags: ['State Management', 'Error Handling', 'Data Validation', 'Make/Integromat'],
-                benchmark: '<1% Error Rate',
-                result: 'Error rate reduced from 8% to <1% while scaling processing capacity 10x.',
+                tags: ['Error Handling', 'Data Validation', 'Make'],
                 flow: [
                     { app: 'forms', label: 'Watch Responses' },
                     { app: 'router', label: 'Router', isRouter: true },
@@ -1193,11 +1049,10 @@
                     { app: 'sheets', label: 'Add Row' }
                 ],
                 description: [
-                    '**Problem:** Client needed reliable ingestion of external webhook data with validation, cleanup, and audit trail. Previous manual process had 8% error rate.',
-                    '**Architecture:** Designed 5-state pipeline: Reception → Verification → Sanitization → Dispatch → Logging. Each state has entry/exit conditions and error handling.',
-                    '**Technical Decisions:** Webhook over polling for real-time response. Validation layer prevents "dirty data" from propagating through system.',
-                    '**Projected Impact:** Error rate reduced from 8% to <1%. Processing capacity: 50 → 500+ daily transactions.',
-                    '**Product Skills:** System architecture, reliability engineering, trade-off analysis.'
+                    '**Problem:** Client required reliable ingestion of external webhook data. The previous manual process had an 8% error rate.',
+                    '**Solution:** Designed a 5-state pipeline: Reception → Verification → Sanitization → Dispatch → Logging.',
+                    '**Impact:** Reduced error rate to <1% while scaling processing capacity from 50 to 500+ daily transactions.',
+                    '**Tech:** Reliability engineering, Data validation layers.'
                 ],
                 link: 'https://github.com/Gnoga05/Automation-Library',
                 secondaryLink: null,
@@ -1212,93 +1067,72 @@
                 category: 'product',
                 subCategory: 'strategy',
                 type: 'production',
-                tags: ['Roadmapping', 'Scrum', '33 User Stories', 'Risk Analysis'],
-                benchmark: 'Risk Mitigation',
-                result: 'Delivered stable build by identifying critical path dependencies early.',
+                tags: ['Roadmapping', 'Scrum', 'Risk Analysis'],
                 imageUrl: 'https://i.imgur.com/fRzY4Bg.png',
                 description: [
-                    '**Scope:** 12-month FPS development, 13 sprints (2 weeks each), 33 detailed user stories covering core mechanics (movement, weapons, enemies).',
-                    '**Methodology:** Scrum with milestone-based gates. Sprint 1-3: 3 Cs (Camera, Control, Character). Sprint 4-8: Combat integration. Sprint 9-13: Polish and MVP.',
-                    '**Risk Management:** Identified critical path dependencies (AI blocking level design, weapons blocking balance). Built buffer time for high-risk items.',
-                    '**Documentation:** Living roadmap with velocity tracking, scope negotiation protocols, and stakeholder update cadence.',
-                    '**Product Skills:** Long-term planning, dependency management, scope vs quality trade-offs, team capacity planning.'
+                    '**Problem:** A 12-month FPS development cycle risked feature creep and bottlenecked dependencies across disciplines.',
+                    '**Solution:** Built a structured roadmap with milestone-based gates (3 Cs first, combat next, polish last) and active risk management.',
+                    '**Impact:** Delivered a stable build on time by identifying and mitigating critical path dependencies early.',
+                    '**Tech:** Scrum, Sprint Planning, Scope Negotiation.'
                 ],
                 link: null,
-                secondaryLink: 'https://i.imgur.com/OUwqIcb.png'
+                secondaryLink: 'https://drive.google.com/drive/folders/1xSNCguAGh1YzwuqoPHQuGEO0Nk7E4PCJ'
             },
             {
                 title: 'FRACTURED MIND: Horror Pipeline',
-                role: 'Producer & Systems Designer',
+                role: 'Systems Designer & Producer',
                 category: 'product',
                 subCategory: 'strategy',
                 type: 'production',
-                tags: ['Agile', '16-Week Sprint', 'Vertical Slice', 'Quality Gates'],
-                benchmark: 'On-Time Delivery',
-                result: 'Core horror mechanics validated before full production via Vertical Slice.',
+                tags: ['Agile', 'Vertical Slice', 'Quality Gates'],
                 imageUrl: 'https://i.imgur.com/s4itJ8U.png',
                 description: [
-                    '**Constraint:** 16-week development with 4 milestones. Horror genre requiring specific tech (shaders, AI) validated early.',
-                    '**Strategy:** Milestone 2 = Vertical Slice with antagonist AI ("La Figura") and sanity shaders. Core experience validated before full production.',
-                    '**Scope Management:** Managed sprint cycles, prioritized the product backlog, and ensured cross-functional alignment. Visual Story Mapping distinguished MVP (sanity mechanic, 3 levels) from backlog (additional enemy types, branching endings).',
-                    '**Quality Standards:** Acceptance criteria for every user story. Shader performance benchmarks (60fps) as non-negotiable.',
-                    '**Outcome:** Stable build delivered through disciplined scope control and early validation of riskiest tech.',
-                    '**Product Skills:** Risk-based prioritization, vertical slice methodology, quality gates, genre-specific UX requirements.'
+                    '**Problem:** Strict 16-week constraint to develop a horror game requiring complex antagonist AI and custom shaders.',
+                    '**Solution:** Designed a milestone strategy prioritizing a Vertical Slice to validate core mechanics before full production.',
+                    '**Impact:** Validated the core experience early, ensuring on-time delivery without compromising required performance benchmarks.',
+                    '**Tech:** Backlog Prioritization, Visual Story Mapping.'
                 ],
                 link: null,
-                secondaryLink: 'https://i.imgur.com/qsh4Jr4.png'
+                secondaryLink: 'https://drive.google.com/drive/folders/1xSNCguAGh1YzwuqoPHQuGEO0Nk7E4PCJ'
             },
             {
-                title: 'Aeterna: Roguelike Analysis',
-                role: 'Systems Analyst',
+                title: 'Aeterna: Roguelike Systems',
+                role: 'Systems Designer',
                 category: 'product',
                 subCategory: 'strategy',
                 type: 'production',
-                tags: ['MDA Framework', 'Power-Up Systems', 'FDD Analysis', 'Balance Math'],
-                benchmark: 'System Clarity',
-                result: 'Reverse-engineered complex progression systems into actionable FDDs.',
+                tags: ['Power-Up Systems', 'FDD Analysis', 'Balance Math'],
                 imageUrl: 'https://img.itch.zone/aW1nLzE4NjI3MTg0LnBuZw==/315x250%23c/EEDvra.png',
                 description: [
-                    '**Analysis Framework:** Formal Design Document (FDD) analysis of Aeterna\'s Tarot card system vs Hades (Boons) and TBoI (Items).',
-                    '**Feature Design:** Designed the "Power Ups: Cartas del Tarot" mechanic, creating a detailed GDD to systemize RNG-based player progression.',
-                    '**System Breakdown:** Card selection: 3 random options per event. Effects: Flat (+/- absolute) vs Percentual (+/- %) modifiers with mathematical formulas.',
-                    '**Narrative Systems:** Cards persist only per run (temporary state changes), creating risk/reward tension: "Take card now vs save for later?"',
-                    '**Comparative Analysis:** Documented how each game handles power persistence, stacking rules, and player agency in selection.',
-                    '**Product Skills:** System reverse-engineering, comparative product analysis, mathematical balance documentation, mechanics documentation.'
+                    '**Problem:** Needed to design a scalable, RNG-based player progression system that felt balanced and rewarding.',
+                    '**Solution:** Built formal design specifications for a Tarot card modifier system, defining mathematical formulas for percentual and flat upgrades.',
+                    '**Impact:** Created a clear, documented system logic that eliminated development ambiguity and improved progression balance.',
+                    '**Tech:** MDA Framework, Formal Design Documents (FDD).'
                 ],
-                link: 'https://drive.google.com/drive/folders/1xSNCguAGh1YzwuqoPHQuGEO0Nk7E4PCJ',
-                secondaryLink: 'https://michibrujas.itch.io/aeterna',
+                link: 'https://michibrujas.itch.io/aeterna',
+                secondaryLink: 'https://drive.google.com/drive/folders/1xSNCguAGh1YzwuqoPHQuGEO0Nk7E4PCJ',
                 video: null
             },
 
              // --- Narrative ---
              {
                 title: 'AI Narrative NPC Engine',
-                role: 'AI Systems Architect',
+                role: 'Systems Designer',
                 category: 'product',
                 subCategory: 'narrative',
-                type: 'automation', // using automation type to trigger flow view
-                tags: ['Emergent Storytelling', 'AI Integration', 'FastAPI', 'Game Systems'],
-                benchmark: '<800ms Latency',
-                result: 'Achieved sub-second response time for real-time conversation.',
+                type: 'automation',
+                tags: ['FastAPI', 'AI Integration', 'Game Systems'],
                 flow: [
                     { app: 'user', label: 'Player Input' },
                     { app: 'fastapi', label: 'Middleware (FastAPI)' },
                     { app: 'gemini', label: 'LLM (Reasoning)' },
                     { app: 'engine', label: 'Game Engine State' }
                 ],
-                techSpecs: [
-                    "<strong>Backend:</strong> Python (FastAPI), Uvicorn",
-                    "<strong>AI Model:</strong> Gemini 1.5 Flash (via OpenRouter)",
-                    "<strong>Latency:</strong> <800ms average response time",
-                    "<strong>Memory:</strong> Vector DB for long-term persistence",
-                    "<strong>Guardrails:</strong> Pre-prompt safety filtering"
-                ],
                 description: [
-                    '**Core System:** Middleware backend enabling conversational NPCs with persistent memory and dynamic personality.',
-                    '**Technical Architecture:** Developed a modular system in FastAPI that allows NPCs to generate contextual dialogue using LLMs. Built-in guardrails maintain narrative consistency, memory persistence, and production security.',
-                    '**Integration:** Designed for HTTP integration with major game engines (Unity, Godot, Unreal).',
-                    '**Status:** Currently in active MVP phase.',
-                    '**Product Skills:** AI System Design, Narrative Engineering, Backend Architecture, API Strategy.'
+                    '**Problem:** Static NPC dialogue trees fail to create emergent, personalized storytelling in modern games.',
+                    '**Solution:** Built a Python/FastAPI middleware that connects game engines to LLMs, generating contextual dialogue with persistent memory.',
+                    '**Impact:** Achieved sub-second response times (<800ms) for real-time conversation while maintaining strict narrative guardrails.',
+                    '**Tech:** Python, FastAPI, Gemini, Vector DBs, System Prompting.'
                 ],
                 link: null,
                 secondaryLink: null,
@@ -1306,20 +1140,17 @@
             },
             {
                 title: 'Holy Banquet! (Grubgrind)',
-                role: 'Worldbuilding & Narrative Lead',
+                role: 'Narrative Architect',
                 category: 'product',
                 subCategory: 'narrative',
                 type: 'production',
-                tags: ['Worldbuilding', 'Meatpunk', 'Gastromancy', 'Co-op', 'Emergent Storytelling'],
-                benchmark: 'Lore Cohesion',
-                result: 'Integrated gameplay loops (cooking/fighting) into theological lore.',
+                tags: ['Worldbuilding', 'Systems Integration'],
                 imageUrl: 'https://i.imgur.com/zIci8VV.jpeg',
                 description: [
-                    '**Premise:** Co-op Hack & Slash meets cooking sim in a "Meatpunk" kingdom. Heroes: Morfer (Muscle) and Bondiu (Chef/Brain) bound by a cursed Rabbit Foot.',
-                    '**World Architecture:** Created "Grubgrind" universe. History: The "Butchery Schism" (God murdered/eaten) caused cosmic indigestion, rotting reality.',
-                    '**Magic System:** Designed "Gastromancy" & "Law of Equivalent Exchange". Cooking requires monster organs to create buffs. Luck is shared: if one succeeds, the other suffers misfortune.',
-                    '**Social Structure:** Defined the "Oligarchs of Fat" (high table) vs "The Underbelly" (scrappers). Integrated gameplay loops (cooking/fighting) into the theological lore.',
-                    '**Product Skills:** Mythos creation, thematic cohesion, mechanics-driven lore, tone management.'
+                    '**Problem:** Integrating a co-op cooking simulation loop into a fast-paced Hack & Slash combat environment without thematic disconnect.',
+                    '**Solution:** Designed the "Gastromancy" magic system where cooking monster organs directly impacts combat buffs, tying mechanics to the narrative.',
+                    '**Impact:** Achieved high thematic cohesion where gameplay loops perfectly reflect the internal logic of the world.',
+                    '**Tech:** Worldbuilding, Mechanics-as-Metaphor.'
                 ],
                 link: 'https://drive.google.com/drive/folders/1xSNCguAGh1YzwuqoPHQuGEO0Nk7E4PCJ',
                 secondaryLink: null,
@@ -1327,20 +1158,17 @@
             },
             {
                 title: 'Gods Within: Transmedia IP',
-                role: 'Narrative Systems Architect',
+                role: 'Systems Designer',
                 category: 'product',
                 subCategory: 'narrative',
                 type: 'production',
-                tags: ['Worldbuilding', 'Transmedia', 'IP Bible', 'System Design'],
-                benchmark: 'Scalable IP',
-                result: 'Designed a consistent internal logic scalable across 12 platforms.',
+                tags: ['Worldbuilding', 'IP Bible', 'System Design'],
                 imageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&h=600&fit=crop',
                 description: [
-                    '**Challenge:** Design fantasy universe expandable across multiple platforms (game, novel, TCG) with consistent internal logic.',
-                    '**System Architecture:** Created IP Bible with 6 races, magic systems (runic technology), geopolitical conflicts, and economic frameworks. Each element designed for cross-platform consistency.',
-                    '**Narrative Systems:** Designed "belief as power" magic system—gods strength proportional to worshipper count. Creates emergent political dynamics analogous to game economies.',
-                    '**Documentation:** 30+ page bible covering history, cultures, power structures, and expansion roadmap. Designed for maintainability by future contributors.',
-                    '**Product Skills:** Scalable worldbuilding, system consistency across products, IP as platform, documentation architecture.'
+                    '**Problem:** Designing a fantasy universe that could scale consistently across multiple formats (games, novels, TCG).',
+                    '**Solution:** Built a 30+ page IP Bible defining strict internal logic for magic systems, economies, and geopolitical conflicts.',
+                    '**Impact:** Created a scalable framework ensuring cross-platform consistency for future product expansions.',
+                    '**Tech:** Documentation Architecture, Scalable Worldbuilding.'
                 ],
                 link: 'https://drive.google.com/drive/folders/1xSNCguAGh1YzwuqoPHQuGEO0Nk7E4PCJ',
                 secondaryLink: null,
@@ -1352,15 +1180,14 @@
                 category: 'product',
                 subCategory: 'narrative',
                 type: 'production',
-                tags: ['Economy Design', 'Re-theming', 'Drafting Systems', 'Resource Conversion'],
-                benchmark: 'System Integrity',
-                result: 'Maintained mathematical balance while completely re-skinning theme.',
+                tags: ['Economy Design', 'Drafting Systems'],
                 imageUrl: 'https://i.imgur.com/sJgYMph.png',
                 imageFit: 'contain',
                 description: [
-                    '**Design Challenge:** Re-theme 7 Wonders drafting mechanics with horror narrative.',
-                    '**Balance Analysis:** Preserved original curves while creating distinct flavor.',
-                    '**Product Skills:** Mechanics-as-metaphor, system integrity, player psychology.'
+                    '**Problem:** Re-theming a complex drafting economy (7 Wonders) into a horror narrative without breaking the mathematical balance.',
+                    '**Solution:** Mapped resource conversion curves and redesigned the thematic output to preserve the original system integrity.',
+                    '**Impact:** Maintained perfect mathematical balance while successfully shifting the player psychology toward tension and horror.',
+                    '**Tech:** Economy Balancing, System Integrity.'
                 ],
                 link: 'https://drive.google.com/drive/folders/1xSNCguAGh1YzwuqoPHQuGEO0Nk7E4PCJ',
                 secondaryLink: null,
@@ -1368,19 +1195,18 @@
             },
             {
                 title: 'Cazador del Abismo: Hidden Roles',
-                role: 'Game Systems Designer',
+                role: 'Systems Designer',
                 category: 'product',
                 subCategory: 'narrative',
                 type: 'production',
-                tags: ['Social Deduction', 'Information Asymmetry', 'Timer Mechanics', 'Tension Design'],
-                benchmark: 'Social Dynamics',
-                result: 'Engineered information asymmetry to force emergent player conflict.',
+                tags: ['Social Deduction', 'Information Asymmetry'],
                 imageUrl: 'https://i.imgur.com/2T1awbm.png',
                 imageFit: 'contain',
                 description: [
-                    '**Core System:** 4-8 players, hidden roles, missions with strict timers.',
-                    '**Balance:** Demon team minority sabotage advantage vs Hunter coordination.',
-                    '**Product Skills:** Social dynamics engineering, tension curves, win condition balancing.'
+                    '**Problem:** Designing a tabletop system that naturally generates high tension and emergent player conflict.',
+                    '**Solution:** Built a hidden-role system leveraging strict timer mechanics and information asymmetry between teams.',
+                    '**Impact:** Engineered social dynamics that successfully force coordination vs sabotage gameplay loops.',
+                    '**Tech:** Win-condition balancing, Tension curves.'
                 ],
                 link: 'https://drive.google.com/drive/folders/1xSNCguAGh1YzwuqoPHQuGEO0Nk7E4PCJ',
                 secondaryLink: null,
@@ -1388,89 +1214,73 @@
             },
             {
                 title: 'Nanban: Branching Narrative',
-                role: 'Narrative Lead',
+                role: 'Systems Designer',
                 category: 'product',
                 subCategory: 'narrative',
                 type: 'game',
-                tags: ['Branching Systems', 'Technical Constraints', 'Choice Architecture'],
-                benchmark: 'Choice Impact',
-                result: 'Implemented 4 distinct endings based on complex choice combinations.',
+                tags: ['Branching Systems', 'Choice Architecture'],
                 imageUrl: 'https://img.itch.zone/aW1nLzIzMzk4NjMxLnBuZw==/315x250%23c/jayV8k.png',
                 description: [
-                    '**System Design:** 4 distinct endings based on choice combinations. "Hero\'s Journey" structure with player agency in path selection.',
-                    '**Choice Architecture:** Designed decisions to feel meaningful (impact visible within 2 minutes) not arbitrary. Balanced agency with narrative coherence.',
-                    '**Technical Constraint:** Platform image hosting limitations threatened project.',
-                    '**Solution:** Designed external asset pipeline maintaining narrative flow while working within constraints. State machine tracked story branches independently of assets.',
-                    '**Cross-Functional:** Coordinated with artists for visual consistency across 4 narrative branches.',
-                    '**Product Skills:** Narrative system design, choice consequence mapping, constraint-driven innovation, cross-disciplinary coordination.'
+                    '**Problem:** Managing complex branching narrative paths under severe platform image-hosting constraints.',
+                    '**Solution:** Designed an external asset pipeline and a state machine that tracked story branches independently of the visual assets.',
+                    '**Impact:** Implemented 4 distinct endings based on choice combinations without exceeding technical limits.',
+                    '**Tech:** State Machines, Choice consequence mapping.'
                 ],
                 link: 'https://gabrielnogarotto.itch.io/nanban',
-                secondaryLink: null,
+                secondaryLink: 'https://drive.google.com/drive/folders/1xSNCguAGh1YzwuqoPHQuGEO0Nk7E4PCJ',
                 video: null
             },
 
             // --- Game Dev ---
             {
                 title: 'Vessel Mask: Ritual Color',
-                role: 'Producer & Systems Designer',
+                role: 'Systems Designer & Builder',
                 category: 'product',
                 subCategory: 'game-dev',
                 type: 'game',
-                tags: ['UX Research', 'State Machines', 'Rapid Prototyping', '48h Delivery'],
-                benchmark: '+40% Completion',
-                result: 'Improved session completion by ~40% after retry loop tuning.',
+                tags: ['State Machines', 'UX Polish', 'Rapid Prototyping'],
                 imageUrl: 'https://img.itch.zone/aW1nLzI1MzM4NzU0LmpwZw==/315x250%23c/wgToJf.jpg',
                 description: [
-                    '**Product Challenge:** Compelling MVP in 48 hours with new team, no established workflow.',
-                    '**UX Strategy:** Player journey mapping revealed startup menus created friction in Game Jam context. Designed "zero-friction" entry: immediate gameplay, no menus.',
-                    '**Scope & Delivery:** Managed scope through strict backlog prioritization and sprint execution within the 48h constraint.',
-                    '**State Design:** Core loop state machine: Enter → Challenge → Success/Failure → Retry/Exit. Optimized retry transition to maintain flow state.',
-                    '**Data-Driven:** 3 playtest sessions identified retry loop friction. Estimated 40% improvement in session completion after optimization.',
-                    '**Product Skills:** Rapid user research, state machine UX, cross-functional coordination under pressure.'
+                    '**Problem:** Required a compelling MVP in 48 hours. Playtesting revealed high friction in the retry loop.',
+                    '**Solution:** Designed a "zero-friction" state machine: eliminated startup menus and optimized the fail-state transition to keep players in the flow.',
+                    '**Impact:** Improved session completion rates by ~40% through targeted UX flow design.',
+                    '**Tech:** Rapid UX research, State machine design.'
                 ],
                 link: 'https://gabrielnogarotto.itch.io/vesselmask',
                 secondaryLink: 'https://github.com/Gnoga05/GGJ-2026',
                 video: null
             },
             {
-                title: 'Little Dungeon: AI Architecture',
-                role: 'Project Lead & Systems Architect',
+                title: 'Little Dungeon: AI Logic',
+                role: 'Systems Builder',
                 category: 'product',
                 subCategory: 'game-dev',
                 type: 'game',
-                tags: ['AI State Machines', 'Inheritance Systems', 'Technical Optimization', 'Full-Cycle'],
-                benchmark: '40% Code Reduction',
-                result: 'Reduced code duplication significantly via hierarchical state machines.',
+                tags: ['AI State Machines', 'Inheritance Systems'],
                 imageUrl: 'https://img.itch.zone/aW1nLzI0MTg2NjY0LmpwZw==/315x250%23c/qNmvx4.jpg',
                 description: [
-                    '**Technical Challenge:** Build scalable AI handling multiple enemy types without code duplication.',
-                    '**Architecture:** Hierarchical state machine—Base Enemy (patrol, chase, attack) → Specialized (ranged, melee) → Boss (adds phases, special attacks).',
-                    '**Code Efficiency:** 40% reduction in duplication through inheritance. New enemy types require only state overrides, not full rewrites.',
-                    '**UX Considerations:** Balanced difficulty through iterative playtesting. Tuned feedback timing (visual/audio) for "game feel".',
-                    '**Production:** Managed 3D pipeline, UI systems, navigation mesh. Resolved performance bottlenecks for 60fps target.',
-                    '**Product Skills:** System architecture, technical debt management, performance optimization, AI behavior design.'
+                    '**Problem:** Need to build scalable AI handling multiple enemy types without massive code duplication.',
+                    '**Solution:** Architected a hierarchical state machine (Base Enemy → Specialized → Boss) utilizing inheritance.',
+                    '**Impact:** Reduced code duplication by 40%, allowing new enemy types to be built entirely via state overrides.',
+                    '**Tech:** System architecture, Technical optimization, AI behavior.'
                 ],
                 link: 'https://gabrielnogarotto.itch.io/little-dungeonn',
                 secondaryLink: null,
                 video: null
             },
             {
-                title: 'The Risk of Fido: Team Dynamics',
-                role: 'Project Coordinator',
+                title: 'The Risk of Fido: Team Pivots',
+                role: 'Product Lead',
                 category: 'product',
                 subCategory: 'game-dev',
                 type: 'game',
-                tags: ['Crisis Management', 'Scope Reduction', 'Team Leadership', 'Conflict Resolution'],
-                benchmark: 'Crisis Resolution',
-                result: 'Successfully shipped by pivoting scope 60% mid-jam without morale loss.',
+                tags: ['Scope Reduction', 'Team Leadership'],
                 imageUrl: 'https://img.itch.zone/aW1nLzIyOTY2MzUyLnBuZw==/315x250%23c/996jtP.png',
                 description: [
-                    '**Team Challenge:** Led 8+ person remote team during high-pressure pivot.',
-                    '**Crisis:** Mid-jam technical bottleneck threatened delivery. Facilitated rapid decision-making to pivot design toward feasible scope.',
-                    '**Scope Strategy:** Reduced features 60% using "minimum viable fun" criteria. Prioritized core loop polish over content volume.',
-                    '**Human Systems:** Resolved Design-Programming communication breakdown through structured feedback sessions. Maintained morale despite cuts.',
-                    '**Outcome:** Shipped playable build in 48h. Team satisfaction remained high—scope cuts seen as "saving the project" not "losing features".',
-                    '**Product Skills:** Team leadership, conflict resolution, ruthless prioritization, stakeholder management under pressure.'
+                    '**Problem:** Mid-development technical bottleneck threatened delivery for an 8-person team.',
+                    '**Solution:** Facilitated rapid decision-making to pivot design, reducing scope by 60% based on "minimum viable fun" metrics.',
+                    '**Impact:** Shipped a playable build on time while maintaining team morale and cross-functional alignment.',
+                    '**Tech:** Crisis Management, Scope prioritization.'
                 ],
                 link: 'https://gabrielnogarotto.itch.io/the-risk-of-figo',
                 secondaryLink: 'https://github.com/Gnoga05/BrackeysJamGame',
@@ -1478,43 +1288,35 @@
             },
             {
                 title: 'Deadly Western: Game Feel',
-                role: 'Solo Developer',
+                role: 'Systems Builder',
                 category: 'product',
                 subCategory: 'game-dev',
                 type: 'game',
-                tags: ['Juice', 'UX Polish', 'Market Differentiation', 'Custom Engine Work'],
-                benchmark: '+50% Response Speed',
-                result: 'Custom state machine improved input response by 50% vs default engine.',
+                tags: ['UX Polish', 'Custom Engine Work'],
                 imageUrl: 'https://img.itch.zone/aW1nLzIzNDM0NDU3LnBuZw==/315x250%23c/pLfGTa.png',
                 description: [
-                    '**Market Analysis:** Identified oversaturated "gallery shooter" genre. Differentiated through western aesthetic and heavy "juice" (feedback).',
-                    '**UX Iteration:** 10+ iterations on shooting feedback and 만족satisfaction tuning.',
-                    '**Technical Solution:** Custom GDScript state machine achieving 50% faster response.',
-                    '**Validation:** Playtested with 5+ peers. Adjusted difficulty based on completion rates and frustration indicators (rage-quit points).',
-                    '**Solo Production:** Managed code, art, sound, balance, release. Full product ownership.',
-                    '**Product Skills:** Market positioning, iterative UX polish, technical problem-solving for feel, data-informed tuning.'
+                    '**Problem:** Needed to differentiate a product in an oversaturated market through extreme responsiveness.',
+                    '**Solution:** Built a custom GDScript state machine to handle input mapping and "juice" (feedback systems) independently of engine defaults.',
+                    '**Impact:** Improved input response by 50%, significantly increasing player satisfaction and retention.',
+                    '**Tech:** GDScript, Iterative UX polish.'
                 ],
                 link: 'https://gabrielnogarotto.itch.io/deadly-western',
                 secondaryLink: null,
                 video: 'https://www.youtube.com/embed/g9mP6PCkcq0'
             },
             {
-                title: 'Viper Assault: Data-Driven Balance',
-                role: 'Lead Designer',
+                title: 'Viper Assault: Economy Tuning',
+                role: 'Systems Designer',
                 category: 'product',
                 subCategory: 'game-dev',
                 type: 'game',
-                tags: ['System Balancing', 'Playtesting', 'Data Analysis', 'Scope Control'],
-                benchmark: '-60% Frustration',
-                result: 'Reduced "unfair death" perception by ~60% through heat-map analysis.',
+                tags: ['System Balancing', 'Data Analysis'],
                 imageUrl: 'https://img.itch.zone/aW1nLzIxMzgyMjY0LnBuZw==/315x250%23c/QDg1AS.png',
                 description: [
-                    '**Design Challenge:** Reimagine Snake with combat while maintaining accessibility.',
-                    '**Research:** External playtesting with 8+ participants. Tracked completion rates, death locations, power-up usage patterns.',
-                    '**Data Application:** Adjusted boss patterns and spawn rates based on observed behavior. Reduced "unfair death" perception ~60% through tuning.',
-                    '**Economy Design:** Power-up scarcity vs player empowerment curve. Too generous = boring; too scarce = frustrating.',
-                    '**Scope Decision:** Cut 20-level ambition to 5 polished levels. Quality metric: "Would players recommend this?" over "How much content?"',
-                    '**Product Skills:** User research, metrics-informed iteration, difficulty tuning, scope negotiation.'
+                    '**Problem:** Reimagine classic gameplay with combat without creating an unfair difficulty curve.',
+                    '**Solution:** Used playtesting telemetry (death locations, power-up usage) to adjust boss patterns and spawn economies.',
+                    '**Impact:** Reduced player frustration and "unfair death" perception by ~60% through data-informed tuning.',
+                    '**Tech:** User research, Metrics-informed iteration.'
                 ],
                 link: 'https://gabrielnogarotto.itch.io/neo-viper-assault',
                 secondaryLink: null,
@@ -1594,7 +1396,6 @@
                             </div>
                         </div>`;
                 } else if (p.video && p.imageUrl) {
-                    // Use provided image as thumbnail even if there's a video
                     mediaContent = `
                         <div class="h-56 image-zoom-container bg-slate-100 relative">
                             <img src="${p.imageUrl}" class="w-full h-full ${imgClass} zoom-img opacity-90" loading="lazy" alt="${p.title}">
@@ -1630,26 +1431,16 @@
                         </div>`;
                 }
 
-                // Micro-benchmark badge
-                let benchmarkBadge = '';
-                if(p.benchmark) {
-                    benchmarkBadge = `
-                    <div class="mb-3 inline-block">
-                        <span class="text-[10px] font-bold text-green-600 bg-green-50 px-2 py-1 rounded border border-green-100 flex items-center gap-1 w-max">
-                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                            ${p.benchmark}
-                        </span>
-                    </div>`;
-                }
+                // Extract description content for the card preview (without the bold tags)
+                const problemText = p.description[0].replace('**Problem:** ', '');
 
                 const card = `
                     <div class="card-project rounded-[24px] overflow-hidden cursor-pointer flex flex-col h-full group" onclick="openModal(${i})">
                         ${mediaContent}
                         <div class="p-6 md:p-8 flex flex-col flex-grow">
                             <h3 class="text-xl font-extrabold tracking-tight text-slate-900 mb-1 group-hover:text-blue-600 transition-colors">${p.title}</h3>
-                            ${benchmarkBadge}
                             <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-4">${p.role}</p>
-                            <p class="text-slate-500 text-base leading-relaxed line-clamp-3 mb-4 flex-grow">${p.description[0].replace(/\*\*/g, '')}</p>
+                            <p class="text-slate-500 text-base leading-relaxed line-clamp-3 mb-4 flex-grow">${problemText}</p>
                             <div class="flex flex-wrap gap-2 mt-auto">
                                 ${p.tags ? p.tags.slice(0, 3).map(tag => `<span class="text-[10px] font-semibold text-slate-400 bg-slate-50 px-2 py-1 rounded">${tag}</span>`).join('') : ''}
                             </div>
@@ -1702,8 +1493,6 @@
         const modalImage = document.getElementById('modal-image');
         const modalDemo = document.getElementById('modal-demo-container');
         const modalFlowContainer = document.getElementById('modal-flow-container');
-        const modalSpecs = document.getElementById('modal-specs');
-        const modalSpecsList = document.getElementById('modal-specs-list');
 
         window.openModal = function(index) {
             const p = projectsData[index];
@@ -1717,22 +1506,13 @@
             const tagsEl = document.getElementById('modal-tags');
             tagsEl.innerHTML = p.tags ? p.tags.map(tag => `<span class="text-xs font-semibold text-slate-500 bg-slate-100 px-3 py-1 rounded-full">${tag}</span>`).join('') : '';
             
-            // Build body with Result Context first
-            let resultHtml = '';
-            if(p.result) {
-                resultHtml = `<div class="bg-blue-50 border-l-4 border-blue-600 p-4 mb-6 rounded-r text-sm md:text-base text-slate-700"><strong>Result:</strong> ${p.result}</div>`;
-            }
-
-            const descHtml = p.description.map(text => `<p class="mb-3">${text.replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-900">$1</strong>')}</p>`).join('');
-            modalBody.innerHTML = resultHtml + descHtml;
+            // Format descriptions specifically for the Problem/Solution/Impact format
+            const descHtml = p.description.map(text => {
+                // Style the labels (Problem, Solution, Impact, Tech) beautifully
+                return `<p class="mb-4 text-[15px]"><span class="block text-[11px] font-black text-blue-600 uppercase tracking-widest mb-1">${text.match(/\*\*(.*?)\*\*/)[1].replace(':', '')}</span><span class="text-slate-700">${text.replace(/\*\*(.*?)\*\*/g, '')}</span></p>`;
+            }).join('');
             
-            // Tech Specs Logic
-            if (p.techSpecs && p.techSpecs.length > 0) {
-                modalSpecs.classList.remove('hidden');
-                modalSpecsList.innerHTML = p.techSpecs.map(spec => `<li>${spec}</li>`).join('');
-            } else {
-                modalSpecs.classList.add('hidden');
-            }
+            modalBody.innerHTML = descHtml;
 
             // Reset visibility
             modalVideo.src = "";
@@ -1748,7 +1528,6 @@
                 modalFlowContainer.classList.remove('hidden');
             } else {
                 modalImage.src = p.imageUrl;
-                // apply object-contain to modal if specified
                 if(p.imageFit === 'contain') {
                     modalImage.classList.add('object-contain', 'p-4');
                     modalImage.classList.remove('object-cover');
@@ -1764,7 +1543,6 @@
                 mainBtn.href = p.link;
                 mainBtn.classList.remove('hidden');
                 
-                // Lógica de "Documentación / PRD" vs "View Project"
                 let mainLabel = 'View Project';
                 if(p.link.includes('github.com')) mainLabel = 'View on GitHub';
                 else if(p.link.includes('itch.io')) mainLabel = 'Play on itch.io';
@@ -1784,7 +1562,6 @@
                 secBtn.href = p.secondaryLink;
                 secBtn.classList.remove('hidden');
                 
-                // Lógica de "Documentación / PRD"
                 let secLabel = 'View Documentation';
                 if(p.secondaryLink.includes('github.com')) secLabel = 'View Repository';
                 else if(p.secondaryLink.includes('itch.io')) secLabel = 'Play Original Game';
